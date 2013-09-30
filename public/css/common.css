@@ -70,3 +70,5 @@ hr { width:100%; border:none; margin:0; padding:0; height:0; border-top:2px soli
 #footer .links:after {content:''; display:block; position:absolute; left:99px; top:32px; width:2px; height:38px;background-position:-851px 0;}
 #footer .links a.agreement {margin-left:50px;width:44px;background-position:-802px 0;}
 #footer .links a.privacy {margin-left:12px;width:90px;background-position:-858px 0;}
+
+#content {margin-top:-255px;}
