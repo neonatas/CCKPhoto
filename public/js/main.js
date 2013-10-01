@@ -1,6 +1,6 @@
 $(function() {
 	var tops = [11, 11, 11, 205, 205];
-	var lefts = [15, 263, 509, 756, 1003];//[15, 233+15+15, (232+15)*2+15, (232+15)*3+15, (232+15)*4+15];
+	var lefts = [15, 263, 509, 756, 1002];//[15, 233+15+15, (232+15)*2+15, (232+15)*3+15, (232+15)*4+15];
 	var setPosition = function (idx, li) {
 		var $li = $(li);
 		var col = tops.indexOf(Math.min.apply(null, tops));
