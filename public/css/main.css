@@ -1,0 +1,47 @@
+#content.main {position:relative;padding-top:265px;}
+#content.main .top {position:absolute;width:100%; top:0;left:0; }
+#content.main .top img {position:absolute; top:49px; right:31px;}
+#content.main .category {float:left; width:516px;padding:19px 0 0 30px;}
+.btn-upload {display:block; width:245px; height:52px; background: url(../images/btn_upload.png) no-repeat; text-indent:-10000px;}
+#content.main .btn-upload {float:left;}
+#content.main form {float:right; padding:18px 30px 0 0;}
+#content.main fieldset {float:left;}
+#content.main legend {display:none;}
+
+#content.main .search {width:208px;height:30px;background:url(../images/bg_search.png) right 0 no-repeat; }
+#content.main .search input {margin:0;padding:0;display:block;float:left; background:#e0e0e0; }
+#content.main .search .keyword {width:158px;height:24px;line-height:24px; border:none; color:#979797; padding:5px 8px 0; font-size:14px;}
+#content.main .search .btn-search {width:33px;height:30px;border:none;text-indent:-10000px; background:transparent; cursor:pointer;}
+
+#content.main .order {padding:5px 10px 0 0}
+#content.main .order input {visibility:hidden;position:absolute;}
+#content.main .order label {background: url(../images/btn_order.png) no-repeat; text-indent:-10000px; display:block; float:left; height:26px; cursor:pointer;}
+
+#content.main .order label.recently {width:46px; background-position:0 0;}
+#content.main .order label.recently.on, #content.main .order label.recently:hover {background-position:0 -26px;}
+
+#content.main .order label.recommend {width:45px; background-position:-46px 0;}
+#content.main .order label.recommend.on, #content.main .order label.recommend:hover {background-position:-46px -26px;}
+
+#content.main .order label.hit {width:46px; background-position:-91px 0;}
+#content.main .order label.hit.on, #content.main .order label.hit:hover {background-position:-91px -26px;}
+/*
+				<input type="radio" id="orderRecently" name="order" value="recently" checked />
+					<label class="recently" for="orderRecently">최신순</label>
+					<input type="radio" id="orderRecommend" name="order" value="recommend" />
+					<label class="recommend" for="orderRecommend">추천순</label>
+					<input type="radio" id="orderHit" name="order" value="hit" />
+					<label class="hit" for="orderHit">조회순</label>
+*/
+#content.main .banner {position:absolute; top:328px; right:30px;}
+#content.main .banner a {background:url(../images/main_banner.png); width:479px; height:179px; display:block; text-indent:-10000px;}
+#content.main .banner a:hover {background-position:0 -179px;}
+.no-result {display:none;clear:both; text-align:center;font-size:14px; padding:95px;}
+.photo-list {clear:both; display:block; position:relative;}
+.photo-list ul {overflow:hidden; min-height:1000px; }
+.photo-list hr {margin:40px 0;}
+.photo-list a.more {margin:30px auto 0;}
+
+.photo-list li {float:left; margin:0 0 15px 15px; position:absolute; opacity: .0; filter: alpha(opacity=0); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";}
+.photo-list li .recommend {display:none;}
+a.more {display:block; clear:both; width:267px; height:55px; background: url(../images/btn_more.png) no-repeat; text-indent:-10000px;}
