@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+	<title>Share & Photo</title>
+	<link rel="stylesheet" media="all" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" media="all" type="text/css" href="../css/member.css" />
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<h1><a href="/"><img src="../images/logo.png" width="307" height="307" alt="Share & Photo"/></a></h1>
+
+		<ul id="nav">
+			<li class="intro"><a href="">캠패인소개</a></li>
+			<li class="exhibition"><a href="">전시회</a></li>
+			<li class="workshop"><a href="">워크샵</a></li>
+			<li class="login"><a href="">로그인</a></li>
+			<li class="join on"><a href="">회원가입</a></li>
+			<li class="about"><a href="">About CCKorea</a></li>
+		</ul>
+
+		<hr />
+	</div>
+	<div id="content" class="">
+		
+		<div id="joinArea">
+			<h2><img src="../images/title_join.png" alt="회원가입" /></h2>
+			<p class="desc"><img src="../images/text_join_desc.png" alt="페이스북, 트위터 계정을 연동하여 회원가입을 하거나 사용중인 E-mail을 이용하여 회원가입 해주세요!" /></p>
+			<ul>
+				<li class="link-JoinF"><a href="">페이스북으로 가입하기</a></li>
+				<li class="link-JoinT"><a href="">트위터로 가입하기</a></li>
+			</ul>
+			<div class="float-clear"></div>
+			<form name="join_form" id="join_form" action="" method="post">
+			<fieldset>
+				<div class="input-area">
+					<label for="joinEmail"><img src="../images/text_email.png" alt="E-mail" /></label>
+					<input type="text" id="joinEmail" name="joinEmail" class="input-455 text"/>
+					<img src="../images/text_email_desc.png" class="msg" />
+					<span class="mark"></span>
+				</div>
+				<div class="input-area">
+					<label for="joinPasswd"><img src="../images/text_passwd.png" alt="비밀번호" /></label>
+					<input type="password" id="joinPasswd" name="joinPasswd" class="input-455 text"/>
+					<img src="../images/text_passwd_desc.png" class="msg" />
+					<span class="mark"></span>
+				</div>
+				<div class="input-area">
+					<label for="joinPasswdConfirm"><img src="../images/text_passwd_confirm.png" alt="비밀번호확인" /></label>
+					<input type="password" id="joinPasswdConfirm" name="joinPasswdConfirm" class="input-455 text" />
+					<img src="../images/text_passwd_desc.png" class="msg" />
+					<span class="mark"></span>
+				</div>
+				<div class="input-area">
+					<label for="joinName"><img src="../images/text_name.png" alt="이름 & 닉네임" /></label>
+					<input type="text" id="joinName" name="joinName" class="input-341 text"/>
+					<img src="../images/text_name_desc.png" class="msg" />
+					<img src="" class="d-msg" style="display:none;"/>
+					<span class="mark"></span>
+					<button id="btnCheckDuplication">중복확인</button>
+				</div>
+				<div class="agreement-area">
+					<label for="agreement"><a href="#" class="link-provision">이용약관</a><span> 및 </span><a href="#" class="link-personal">개인정보 취급방침</a><span>에 동의합니다.</span></label>
+					<span id="joinAgreement"></span>
+					<input type="hidden" name="policyAgree"  id="policyAgree" />
+				</div>
+				<div class="button-area">
+					<img src="../images/btn_join_ok.png" alt="확인" class="btn-ok" /><img src="../images/btn_join_cancel.png" alt="취소" class="btn-cancel" />
+				</div>
+			</fieldset>
+			</form>
+		</div>
+	
+	</div>
+	<div id="footer">
+		<p class="host">
+			<span>추최/추관</span>
+			<a href="">creative commons korea</a>
+		</p>
+		<p class="sponsor">
+			<span>후원</span>
+			<a class="s1" href="">공유 서울</a>
+			<a class="s2" href="">한국 스마트 카드</a>
+			<a class="s3" href="">ART TECH</a>
+		</p>
+		<p class="links">
+			<a class="agreement" href="">이용약관</a>
+			<a class="privacy" href="">개인정보 취급방침</a>
+		</p>
+	</div>
+</div>
+
+<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.js"></script>
+
+<script type="text/javascript">
+<!--
+	$(function() {
+		check_agreement();
+		check_inputDesc();
+	
+		$('#joinAgreement').click( function() {
+			if( $('#joinAgreement').hasClass('check') ) {
+				$('#joinAgreement').removeClass('check');
+			} else {
+				$('#joinAgreement').addClass('check');
+			}
+			check_agreement();
+		});
+
+		$('#joinArea .input-area').click( function() {
+			check_inputDesc();
+
+			$(this).children('.msg').hide();
+			$(this).children('.text').focus();
+		});
+
+		$('#joinArea .btn-ok').click( function() {
+			$('#join_form').submit();
+			return false;
+		});
+		$('#joinArea .btn-cancel').click( function() {
+			history.go(-1);
+			return false;
+		});
+
+		$('#join_form').validate({
+			errorElement:'span',
+			rules: {
+				joinEmail: {
+					required: true,
+					email: true,
+					remote : {
+						type : 'POST',
+						url  : 'validEmail.php'
+					}
+				},
+				joinPasswd: {
+				   required: true,
+				   number: true,
+				   minlength: 6
+			   },
+				joinPasswdConfirm: {
+				   required: true,
+				   number: true,
+				   minlength: 6,
+				   equalTo: '#joinPasswd'
+			   },
+				joinName: {
+					required: true,
+					remote : {
+						type : 'POST',
+						url  : 'validName.php'
+					}
+				},
+				policyAgree: 'required'
+			},
+
+			messages: {  
+				joinEmail: {
+					required: function(r,el) { return showValidError( el, '이메일 주소를 입력하세요.' ); },
+					email: function(r,el){ return showValidError( el,'유효하지 않는 이메일 형식입니다.' ); },
+					remote: function(r,el){ return showValidError( el, '입력하신 이메일 이미 등록되었습니다.' ); }
+				},
+				joinPasswd: {
+					required: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
+					number: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
+					minlength: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); }
+				},
+				joinPasswdConfirm: {
+					required: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
+					number: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
+					minlength: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
+					equalTo: function(r,el) { return showValidError( el, '비밀번호가 일치하지 않습니다, 다시 입력해주세요.' ); }
+				},
+				joinName: {
+					required: function(r,el) { return showValidError( el, '이름이나 닉네임을 입력하세요.' ); },
+					remote: function(r,el){ return showValidError( el, '중복되는 이름입니다.' ); }
+				},
+				policyAgree: {
+					required: '이용약관 및 개인정보 취급방침에 동의해주세요.'
+				}
+			},
+
+			success:function(em) {
+				showValidSuccess(em);
+			},
+
+			submitHandler: function (frm) {
+				frm.submit();
+			}
+		});
+
+	});
+
+	function check_inputDesc() {
+		$('#joinArea .input-area .text').each( function() {
+			if( $(this).val() == '' )
+				$(this).siblings('.msg').show();
+			else
+				$(this).siblings('.msg').hide();
+		});
+	}
+	function check_agreement() {
+		var f = document.join_form;
+
+		if( $('#joinAgreement').hasClass('check') ) {
+			f.policyAgree.value = "";
+		} else {
+			f.policyAgree.value = "y";
+		}
+	}
+
+	//form validate
+	function showValidError( obj, msg ) {
+		$(obj).addClass('failed');
+
+		return msg;
+	}
+	function showNameValidError( obj, msg ) {
+		$(obj).addClass('failed');
+		$(obj).siblings('.d-msg').attr('src', '../images/text_duplication_no.png');
+
+		return msg;
+	}
+	function showValidSuccess(obj){
+		setTimeout(function(){	$(obj).hide();}, 0);
+		
+		if ($(obj).attr('for') != 'policyAgree') {
+			$(obj).removeClass('failed');
+		}
+
+		if ($(obj).attr('name') != 'joinName') {
+			$(obj).siblings('.d-msg').attr('src', '../images/text_duplication_ok.png');
+		}
+		
+		return false;
+	}
+//-->
+</script>
+</body>
+</html>
