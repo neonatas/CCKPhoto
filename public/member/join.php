@@ -1,38 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<?
+    $strCSS = "<link rel='stylesheet' media='all' type='text/css' href='../css/join.css' />";
 
-	<title>Share & Photo</title>
-	<link rel="stylesheet" media="all" type="text/css" href="../css/common.css" />
-	<link rel="stylesheet" media="all" type="text/css" href="../css/join.css" />
-</head>
-<body>
-<div id="wrap">
-	<div id="header">
-		<h1><a href="/"><img src="../images/logo.png" width="307" height="307" alt="Share & Photo"/></a></h1>
+    $strJS = "<script type='text/javascript' src='../js/jquery.validate.js'></script>";
+    $strJS .= "<script type='text/javascript' src='../js/join.js'></script>";
 
-		<ul id="nav">
-			<li class="intro"><a href="">캠패인소개</a></li>
-			<li class="exhibition"><a href="">전시회</a></li>
-			<li class="workshop"><a href="">워크샵</a></li>
-			<li class="login"><a href="">로그인</a></li>
-			<li class="join on"><a href="">회원가입</a></li>
-			<li class="about"><a href="">About CCKorea</a></li>
-		</ul>
+    $pageCode = "join";
 
-		<hr />
-	</div>
+    require_once "../_include/header.php";
+
+	$re_url = ( trim($_POST["re_url"]) ) ? trim($_POST["re_url"]) : trim($_GET["re_url"]);
+	if ( $re_url == "" ) $re_url = "/";
+?>
+
 	<div id="content" class="">
 		<div id="joinArea">
 			<h2><img src="../images/title_join.png" alt="회원가입" /></h2>
 			<p class="desc"><img src="../images/text_join_desc.png" alt="페이스북, 트위터 계정을 연동하여 회원가입을 하거나 사용중인 E-mail을 이용하여 회원가입 해주세요!" /></p>
 			<ul>
-				<li class="link-JoinF"><a href="">페이스북으로 가입하기</a></li>
-				<li class="link-JoinT"><a href="">트위터로 가입하기</a></li>
+				<li class="link-JoinF" onclick="joinFacebook('<?=$re_url?>')">페이스북으로 가입하기</li>
+				<li class="link-JoinT" onclick="joinTwitter('<?=$re_url?>')">트위터로 가입하기</li>
 			</ul>
 			<div class="float-clear"></div>
-			<form name="join_form" id="join_form" action="" method="post">
+			<form name="join_form" id="join_form" method="post" action="join_proc.php" >
 			<fieldset>
 				<div class="input-area">
 					<label for="joinEmail"><img src="../images/text_email.png" alt="E-mail" /></label>
@@ -53,12 +42,13 @@
 					<span class="mark"></span>
 				</div>
 				<div class="input-area">
-					<label for="joinName"><img src="../images/text_name.png" alt="이름 & 닉네임" /></label>
-					<input type="text" id="joinName" name="joinName" class="input-341 text"/>
+					<label for="joinNickName"><img src="../images/text_name.png" alt="이름 & 닉네임" /></label>
+					<input type="text" id="joinNickName" name="joinNickName" class="input-341 text"/>
 					<img src="../images/text_name_desc.png" class="msg" />
 					<img src="" class="d-msg" style="display:none;"/>
 					<span class="mark"></span>
 					<button id="btnCheckDuplication">중복확인</button>
+                    <input type="hidden" name="checkDuplication" />
 				</div>
 				<div class="agreement-area">
 					<label for="agreement"><a href="#" class="link-provision">이용약관</a><span> 및 </span><a href="#" class="link-personal">개인정보 취급방침</a><span>에 동의합니다.</span></label>
@@ -72,26 +62,5 @@
 			</form>
 		</div>
 	</div>
-	<div id="footer">
-		<p class="host">
-			<span>추최/추관</span>
-			<a href="">creative commons korea</a>
-		</p>
-		<p class="sponsor">
-			<span>후원</span>
-			<a class="s1" href="">공유 서울</a>
-			<a class="s2" href="">한국 스마트 카드</a>
-			<a class="s3" href="">ART TECH</a>
-		</p>
-		<p class="links">
-			<a class="agreement" href="">이용약관</a>
-			<a class="privacy" href="">개인정보 취급방침</a>
-		</p>
-	</div>
-</div>
 
-<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
-<script type="text/javascript" src="../js/jquery.validate.js"></script>
-<script type="text/javascript" src="../js/join.js"></script>
-</body>
-</html>
+<? require_once "../_include/footer.php"; ?>
