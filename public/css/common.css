@@ -15,8 +15,8 @@ hr { width:100%; border:none; margin:0; padding:0; height:0; border-top:2px soli
 #wrap:before{content:''; display:block; width:1280px; height:963px; position:absolute; background: url(../images/back01.jpg);}
 
 #header, #content, #footer {position:relative;}
-#wrap h1 {position:relative; z-index:1; width:307px;height:307px;}
-
+#wrap h1 {position:relative; z-index:1; width:307px;height:307px; background:url(../images/logo.png);}
+#wrap h1 a {display:block; width:200px; height:170px; text-indent:-10000px;}
 #nav {position:absolute; right:29px; top:13px;}
 #nav li {float:left; background: url(../images/nav.png) no-repeat;}
 #nav li a {color:white; display:block;  height:29px; text-indent:-10000px;}
