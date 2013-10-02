@@ -11,3 +11,16 @@ if (!Array.prototype.indexOf) {
 		return -1;
 	};
 }
+
+$.dialog = {
+	open: function(id, f) {
+		$('#popupContainer').show().find('>.popup').hide();
+		var $popup = $('#' + id);
+		$popup.show().css({'top': $(window).height()/2 - $popup.height()/2,'left':$(window).width()/2 - $popup.width()/2});
+		f && f();
+	},
+	close: function(f) {
+		$('#popupContainer').hide();
+		f && f();
+	}
+}

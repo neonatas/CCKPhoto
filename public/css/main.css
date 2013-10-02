@@ -35,22 +35,8 @@
 }
 #content.main .banner a:hover {background-position:0 -179px;}
 
-.no-result {display:none;clear:both; text-align:center;font-size:14px; padding:95px;}
-.photo-list {clear:both; display:block; position:relative;}
-.photo-list ul {overflow:hidden; min-height:1000px; }
-.photo-list hr {margin:40px 0;}
-.photo-list a.more {margin:30px auto 0;}
-
-.photo-list li {
-	float:left; margin:0 0 15px 15px; position:absolute; opacity: .0; filter: alpha(opacity=0); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	-webkit-box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
-	-moz-box-shadow:    4px 4px 3px rgba(0, 0, 0, 0.6);
-	box-shadow:         4px 4px 3px rgba(0, 0, 0, 0.6);
-}
 .photo-list li .title {display:none; position:absolute; top:0; right:0; left:0; bottom:0; border:5px solid white;background: url(../images/bg_photo_title.png) -8px -39px no-repeat;}
 .photo-list li .title em {display:block;color:white; width:130px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; line-height:40px; font-weight:normal; font-size:14px; padding-left:8px;}
 .photo-list li .recommend {display:none; position:absolute; top:12px; right:15px; width:74px; height:20px;  background: url(../images/btn_recommend.png) no-repeat; text-indent:-10000px;}
 .photo-list li .recommend.on {background-position:0 -20px;}
-
 .photo-list li:hover .title, .photo-list li:hover .recommend {display:block; }
-a.more {display:block; clear:both; width:267px; height:55px; background: url(../images/btn_more.png) no-repeat; text-indent:-10000px;}

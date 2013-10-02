@@ -1,0 +1,46 @@
+#content.gallery {position:relative;padding-top:116px;}
+#content.gallery .top {width:986px; height:157px; margin:0 auto; background: url(../images/bg_gallery.png) right 0 no-repeat; }
+#content.gallery .profile {padding:54px 0 0 43px;}
+#content.gallery .profile img {display:block; width:63px; height:63px;border:1px solid #777; float:left;}
+#content.gallery .profile .title {display:block; float:left; padding:34px 0 0 18px;}
+#content.gallery .profile .title span {background: url(../images/bg_gallery_title.png) 0 0 no-repeat; text-indent:-10000px; display:block; float:left; width:77px; height:20px; margin:12px 0 0 11px;}
+#content.gallery .profile .name {font-size:30px; display:block; color:#fff; float:left; }
+#content.gallery .profile a {display:block; float:left; background: url(../images/bg_gallery_title.png) right 0 no-repeat;text-indent:-10000px; width:90px; height:20px; margin-top:46px;}
+/*
+<span><em class="name">이진우</em> 님의 갤러리</span>
+*/
+
+.photo-list li .title {display:none; }
+.photo-list li .recommend {display:block; position:absolute; bottom:7px; right:10px; width:74px; height:20px;  background: url(../images/btn_recommend2.png) no-repeat; text-indent:-10000px;}
+.photo-list li .recommend.on {background-position:0 -20px;}
+.photo-list li .delete {display:block; position:absolute; bottom:7px; right:10px; width:74px; height:20px;  background: url(../images/btn_delete.png) no-repeat; text-indent:-10000px; cursor:pointer;}
+
+#popupDelete {background-color:#bbb; width:390px; height:108px; position:relative;}
+#popupDelete span {display:block; position:absolute; left:38px; top:48px; border:none; width:141px; height:14px; background: url(../images/text_confirm_delete.png) no-repeat; text-indent: -10000px; }
+#popupDelete .btn-delete {position:absolute; left:192px; top:41px;}
+#popupDelete .btn-cancel {position:absolute; left:279px; top:41px;}
+
+
+#popupProfileUpdate {background-color:#bbb; width:390px; height:298px; position:relative;}
+#popupProfileUpdate legend {display:none;}
+#popupProfileUpdate fieldset.nick {position:relative; margin:36px 0 0 40px; height:88px; background: url(../images/bg_profile_update1.png) no-repeat;}
+#popupProfileUpdate fieldset.nick.err {background-position: 0 -100px;}
+#popupProfileUpdate fieldset.nick.ok {background-position: 0 -200px;}
+#popupProfileUpdate .btn-check-nick {position:absolute; top:32px; right:40px; display:block; border:none; width:93px; height:33px; background: url(../images/btn_check_nick.png) no-repeat; text-indent: -10000px; cursor:pointer; }
+#popupProfileUpdate fieldset.nick.err .btn-check-nick {background-position: 0 -33px;}
+#popupProfileUpdate fieldset.nick.ok .btn-check-nick {background-position: 0 -66px;}
+#popupProfileUpdate .text-nick {
+	position:absolute; left:3px; top: 34px; width:192px;height:40px;
+	margin:0; background-color:transparent; border:none; color:black; font-size:13px; font-weight:bold; line-height:40px;
+	padding: 0 0 0 10px;
+}
+#popupProfileUpdate .file {position:absolute; top:34px; left:0; width:100px; height:40px; overflow:hidden;  opacity: .0; filter: alpha(opacity=0); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; cursor:pointer; }
+#popupProfileUpdate .file input {position:absolute; right:0; display:block; width:1000px; height:100px;}
+#popupProfileUpdate .text-fn {
+	position:absolute; left:105px; top: 34px; width:192px;height:40px; color:#555;
+	margin:0; background-color:transparent; border:none; font-size:13px; font-weight:bold; line-height:40px;
+	padding: 0 0 0 10px;}
+#popupProfileUpdate fieldset.photo {position:relative; margin-left:40px; height:120px; background: url(../images/bg_profile_update2.png) no-repeat;}
+#popupProfileUpdate .btn-ok {position:absolute; right:129px; bottom:20px;}
+#popupProfileUpdate .btn-cancel {position:absolute; right: 40px; bottom: 20px;}
+#popupProfileUpdate .btn-close {position:absolute; top:10px; right:10px;}
