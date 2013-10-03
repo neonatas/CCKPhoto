@@ -56,7 +56,7 @@
 					<input type="hidden" name="policyAgree"  id="policyAgree" />
 				</div>
 				<div class="button-area">
-					<img src="../images/btn_join_ok.png" alt="확인" class="btn-ok" /><img src="../images/btn_join_cancel.png" alt="취소" class="btn-cancel" />
+					<img src="../images/btn_join_ok.png" alt="확인" class="btn-join-ok" /><img src="../images/btn_join_cancel.png" alt="취소" class="btn-join-cancel" />
 				</div>
 			</fieldset>
 			</form>

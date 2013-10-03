@@ -36,7 +36,7 @@
 					<span class="mark"></span>
 				</div>
 				<div class="button-area">
-					<img src="../images/btn_join_ok.png" alt="확인" class="btn-ok" /><img src="../images/btn_join_cancel.png" alt="취소" class="btn-cancel" />
+					<img src="../images/btn_join_ok.png" alt="확인" class="btn-login-ok" /><img src="../images/btn_join_cancel.png" alt="취소" class="btn-login-cancel" />
 				</div>
 			</fieldset>
 			</form>

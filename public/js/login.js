@@ -13,7 +13,7 @@ $(function() {
 	})
 
 	//로그인
-	$('#loginArea .btn-ok').click( function() {
+	$('#loginArea .btn-login-ok').click( function() {
 		$('#login_form').submit();
 		return false;
 	});
@@ -92,7 +92,7 @@ $(function() {
 	});
 	
 	//로그인 취소
-	$('#loginArea .btn-cancel').click( function() {
+	$('#loginArea .btn-login-cancel').click( function() {
 		history.go(-1);
 		return false;
 	});

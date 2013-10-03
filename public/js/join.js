@@ -25,7 +25,7 @@ $(function() {
 	})
 
 	//가입 확인
-	$('#joinArea .btn-ok').click( function() {
+	$('#joinArea .btn-join-ok').click( function() {
 		$('#join_form').submit();
 		return false;
 	});
@@ -138,7 +138,7 @@ $(function() {
 	});
 	
 	//가입취소
-	$('#joinArea .btn-cancel').click( function() {
+	$('#joinArea .btn-join-cancel').click( function() {
 		history.go(-1);
 		return false;
 	});
