@@ -1,0 +1,23 @@
+	#content.login { padding-top:130px; }
+	#loginArea  { width:625px; margin:0 auto; text-align:center; font-size:10pt; padding-bottom:40px; position:relative; }
+	#loginArea h2 {height:41px; width:100%; border-bottom:2px solid #009bb0; text-align:left; }
+	#loginArea .oauth { padding-top:30px; display:block; overflow:hidden; }
+	#loginArea .oauth li { width:302px; height:51px; border:0; text-indent:-10000px; text-align:center; float:left; cursor:pointer; }
+	#loginArea li.link-JoinF { margin-right:10px; background:url("../images/btn_login_facebook.png") no-repeat; }
+	#loginArea li.link-JoinT { margin-left:10px; background:url("../images/btn_login_twitter.png") no-repeat; }
+	#loginArea li:hover { background-position:0 -51px; }
+	#loginArea div.float-clear{ clear:both; }
+	#loginArea form { margin-top:30px; padding:30px 0; width:605px; border:10px solid #201f1f; text-align:center;}
+	#loginArea fieldset { width:515px; margin:0 auto;  }
+	#loginArea .input-area { padding-top:10px; padding-left:60px; width:455px; position:relative; text-align:left; clear:both;  }
+	#loginArea .input-area label { position:absolute; left:0; height:41px; line-height:41px; }
+	#loginArea .input-area img.msg { position:absolute; left:70px; top:23px; }
+	#loginArea .input-area span.error { display:none; position:absolute; right:0; bottom:-10px; z-index:9; background-color:#fff; heigh:20px; line-height:20px; padding:0 6px; color:#ff5019; border:1px solid #c9c9cb; font-size:11px; }
+	#loginArea .input-area span.mark { display:block; position:absolute; right:20px; bottom:12px; width:20px; height:17px; }
+	#loginArea .button-area { padding-top:40px; text-align:right; }
+	#loginArea .button-area img { margin-left:13px; cursor:pointer;  }
+	#loginArea input.text { height:41px; line-height:41px; border:0; padding:0 10px; }
+	#loginArea input.failed { border:2px solid red; }
+	#loginArea input.input-455 { width:435px; background:url("../images/bg_join_input_455.png") no-repeat;}
+	#loginArea .login-about { text-align:left; padding-top:15px; }
+	#loginArea .login-about li { padding-top:5px; }

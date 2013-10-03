@@ -1,4 +1,5 @@
-	#joinArea { width:800px; margin:0 auto; text-align:center; font-size:10pt; }
+	#content.join { padding-top:130px; }
+	#joinArea { width:800px; margin:0 auto; text-align:center; font-size:10pt; position:relative; }
 	#joinArea h2 {height:41px; width:100%; border-bottom:2px solid #009bb0; text-align:left; }
 	#joinArea .desc { text-align:left; color:#cdcdcd; padding-top:13px; }
 	#joinArea ul { padding-top:30px; display:block; overflow:hidden; padding-left:12px; }

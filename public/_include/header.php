@@ -10,14 +10,14 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 
 	<title>Share & Photo</title>
-	<link rel="stylesheet" media="all" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" media="all" type="text/css" href="/css/common.css" />
     <?=$strCSS?>
 </head>
 <body>
 <div id="wrap">
 	<div id="bg"></div>
 	<div id="header">
-		<h1><a href="/">Share & Photo</h1>
+		<h1><a href="/">Share & Photo</a></h1>
 
 		<ul id="nav">
 			<li class="intro"><a href="">캠패인소개</a></li>
@@ -27,8 +27,8 @@
                 <li class="logout"><a href="/member/logout.php">로그아웃</a></li>
                 <li class="my"><a href="">마이갤러리</a></li>
             <? } else { ?>
-            <li class="login"><a href="/member/login.php">로그인</a></li>
-			<li class="join"><a href="/member/join.php">회원가입</a></li>
+            <li class="login <?if($pageCode=="login") echo "on";?>"><a href="/member/login.php">로그인</a></li>
+			<li class="join <?if($pageCode=="join") echo "on";?>"><a href="/member/join.php">회원가입</a></li>
             <? } ?>
 			<li class="about"><a href="">About CCKorea</a></li>
 		</ul>

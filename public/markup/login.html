@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+	<title>Share & Photo</title>
+	<link rel="stylesheet" media="all" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" media="all" type="text/css" href="../css/login.css" />
+</head>
+<body>
+<div id="wrap">
+	<div id="bg"></div>
+	<div id="header">
+		<h1><a href="/">Share & Photo</a></h1>
+
+		<ul id="nav">
+			<li class="intro"><a href="">캠패인소개</a></li>
+			<li class="exhibition"><a href="">전시회</a></li>
+			<li class="workshop"><a href="">워크샵</a></li>
+			<li class="login on"><a href="">로그인</a></li>
+			<li class="join"><a href="">회원가입</a></li>
+			<li class="about"><a href="">About CCKorea</a></li>
+		</ul>
+
+		<hr />
+	</div>
+	<div id="content" class="login">
+		<div id="loginArea">
+			<h2><img src="../images/title_login.png" alt="로그인" /></h2>
+			<ul class="oauth">
+				<li class="link-JoinF"><a href="">페이스북으로 로그인하기</a></li>
+				<li class="link-JoinT"><a href="">트위터로 로그인하기</a></li>
+			</ul>
+			<div class="float-clear"></div>
+			<form name="login_form" id="login_form" action="" method="post">
+			<fieldset>
+				<div class="input-area">
+					<label for="loginEmail"><img src="../images/text_email.png" alt="E-mail" /></label>
+					<input type="text" id="loginEmail" name="loginEmail" class="input-455 text"/>
+					<img src="../images/text_email_desc.png" class="msg" />
+					<span class="mark"></span>
+				</div>
+				<div class="input-area">
+					<label for="loginPasswd"><img src="../images/text_passwd.png" alt="비밀번호" /></label>
+					<input type="password" id="loginPasswd" name="loginPasswd" class="input-455 text"/>
+					<img src="../images/text_passwd_desc.png" class="msg" />
+					<span class="mark"></span>
+				</div>
+				<div class="button-area">
+					<img src="../images/btn_join_ok.png" alt="확인" class="btn-ok" /><img src="../images/btn_join_cancel.png" alt="취소" class="btn-cancel" />
+				</div>
+			</fieldset>
+			</form>
+			<ul class="login-about">
+				<li><a href=""><img src="../images/text_find_passwd.png" alt="비밀번호 찾기" /></a></li>
+				<li><a href=""><img src="../images/text_go_join.png" alt="회원 가입하기" /></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="footer">
+		<p class="host">
+			<span>추최/추관</span>
+			<a href="">creative commons korea</a>
+		</p>
+		<p class="sponsor">
+			<span>후원</span>
+			<a class="s1" href="">공유 서울</a>
+			<a class="s2" href="">한국 스마트 카드</a>
+			<a class="s3" href="">ART TECH</a>
+		</p>
+		<p class="links">
+			<a class="agreement" href="">이용약관</a>
+			<a class="privacy" href="">개인정보 취급방침</a>
+		</p>
+	</div>
+</div>
+
+<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
+</body>
+</html>

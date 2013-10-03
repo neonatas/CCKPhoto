@@ -12,7 +12,7 @@
 	if ( $re_url == "" ) $re_url = "/";
 ?>
 
-	<div id="content" class="">
+	<div id="content" class="join">
 		<div id="joinArea">
 			<h2><img src="../images/title_join.png" alt="회원가입" /></h2>
 			<p class="desc"><img src="../images/text_join_desc.png" alt="페이스북, 트위터 계정을 연동하여 회원가입을 하거나 사용중인 E-mail을 이용하여 회원가입 해주세요!" /></p>
