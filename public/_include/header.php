@@ -20,12 +20,12 @@
 		<h1><a href="/">Share & Photo</a></h1>
 
 		<ul id="nav">
-			<li class="intro"><a href="">캠패인소개</a></li>
-			<li class="exhibition"><a href="">전시회</a></li>
-			<li class="workshop"><a href="">워크샵</a></li>
+			<li class="intro"><a href="#">캠패인소개</a></li>
+			<li class="exhibition"><a href="#">전시회</a></li>
+			<li class="workshop"><a href="#">워크샵</a></li>
             <? if($isLogin) { ?>
                 <li class="logout"><a href="/member/logout.php">로그아웃</a></li>
-                <li class="my"><a href="">마이갤러리</a></li>
+                <li class="my <?if($pageCode=="galley") echo "on";?>"><a href="/my/gallery.php">마이갤러리</a></li>
             <? } else { ?>
             <li class="login <?if($pageCode=="login") echo "on";?>"><a href="/member/login.php">로그인</a></li>
 			<li class="join <?if($pageCode=="join") echo "on";?>"><a href="/member/join.php">회원가입</a></li>

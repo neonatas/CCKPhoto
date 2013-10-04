@@ -1,10 +1,10 @@
 <?
-    $strCSS = "<link rel='stylesheet' media='all' type='text/css' href='../css/login.css' />";
-
-    $strJS = "<script type='text/javascript' src='../js/jquery.validate.js'></script>";
-    $strJS .= "<script type='text/javascript' src='../js/login.js'></script>";
-
     $pageCode = "login";
+
+    $strCSS = "<link rel='stylesheet' media='all' type='text/css' href='/css/".$pageCode.".css' />";
+    $strJS = "<script type='text/javascript' src='../js/jquery.validate.js'></script>";
+    $strJS .= "<script type='text/javascript' src='/js/".$pageCode.".js'></script>";
+
 
     require_once "../_include/header.php";
 
@@ -12,7 +12,7 @@
 	if ( $re_url == "" ) $re_url = "/";
 ?>
 
-	<div id="content" class="login">
+	<div id="content" class="<?=$pageCode?>">
 		<div id="loginArea">
 			<h2><img src="../images/title_login.png" alt="로그인" /></h2>
 			<ul class="oauth">

@@ -7,9 +7,6 @@
     $pageCode = "main";
 
     require_once "_include/header.php";
-
-	$re_url = ( trim($_POST["re_url"]) ) ? trim($_POST["re_url"]) : trim($_GET["re_url"]);
-	if ( $re_url == "" ) $re_url = "/";
 ?>
 		<div id="content" class="main">
 			<div class="top">
@@ -27,7 +24,7 @@
 				<li class="c9"><a href="">음식</a></li>
 				<li class="c10"><a href="">예술사진</a></li>
 			</ul>
-			<a class="btn-upload" href="">사진 올리기</a>
+			<a class="btn-upload" href="/my/upload.php">사진 올리기</a>
 			<form>
 				<fieldset class="order">
 					<legend>정렬</legend>

@@ -21,7 +21,7 @@ class clsMembers {
 				break;
 		}
 
-		$query = "select idx, policy_agree from members where ".$field." = '".$id."'";
+		$query = "select idx, policy_agree, my_img_r from members where ".$field." = '".$id."'";
 		$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) { 
@@ -33,6 +33,7 @@ class clsMembers {
 			$result['msg'] = "이미 가입된 회원 입니다.";
 			$result['idx'] = $row['idx'];
 			$result['policy_agree'] = $row['policy_agree'];
+            $result['my_img'] = $row['my_img_r'];
 		} else {
 			$query = "insert into members ( ".$field.", nickname, joindate, logindate, policy_agree ) values ( '".$id."','".$nickname."', now(), now(), 'y' )";
 			$res = mysql_query($query,$this->conn) or die ("insert query error!!");
@@ -42,6 +43,7 @@ class clsMembers {
 				$result['msg'] = "회원 가입이 완료되었습니다.";
 				$result['idx'] = mysql_insert_id();
 				$result['policy_agree'] = 'y';
+                $result['my_img'] = "";
 			}
 		}
 
@@ -141,6 +143,8 @@ class clsMembers {
 				$result['r'] = "success";
 				$result['idx'] = $row['idx'];
 				$result['level'] = $row['level'];
+                $result['nickname'] = $row['nickname'];
+                $result['my_img'] = $row['my_img_r'];
 				$result['policy_agree'] = $row['policy_agree'];
 			} else {
 				$result['r'] = 'error';

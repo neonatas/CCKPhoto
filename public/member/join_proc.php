@@ -51,7 +51,9 @@ if( $result['r'] == 'success' )
 	$_SESSION['USER_IDX'] = $result['idx'];
 	$_SESSION['USER_TYPE'] = "letscc_photo";
 	$_SESSION['USER_ID'] = $joinEmail;
-	$_SESSION['USER_AGREE'] = $policyAgree;
+	$_SESSION['USER_NAME'] = $joinNickName;
+    $_SESSION['USER_IMAGE'] = "";
+    $_SESSION['USER_AGREE'] = $policyAgree;
 } else if( $result['r'] == 'error' ) {
     $DB->historyBack($result['msg']);
     return;

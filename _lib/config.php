@@ -28,6 +28,6 @@
     define('CONSUMER_SECRET', 'qzKDBFWXmMrVtC0TZYELvRNIYXZthYDvCpRc5CBmqT4');
     define('TWITTER_CALLBACK', 'http://'.$_SERVER['SERVER_NAME'].'/member/oauth/twitter/callback.php');
 
-	// SlideShare API
-    define('SLIDESHARE_KEY', 'EPKaXt8x');
-    define('SLIDESHARE_SECRET', 'vfWdbVus');
+    //Path setting
+    define('PATH_PROFILE_IMAGE','http://'.$_SERVER['SERVER_NAME'].'/my/photo/');
+

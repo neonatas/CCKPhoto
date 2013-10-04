@@ -1,5 +1,5 @@
-		#content.upload { padding-top:130px;}
-		#uploadArea { width:800px; position:relative; margin:0 auto; }
+		#content.upload { padding-top:130px; position:relative;}
+		#uploadArea { width:800px; margin:0 auto; }
 		#uploadArea form { margin:10px 0 40px 0; width:780px; border:10px solid #201f1f; text-align:center; }
 		#uploadArea fieldset { width:625px; text-align:left; margin:50px auto; }
 		#uploadArea div.line { clear:both; width:100%; height:21px; border-bottom:1px dotted #707070; /*background:url("../images/upload_line_pattern.png");*/  }

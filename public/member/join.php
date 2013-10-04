@@ -1,10 +1,9 @@
 <?
-    $strCSS = "<link rel='stylesheet' media='all' type='text/css' href='../css/join.css' />";
-
-    $strJS = "<script type='text/javascript' src='../js/jquery.validate.js'></script>";
-    $strJS .= "<script type='text/javascript' src='../js/join.js'></script>";
-
     $pageCode = "join";
+
+    $strCSS = "<link rel='stylesheet' media='all' type='text/css' href='/css/".$pageCode.".css' />";
+    $strJS = "<script type='text/javascript' src='../js/jquery.validate.js'></script>";
+    $strJS .= "<script type='text/javascript' src='/js/".$pageCode.".js'></script>";
 
     require_once "../_include/header.php";
 
@@ -12,7 +11,7 @@
 	if ( $re_url == "" ) $re_url = "/";
 ?>
 
-	<div id="content" class="join">
+	<div id="content" class="<?=$pageCode?>">
 		<div id="joinArea">
 			<h2><img src="../images/title_join.png" alt="회원가입" /></h2>
 			<p class="desc"><img src="../images/text_join_desc.png" alt="페이스북, 트위터 계정을 연동하여 회원가입을 하거나 사용중인 E-mail을 이용하여 회원가입 해주세요!" /></p>
