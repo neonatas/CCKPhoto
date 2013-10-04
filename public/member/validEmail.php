@@ -3,8 +3,8 @@
 session_start();
 $_SESSION['return_url'] = $_SERVER['HTTP_REFERER'];
 
-require_once('../_lib/class.dbConnect.php');
-require_once('../_lib/class.members.php');
+require_once('../../_lib/class.dbConnect.php');
+require_once('../../_lib/class.members.php');
 
 $DB = new dbConn();
 $Member = new clsMembers( $DB->getConnection() );

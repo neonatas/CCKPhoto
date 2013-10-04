@@ -5,8 +5,8 @@ session_start();
 $re_url = ( trim($_POST["re_url"]) ) ? trim($_POST["re_url"]) : trim($_GET["re_url"]);
 if ( $re_url == "" ) $re_url = "/";
 
-require_once('../_lib/class.dbConnect.php');
-require_once('../_lib/class.members.php');
+require_once('../../_lib/class.dbConnect.php');
+require_once('../../_lib/class.members.php');
 
 
 $DB = new dbConn();

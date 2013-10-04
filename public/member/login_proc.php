@@ -6,10 +6,10 @@ if ( $re_url == "" ) $re_url = "/";
 
 $_SESSION['return_url'] = $re_url;
 
-require_once('../_lib/config.php');
-require_once('../_lib/class.dbConnect.php');
-require_once('../_lib/class.members.php');
-require_once('../_lib/class.favorites.php');
+require_once('../../_lib/config.php');
+require_once('../../_lib/class.dbConnect.php');
+require_once('../../_lib/class.members.php');
+require_once('../../_lib/class.favorites.php');
 
 
 $DB = new dbConn();

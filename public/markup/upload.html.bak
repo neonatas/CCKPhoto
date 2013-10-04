@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+	<title>Share & Photo</title>
+	<link rel="stylesheet" media="all" type="text/css" href="../css/common.css" />
+	<style type="text/css">
+		#content.upload { padding-top:130px;}
+		#uploadArea { width:800px; position:relative; margin:0 auto; }
+		#uploadArea form { margin:10px 0 40px 0; width:780px; border:10px solid #201f1f; text-align:center; }
+		#uploadArea fieldset { width:625px; text-align:left; margin:50px auto; }
+		#uploadArea div.line { clear:both; width:100%; height:21px; border-bottom:1px dotted #707070; /*background:url("../images/upload_line_pattern.png");*/  }
+		#uploadArea dl { clear:both; } 
+		#uploadArea dl.b-line { border-bottom:1px dotted #707070; }
+		#uploadArea dt, #uploadArea dd{ float:left; position:relative; }
+		#uploadArea dt { width:90px; }
+		#uploadArea img.msg { position:absolute; }
+		#uploadArea .input-area1 { height: 33px; line-height:33px; padding-bottom:21px; }
+		#uploadArea .input-area1 span { padding-left:30px; font-size:10.5pt; color:#969696; }
+		#uploadArea .input-area2 { height: 32px; line-height:32px; padding:17px 0 22px 0; }
+		#uploadArea .input-area2 img.msg { left:5px; top:9px; }
+		#uploadArea .input-area3 { height: 120px; padding:29px 0 30px 0; }
+		#uploadArea .input-area3 img.msg { left:95px; top:9px; }
+		#uploadArea .input-area3 dd { width:534px; text-align:right; }
+							#profileImage { width:65px; height:65px; border:1px solid #bbb; position:absolute; left:0; top:0; }
+		#uploadArea .input-area3 textarea { width:427px; height:101px; border:0; padding:10px; background:url("../images/bg_upload_textarea.png") no-repeat; color:#777; overflow:auto; }
+		#uploadArea .input-area4 { height: 22px; line-height:22px; padding:24px 0 25px 0; }
+		#uploadArea .input-area4 .select-cate { width:170px; height:22px; background:url("../images/bg_upload_select.png") no-repeat;  position:relative; color:#fff; font-weight:bold; }
+		#uploadArea .input-area4 .select-text { position:relative; left:6px; }
+		#uploadArea .input-area4 .select-option { width:163px; padding-left:3px; position:absolute; left:1px; border:1px solid #939393; background-color:#1c1b1b; z-index:9; display:none; }
+		#uploadArea .input-area4 .select-option li:hover { background-color:#ccc; }
+		#uploadArea .input-area5 { height: 32px; line-height:32px; padding:20px 0 19px 0; }
+		#uploadArea .input-area5 img.msg { left:5px; top:9px; }
+		#uploadArea .input-area6 { padding:20px 0 35px 0; overflow:hidden; }
+		#uploadArea .input-area6 dt div { position:relative; top:10px; }
+		#uploadArea .input-area6 dt div img { margin-top:10px; }
+		#uploadArea .input-area6 .sub-input-area { padding-top:21px; overflow:hidden; }
+		#uploadArea .input-area6 .sub-input-area dl { padding-bottom:13px; overflow:hidden; }
+		#uploadArea .input-area6 .sub-input-area li { float:left; padding-right:20px; cursor:pointer; }
+		#uploadArea .input-area6 .sub-input-area li img { vertical-align:top; }
+		#uploadArea .input-area6 .sub-input-area span.btn-radio { width:13px; height:13px; background:url("../images/btn_radio_ccltype.png") no-repeat; display:inline-block; }
+		#uploadArea .input-area6 .sub-input-area span.btn-radio.on { background-position:0 -13px; }
+		#uploadArea .button-area {width:100%; text-align:center; }
+		#uploadArea .button-area img {margin-left:10px;  }
+		#uploadArea input.input-535 { width:525px; height:32px; border:0; padding:0 5px; background:url("../images/bg_photo_input_535.png") no-repeat; color:#777; } 
+		#uploadArea button { border:0; text-indent:-10000px; cursor:pointer; }
+			#btnFileRegister { width:93px; height:33px; background:url("../images/btn_file_register.png") no-repeat; }
+			#btnFileRegister:hover { background-position:0 -33px; }
+			#btnProfileImage { width:67px; height:29px; border:0; position:absolute; left:0; bottom:0; background:url("../images/btn_upload_photo_modify.png") no-repeat; }
+			#btnProfileImage:hover { background-position:0 -29px; }
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="bg"></div>
+	<div id="header">
+		<h1><a href="/">Share & Photo</a></h1>
+
+		<ul id="nav">
+			<li class="intro"><a href="">캠패인소개</a></li>
+			<li class="exhibition"><a href="">전시회</a></li>
+			<li class="workshop"><a href="">워크샵</a></li>
+			<li class="logout"><a href="">로그아웃</a></li>
+			<li class="my on"><a href="">마이갤러리</a></li>
+			<li class="about"><a href="">About CCKorea</a></li>
+		</ul>
+
+		<hr />
+	</div>
+
+	<div id="content" class="upload">
+		<div id="uploadArea">
+			<h2><img src="../images/title_upload.png" alt="사진올리기" /></h2>
+			<form name="upload_form" id="upload_form" action="" method="post">
+			<fieldset>
+				<dl class="input-area1 b-line">
+					<dt><img src="../images/title_upload_register.png" alt="사진 등록"/></dt>
+					<dd>
+						<button id="btnFileRegister">등록하기</button><span>너랑나랑게스트하우스.jpg</span>
+					</dd>
+				</dl>
+				<dl class="input-area2 b-line">
+					<dt><img src="../images/title_upload_title.png" alt="작품 제목"/></dt>
+					<dd>
+						<input type="text" name="title" maxlength="20" class="input-535 text" />
+						<img src="../images/text_upload_title_desc.png" class="msg" />
+					</dd>
+				</dl>
+				<dl class="input-area3 b-line">
+					<dt><img src="../images/title_upload_profile.png" alt="프로필 & 설명"/></dt>
+					<dd>
+						<img src="../images/upload_profile_noimage.png" id="profileImage" alt="프로필 이미지"/>
+						<button id="btnProfileImage">사진변경</button>
+						<textarea name="description" class="text" ></textarea>
+						<img src="../images/text_upload_desc_desc.png" class="msg" />
+					</dd>
+				</dl>
+				<dl class="input-area4 b-line">
+					<dt><img src="../images/title_upload_cate.png" alt="카테고리"/></dt>
+					<dd>
+						<div class="select-cate">
+							<span class="select-text">선택하세요.</span>
+							<ul class="select-option">
+								<li class="cate-1">자연 & 풍경</li>
+								<li class="cate-2">인물</li>
+								<li class="cate-3">건축 & 예술</li>
+							</ul>
+						</div>
+						<input type="hidden" name="cate" />
+					</dd>
+				</dl>
+				<dl class="input-area5 b-line">
+					<dt><img src="../images/title_upload_tags.png" alt="태그"/></dt>
+					<dd>
+						<input type="text" name="tags" class="input-535 text" />
+						<img src="../images/text_upload_tags_desc.png" class="msg" />
+					</dd>
+				</dl>
+				<dl class="input-area6">
+					<dt>
+						<div>
+							<img src="../images/title_upload_cc.png" alt="CC 라이센스"/>
+							<img src="../images/btn_upload_ccl_view.png" alt="CC 라이센스 설명보기"/>
+						</div>
+					</dt>
+					<dd>
+						<img src="../images/text_upload_ccl_essential.png" alt="제작자 표시는 필수입니다."/>
+						<div class="sub-input-area">
+							<dl>
+								<dt><img src="../images/sub_title_upload_business.png" alt="상업적 이용"/></dt>
+								<dd>
+									<ul>
+										<li class="ccl-b-1">
+											<span class="btn-radio on"></span>
+											<img src="../images/text_upload_ccl_permission.png" alt="상업적 이용 허락" />
+										</li>
+										<li class="ccl-b-2">
+											<span class="btn-radio"></span>
+											<img src="../images/text_upload_ccl_permission_no.png" alt="상업적 이용 허락하지 않음"/>
+										</li>
+									</ul>
+									<input type="hidden" name="ccl_business" value="1"/>
+								</dd>
+							</dl>
+							<dl>
+								<dt><img src="../images/sub_title_upload_change.png" alt="저작물의 변경"/></dt>
+								<dd>
+									<ul>
+										<li class="ccl-c-1">
+											<span class="btn-radio on"></span>
+											<img src="../images/text_upload_ccl_permission.png" alt="저작물의 변경 허락" />
+										</li>
+										<li class="ccl-c-2">
+											<span class="btn-radio"></span>
+											<img src="../images/text_upload_ccl_permission_no.png" alt="저작물의 변경 허락하지 않음"/>
+										</li>
+										<li class="ccl-c-3">
+											<span class="btn-radio"></span>
+											<img src="../images/text_upload_ccl_same.png" alt="동일한 이용조건 적용"/>
+										</li>
+									</ul>
+									<input type="hidden" name="ccl_change" value="1"/>
+								</dd>
+							</dl>
+						</div>
+					</dd>
+				</dl>
+				<div class="button-area">
+					<img src="../images/btn_join_ok.png" alt="확인" class="btn-upload-ok" /><img src="../images/btn_join_cancel.png" alt="취소" class="btn-upload-cancel" />
+				</div>
+			</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<div id="footer">
+		<p class="host">
+			<span>추최/추관</span>
+			<a href="">creative commons korea</a>
+		</p>
+		<p class="sponsor">
+			<span>후원</span>
+			<a class="s1" href="">공유 서울</a>
+			<a class="s2" href="">한국 스마트 카드</a>
+			<a class="s3" href="">ART TECH</a>
+		</p>
+		<p class="links">
+			<a class="agreement" href="">이용약관</a>
+			<a class="privacy" href="">개인정보 취급방침</a>
+		</p>
+	</div>
+</div>
+
+<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.js"></script>
+<script type="text/javascript">
+<!--
+	$(function() {
+		//카테고리 select 처리
+		$('.select-cate').click(function(){
+			$('.select-option').toggle();
+		});
+
+		$('.select-option li').click(function(){
+			var str_temp = $(this).attr('class');
+			var cate_code = str_temp.split('-')[1];
+			$('.select-text').text( $(this).text() );
+			$('input[name=cate]').val(cate_code);
+		});
+
+		//입력창 설명 관련
+		$('#uploadArea .msg').click( function() {
+			$(this).hide();
+			$(this).siblings('.text').focus();
+		});
+		$('#uploadArea .text').focus( function() {
+			$(this).siblings('.msg').hide();
+		});
+		$('#uploadArea .text').blur( function() {
+			if( $(this).val() == '' )
+				$(this).siblings('.msg').show();
+		});
+
+		//CCL 라이센스 관련
+		$('#uploadArea .sub-input-area li').click( function() {
+			var objRadio = $(this).find('.btn-radio');
+			if( !objRadio.hasClass('on') ) {
+				objRadio.addClass('on');
+				$(this).siblings('li').find('.btn-radio').removeClass('on');
+
+				var str_temp = $(this).attr('class');
+				var arr_temp = str_temp.split('-');
+				var ccl_type = arr_temp[1];
+				var ccl_code = arr_temp[2];
+
+				if( ccl_type == 'b' )
+					$('input[name=ccl_business]').val(ccl_code);
+				else if( ccl_type == 'c' )
+					$('input[name=ccl_change]').val(ccl_code);
+			}
+		});
+	});
+//-->
+</script>
+</body>
+</html>

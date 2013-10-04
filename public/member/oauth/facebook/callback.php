@@ -2,12 +2,12 @@
 
 session_start();
 
-require_once('../../../_lib/oauth/facebook-php-sdk/src/facebook.php');
-require_once('../../../_lib/config.php');
+require_once('../../../../_lib/oauth/facebook-php-sdk/src/facebook.php');
+require_once('../../../../_lib/config.php');
 
-require_once('../../../_lib/class.dbConnect.php');
-require_once('../../../_lib/class.members.php');
-require_once('../../../_lib/class.favorites.php');
+require_once('../../../../_lib/class.dbConnect.php');
+require_once('../../../../_lib/class.members.php');
+require_once('../../../../_lib/class.favorites.php');
 
 // Create our Application instance (replace this with your appId and secret).
 $facebook = new Facebook(array(

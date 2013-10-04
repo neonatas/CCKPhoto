@@ -7,8 +7,8 @@ $re_url = ( trim($_GET["re_url"]) ) ? trim($_GET["re_url"]):"/";
 //$_SESSION['return_url'] = $_SERVER['HTTP_REFERER'];
 $_SESSION['return_url'] = $re_url;
 
-require_once('../../../_lib/oauth/facebook-php-sdk/src/facebook.php');
-require_once('../../../_lib/config.php');
+require_once('../../../../_lib/oauth/facebook-php-sdk/src/facebook.php');
+require_once('../../../../_lib/config.php');
 
 // Create our Application instance (replace this with your appId and secret).
 $facebook = new Facebook(array(
