@@ -133,7 +133,7 @@ class clsMembers {
 		$result = array();
 
 		if( $this->existEmail($array['email']) !== false ) {
-			$query = "select idx, level, policy_agree from members where email = '".$array['email']."' and passwd = '".md5($array['passwd'])."'";
+			$query = "select idx, level, policy_agree, nickname from members where email = '".$array['email']."' and passwd = '".md5($array['passwd'])."'";
 			$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 			if( @mysql_affected_rows() > 0 ) {
