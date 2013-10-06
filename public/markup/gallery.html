@@ -218,8 +218,8 @@
 				</fieldset>
 				<fieldset class="photo">
 					<legend>프로필 사진 등록</legend>
-					<span class="file"><input type="file" name="photo" /></span>
-					<input class="text-fn" type="text" readonly />
+					<span class="file"><input type="file" name="photo"  onchange="document.getElementById('fileName').value = this.value.split(/[/\\]/).reverse()[0]" /></span>
+					<input id="fileName" class="text-fn" type="text" readonly />
 				</fieldset>
 				<input class="btn-ok" type="submit" value="확인" />
 				<input class="btn-cancel" type="button" value="취소"  onclick="$.dialog.close(); return false;" />
