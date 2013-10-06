@@ -33,7 +33,8 @@
 				<dl class="input-area1 b-line">
 					<dt><img src="../images/title_upload_register.png" alt="사진 등록"/></dt>
 					<dd>
-						<button id="btnFileRegister">등록하기</button><span>너랑나랑게스트하우스.jpg</span>
+						<span id="btnFileUpload"><input type="file" name="photo" onchange="javascript: document.getElementById('fileName').value = this.value.split(/[/\\]/).reverse()[0]" /></span>
+						<input type="text" id="fileName" value="" readonly />
 					</dd>
 				</dl>
 				<dl class="input-area2 b-line">
