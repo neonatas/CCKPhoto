@@ -30,4 +30,32 @@
 
     //Path setting
     define('PATH_PROFILE_IMAGE','http://'.$_SERVER['SERVER_NAME'].'/my/photo/');
+    define('PATH_PHOTOS_FOLDER','/photos/');
+    define('PATH_PHOTOS','http://'.$_SERVER['SERVER_NAME'].PATH_PHOTOS_FOLDER);
+    define('PATH_PHOTOS_UPLOAD',$_SERVER['DOCUMENT_ROOT'].PATH_PHOTOS_FOLDER);
 
+    //Photo setting
+    define('MAX_PHOTO_SIZE','5000000'); //5메가
+    define('VALID_PHOTO_EXT','jpg,gif'); //허용 확장자
+
+    //Message setting
+    define('MSG_PHOTO_UPLOAD_SUCCESS','사진파일이 등록되었습니다.');
+    define('MSG_PHOTO_UPLOAD_FAILE','사진파일 등록에 실패하였습니다.');
+
+    define('MSG_INPUT_DATA_FAILE','입력 정보가 올바르지 않습니다.');
+
+    //Flickr CCL
+    define('FLICKR_BY_NC_SA',1);
+    define('FLICKR_BY_NC',2);
+    define('FLICKR_BY_NC_ND',3);
+    define('FLICKR_BY',4);
+    define('FLICKR_BY_SA',5);
+    define('FLICKR_BY_ND',6);
+
+    //Flickr app setting
+    define('FLICKR_USER_ID', '100477638@N03');
+    define('FLICKR_API_KEY', '14e017da937660375b6cbc225f66d337');
+    define('FLICKR_API_SECRET', '97ff9a001b89482f');
+
+
+?>
