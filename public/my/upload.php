@@ -4,6 +4,11 @@
     $strCSS = "<link rel='stylesheet' media='all' type='text/css' href='/css/".$pageCode.".css' />";
     $strJS = "<script type='text/javascript' src='/js/".$pageCode.".js'></script>";
 
+    require_once('../../_lib/class.dbConnect.php');
+    require_once('../../_lib/class.category.php');
+
+    $DB = new dbConn();
+    $Category = new clsCategory( $DB->getConnection() );
     require_once "../_include/header.php";
 
     //로그인 체크
@@ -12,15 +17,17 @@
 	}
 ?>
 
+	
 	<div id="content" class="<?=$pageCode?>">
-        <div id="uploadArea">
+		<div id="uploadArea">
 			<h2><img src="../images/title_upload.png" alt="사진올리기" /></h2>
-			<form name="upload_form" id="upload_form" action="" method="post">
+			<form name="upload_form" id="upload_form"  enctype="multipart/form-data" method="post">
 			<fieldset>
 				<dl class="input-area1 b-line">
 					<dt><img src="../images/title_upload_register.png" alt="사진 등록"/></dt>
 					<dd>
-						<button id="btnFileRegister">등록하기</button><span>너랑나랑게스트하우스.jpg</span>
+						<span id="btnFileUpload"><input type="file" name="photo" onchange="javascript: document.getElementById('fileName').value = this.value.split(/[/\\]/).reverse()[0]" /></span>
+						<input type="text" id="fileName" value="" readonly />
 					</dd>
 				</dl>
 				<dl class="input-area2 b-line">
@@ -43,9 +50,11 @@
 						<div class="select-cate">
 							<span class="select-text">선택하세요.</span>
 							<ul class="select-option">
-								<li class="cate-1">자연 & 풍경</li>
-								<li class="cate-2">인물</li>
-								<li class="cate-3">건축 & 예술</li>
+                            <?
+                                foreach( $Category->getList() as $arr ) {
+                            ?>
+								<li class="cate-<?=$arr['id']?>"><?=$arr['name']?></li>
+                            <?}?>
 							</ul>
 						</div>
 						<input type="hidden" name="cate" />
@@ -118,3 +127,19 @@
 <?
     require_once "../_include/footer.php";
 ?>
+
+<script type="text/javascript">
+<!--
+    $(function(){
+        var f = document.upload_form;
+        $('.btn-upload-ok').click(function(){
+            f.action = 'upload_proc.php';
+            f.submit();
+        });
+        $('.btn-upload-cancel').click(function(){
+            history.go(-1);
+            return false;
+        });
+    });
+//-->
+</script>

@@ -10,6 +10,11 @@
 
 	$re_url = ( trim($_POST["re_url"]) ) ? trim($_POST["re_url"]) : trim($_GET["re_url"]);
 	if ( $re_url == "" ) $re_url = "/";
+
+    //로그인 체크
+	if( isset($_SESSION['USER_IDX']) && $_SESSION['USER_IDX'] != '' ) {  
+		header('Location:/index.php');
+	}
 ?>
 
 	<div id="content" class="<?=$pageCode?>">

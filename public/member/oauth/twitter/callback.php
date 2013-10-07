@@ -12,7 +12,6 @@ require_once('../../../../_lib/config.php');
 
 require_once('../../../../_lib/class.dbConnect.php');
 require_once('../../../../_lib/class.members.php');
-require_once('../../../../_lib/class.favorites.php');
 
 /* If the oauth_token is old redirect to the connect page. */
 if (isset($_REQUEST['oauth_token']) && $_SESSION['oauth_token'] !== $_REQUEST['oauth_token']) {

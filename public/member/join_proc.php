@@ -22,7 +22,7 @@ $policyAgree = ( trim($_POST['policyAgree']) ) ? trim($_POST['policyAgree']) : "
 $policy_agree = ( $_POST['policyAgree'] == 'y' )?$_POST['policyAgree']:'n';
 
 if( $joinEmail == "" || $joinPasswd == "" || $joinNickName == "" ) {
-    $DB->historyBack("정보를 정확히 입력하세요.");
+    $DB->historyBack( MSG_INPUT_DATA_FAILE );
     return;
 }
 if( $checkDuplication != "y" ) {
