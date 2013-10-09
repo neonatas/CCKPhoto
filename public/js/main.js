@@ -9,8 +9,29 @@ $(function() {
 		setTimeout(function() {
 			$li.animate({opacity:1},1000);
 		}, 1000 * Math.random());
-		tops[col] += $li.outerHeight() + 15;
+		$li.width($li.width()).height($li.height());
+		tops[col] += $li.height() + 15;
 	}
 	$('.photo-list li').each(setPosition);
 	$('.photo-list ul').css('height', Math.max.apply(null, tops) - 50 + 'px');
 })
+
+$(document).on('mouseenter', '.photo-list li', function() {
+	var $this = $(this);
+	var $img = $this.find('img');
+	$img.css({
+		width:$this.width() * 1.2,
+		height:$this.height() * 1.2,
+	   	left: $this.width() * -0.1,
+		top: $this.height() * -0.1
+	});
+}).on('mouseleave', '.photo-list li', function() {
+	var $this = $(this);
+	var $img = $this.find('img');
+	$img.css({
+		width:$this.width(),
+		height:$this.height(),
+		left: 0,
+		top: 0
+	});
+});

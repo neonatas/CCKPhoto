@@ -10,7 +10,7 @@
 
 #content.main .search {width:208px;height:30px;background:url(../images/bg_search.png) right 0 no-repeat; }
 #content.main .search input {margin:0;padding:0;display:block;float:left; background:#e0e0e0; }
-#content.main .search .keyword {width:158px;height:24px;line-height:24px; border:none; color:#979797; padding:5px 8px 0; font-size:14px;}
+#content.main .search .keyword {width:158px;height:24px;line-height:24px; border:none; color:#000; padding:5px 8px 0; font-size:14px;}
 #content.main .search .btn-search {width:33px;height:30px;border:none;text-indent:-10000px; background:transparent; cursor:pointer;}
 
 #content.main .order {padding:5px 10px 0 0}
@@ -35,8 +35,8 @@
 }
 #content.main .banner a:hover {background-position:0 -179px;}
 
-.photo-list li .title {display:none; position:absolute; top:0; right:0; left:0; bottom:0; border:5px solid white;background: url(../images/bg_photo_title.png) -8px -39px no-repeat;}
+.photo-list li .title {display:none; position:absolute; z-index:1; top:0; right:0; left:0; bottom:0; border:5px solid white;background: url(../images/bg_photo_title.png) -8px -39px no-repeat;}
 .photo-list li .title em {display:block;color:white; width:130px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; line-height:40px; font-weight:normal; font-size:14px; padding-left:8px;}
-.photo-list li .recommend {display:none; position:absolute; top:12px; right:15px; width:74px; height:20px;  background: url(../images/btn_recommend.png) no-repeat; text-indent:-10000px;}
+.photo-list li .recommend {display:none; position:absolute; z-index:1; top:12px; right:15px; width:74px; height:20px;  background: url(../images/btn_recommend.png) no-repeat; text-indent:-10000px;}
 .photo-list li .recommend.on {background-position:0 -20px;}
 .photo-list li:hover .title, .photo-list li:hover .recommend {display:block; }

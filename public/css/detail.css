@@ -14,9 +14,10 @@
 	box-shadow:         7px 7px 10px rgba(0, 0, 0, 0.75);
 }
 .content .photo .prev, .content .photo .next {position:absolute;top:50%;margin-top:-13px;width:17px; height:27px; text-indent:-10000px; cursor:pointer; text-align:left;}
-.content .photo .prev {left:-26px; background: url(../images/btn_prev.png) no-repeat; }
-.content .photo .next {right:-26px; background: url(../images/btn_next.png) no-repeat;}
-.content .photo .prev.dimmed, .content .photo .next.dimmed {background-position: 0 -30px;cursor:default;}
+.content .photo .prev {left:-26px; background: url(../images/btn_prev.png) 0 -30px no-repeat; }
+.content .photo .next {right:-26px; background: url(../images/btn_next.png) 0 -30px no-repeat;}
+.content .photo .prev:hover, .content .photo .next:hover {background-position: 0 0;}
+.content .photo .prev.dimmed:hover, .content .photo .next.dimmed:hover {background-position: 0 -30px;}
 .content .actions {float:right; margin-top:11px;}
 .content .actions li {float: left; position:relative;}
 .content .actions li a {display:block; width:73px; height:25px; background: url(../images/btn_actions.png) no-repeat; text-indent:-10000px; text-align:left;}

@@ -1,6 +1,6 @@
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,form,fieldset,p,button{margin:0;padding:0}
 body,h1,h2,h3,h4,th,td,input{color:#d4d4d4;font-family:"돋움",dotum,sans-serif;font-size:12px;font-weight:normal}
-body{background:#fff; direction:ltr;text-align:center}
+body{background:#333; direction:ltr;text-align:center}
 img,fieldset{border:0}
 ul,ol,li{list-style:none}
 img,input,select,textarea{vertical-align:middle}
@@ -132,10 +132,13 @@ hr { width:100%; border:none; margin:0; padding:0; height:0; border-top:2px soli
 .photo-list a.more {margin:30px auto 0;}
 
 .photo-list li {
-	float:left; margin:0 0 15px 15px; position:absolute; opacity: .0; filter: alpha(opacity=0); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	float:left; margin:0 0 15px 15px; position:absolute; opacity: .0; filter: alpha(opacity=0); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; overflow:hidden;
 	-webkit-box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
 	-moz-box-shadow:    4px 4px 3px rgba(0, 0, 0, 0.6);
 	box-shadow:         4px 4px 3px rgba(0, 0, 0, 0.6);
+}
+.photo-list li img {
+	position:relative;
 }
 a.more {display:block; clear:both; width:267px; height:55px; background: url(../images/btn_more.png) no-repeat; text-indent:-10000px;}
 
