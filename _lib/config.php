@@ -54,8 +54,9 @@
 
     //Flickr app setting
     define('FLICKR_USER_ID', '100477638@N03');
-    define('FLICKR_API_KEY', '14e017da937660375b6cbc225f66d337');
-    define('FLICKR_API_SECRET', '97ff9a001b89482f');
+    define('FLICKR_API_KEY', 'b7150a7b29a3cb3880eb4b2065d00997');
+    define('FLICKR_API_SECRET', 'd790211190778b66');
+    define('FLICKR_API_TOKEN','72157636317670294-df7d0aef9a33353b');
 
 
 ?>
