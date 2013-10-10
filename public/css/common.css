@@ -127,7 +127,8 @@ hr { width:100%; border:none; margin:0; padding:0; height:0; border-top:2px soli
 
 .no-result {display:none;clear:both; text-align:center;font-size:14px; padding:95px;}
 .photo-list {clear:both; display:block; position:relative;}
-.photo-list ul {overflow:hidden; min-height:1000px; }
+.photo-list .item-wrapper {min-height:1000px;}
+.photo-list ul {overflow:hidden; }
 .photo-list hr {margin:40px 0;}
 .photo-list a.more {margin:30px auto 0;}
 
