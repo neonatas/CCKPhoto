@@ -3,6 +3,7 @@ require_once("config.php");
 
 class clsMembers {
 	var $conn;
+    var $table = "members";
 
 	function __construct( $conn ) {
 		$this->conn = $conn;
@@ -21,12 +22,12 @@ class clsMembers {
 				break;
 		}
 
-		$query = "select idx, policy_agree, my_img_r from members where ".$field." = '".$id."'";
+		$query = "select idx, policy_agree, my_img_r from ".$this->table." where ".$field." = '".$id."'";
 		$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) { 
 			$row = mysql_fetch_array( $res );
-			$query = "update members set logindate = now() where idx = ".$row['idx'];
+			$query = "update ".$this->table." set logindate = now() where idx = ".$row['idx'];
 			mysql_query($query,$this->conn) or die ("update query error!!");
 
 			$result['r'] = 'success';
@@ -35,7 +36,7 @@ class clsMembers {
 			$result['policy_agree'] = $row['policy_agree'];
             $result['my_img'] = $row['my_img_r'];
 		} else {
-			$query = "insert into members ( ".$field.", nickname, joindate, logindate, policy_agree ) values ( '".$id."','".$nickname."', now(), now(), 'y' )";
+			$query = "insert into ".$this->table." ( ".$field.", nickname, logindate, policy_agree ) values ( '".$id."','".$nickname."', now(), 'y' )";
 			$res = mysql_query($query,$this->conn) or die ("insert query error!!");
 
 			if( $res ) {
@@ -51,7 +52,7 @@ class clsMembers {
 	}
 
 	function existEmail($email) {
-		$query = "select idx from members where email = '".$email."'";
+		$query = "select idx from ".$this->table." where email = '".$email."'";
 		$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) {
@@ -62,7 +63,7 @@ class clsMembers {
 	}
 
 	function existNickName($nickname) {
-		$query = "select idx from members where nickname = '".$nickname."'";
+		$query = "select idx from ".$this->table." where nickname = '".$nickname."'";
 		$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) {
@@ -79,7 +80,7 @@ class clsMembers {
 			$result['r'] = 'error';
 			$result['msg'] = "이미 가입된 이메일 입니다.";
 		} else {
-			$query = "insert into members ( email, nickname, passwd, policy_agree, joindate, logindate ) values ( '".$array['email']."','".$array['nickname']."', '".md5($array['passwd'])."', '".$array['policy_agree']."', now(), now() )";
+			$query = "insert into ".$this->table." ( email, nickname, passwd, policy_agree, joindate, logindate ) values ( '".$array['email']."','".$array['nickname']."', '".md5($array['passwd'])."', '".$array['policy_agree']."', now(), now() )";
 			$res = mysql_query($query,$this->conn) or die ("insert query error!!");;
 
 			$result['r'] = 'success';
@@ -94,7 +95,7 @@ class clsMembers {
 	function saveAutoKey( $m_idx, $key ) {
 		$result = array();
 
-		$query = "update members set auto_key = '".$key."' where idx = ".$m_idx;
+		$query = "update ".$this->table." set auto_key = '".$key."' where idx = ".$m_idx;
 		$res = mysql_query($query,$this->conn) or die ("update query error!!");
 		
 		if( $res ) {
@@ -105,7 +106,7 @@ class clsMembers {
 	}
 
 	function getDataFromAutoKey($key) {
-		$query = "select * from members where auto_key = ".$key;
+		$query = "select * from ".$this->table." where auto_key = ".$key;
 		$res = mysql_query($query,$this->conn) or die ("getMember select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) {
@@ -118,7 +119,7 @@ class clsMembers {
 
 
 	function updatePolicyAgree($idx, $agree) {
-		$query = "update members set policy_agree = '".$agree."' where idx = ".$idx;
+		$query = "update ".$this->table." set policy_agree = '".$agree."' where idx = ".$idx;
 		$res = mysql_query($query,$this->conn) or die ("update query error!!");
 		
 		if( $res ) {
@@ -133,12 +134,12 @@ class clsMembers {
 		$result = array();
 
 		if( $this->existEmail($array['email']) !== false ) {
-			$query = "select idx, level, policy_agree, nickname from members where email = '".$array['email']."' and passwd = '".md5($array['passwd'])."'";
+			$query = "select idx, level, policy_agree, nickname from ".$this->table." where email = '".$array['email']."' and passwd = '".md5($array['passwd'])."'";
 			$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 			if( @mysql_affected_rows() > 0 ) {
 				$row = mysql_fetch_array($res);
-				$query = "update members set logindate = now() where idx = ".$row['idx'];
+				$query = "update ".$this->table." set logindate = now() where idx = ".$row['idx'];
 				mysql_query($query,$this->conn) or die ("update query error!!");
 				$result['r'] = "success";
 				$result['idx'] = $row['idx'];
@@ -161,7 +162,7 @@ class clsMembers {
 	}
 
 	function confirmPasswd($id, $passwd) {
-		$query = "select idx, policy_agree from members where email = '".$id."' and passwd = '".md5($passwd)."'";
+		$query = "select idx, policy_agree from ".$this->table." where email = '".$id."' and passwd = '".md5($passwd)."'";
 		$res = mysql_query($query,$this->conn) or die ("confirmPasswd query error!!");
 
 		if( @mysql_affected_rows() > 0 ) {
@@ -180,7 +181,7 @@ class clsMembers {
 			else 
 				$tempPasswd = $array['passwd'];
 
-			$query = "update members set passwd = '".md5($tempPasswd)."' where email = '".$array['email']."'";
+			$query = "update ".$this->table." set passwd = '".md5($tempPasswd)."' where email = '".$array['email']."'";
 			$res = mysql_query($query,$this->conn) or die ("update query error!!");
 
 			if( $res ) {
@@ -227,10 +228,10 @@ class clsMembers {
 		$where .= " ".$arrVal;
 			
 		if( $start > 0 && $len > 0 ) {
-			$query = "select * from members ".$where." limit ".$start.",".$len." order by idx desc";
+			$query = "select * from ".$this->table." ".$where." limit ".$start.",".$len." order by idx desc";
 			$res = mysql_query($query,$this->conn) or die ("member list query error!!");
 		} else {
-			echo $query = "select * from members ".$where." order by idx desc";
+			echo $query = "select * from ".$this->table." ".$where." order by idx desc";
 			$res = mysql_query($query,$this->conn) or die ("member list query error!!");
 		}
 
@@ -255,20 +256,20 @@ class clsMembers {
 		}
 		$where .= " ".$arrVal;
 			
-		$query = "select * from members ".$where." order by idx desc";
+		$query = "select * from ".$this->table." ".$where." order by idx desc";
 		$res = mysql_query($query,$this->conn) or die ("confirmPasswd query error!!");
 
 		return @mysql_affected_rows();
 	}
 
 	function delMember($idx) {
-		$query = "delete from members where idx = ".$idx;
+		$query = "delete from ".$this->table." where idx = ".$idx;
 		$res = mysql_query($query,$this->conn) or die ("member Delete query error!!");
 		return $res;
 	}
 
 	function getData( $idx ) {
-		$query = "select * from members where idx = ".$idx;
+		$query = "select * from ".$this->table." where idx = ".$idx;
 		$res = mysql_query($query,$this->conn) or die ("getMember select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) {

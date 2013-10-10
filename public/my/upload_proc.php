@@ -13,21 +13,12 @@
     $DB = new dbConn();
     $Photo = new clsPhotos( $DB->getConnection() );
 
-
     // Require the phpFlickr API
     require_once('../../_lib/phpFlickr.php');
 
     // Create new phpFlickr object: new phpFlickr('[API Key]','[API Secret]')
     $flickr = new phpFlickr(FLICKR_API_KEY,FLICKR_API_SECRET, true);
-
-    // Authenticate;  need the "IF" statement or an infinite redirect will occur
-    if(empty($_GET['frob'])) {
-        $flickr->auth('write'); // redirects if none; write access to upload a photo
-    }
-    else {
-        // Get the FROB token, refresh the page;  without a refresh, there will be "Invalid FROB" error
-        $flickr->auth_getToken($_GET['frob']);
-    }
+    $flickr->setToken(FLICKR_API_TOKEN);
 
     //로그인 체크
 	if( !isset($_SESSION['USER_IDX']) || $_SESSION['USER_IDX'] == '' ) {  
@@ -53,8 +44,6 @@
         $DB->historyBack( MSG_INPUT_DATA_FAILE );
     }
 
-//실서버에는 올리지 않는걸로 변경
-/*
     //파일 용량 체크
     if( !$Photo->checkSize( $photofile['size'] ) )
     {
@@ -76,9 +65,9 @@
     {
         $DB->historyBack( MSG_PHOTO_UPLOAD_FAILE );
     }
-*/
+
     //CCL 체크
-    if( $ccl_busines == 1 ) {
+    if( $ccl_business == 1 ) {
         switch( $ccl_change ) {
             case 1:
                 $ccl = FLICKR_BY;
@@ -90,7 +79,7 @@
                 $ccl = FLICKR_BY_SA;
                 break;
         }
-    } else if ( $ccl_busines == 2 ) {
+    } else if ( $ccl_business == 2 ) {
         switch( $ccl_change ) {
             case 1:
                 $ccl = FLICKR_BY_NC;
@@ -107,25 +96,23 @@
     }
 
     //flickr 업로드
-    $photo_id = $flickr->sync_upload($photofile['tmp_name'], $title, $description,$tags);
+    $photo_id = $flickr->sync_upload($uploadfile, $title, $description,$tags);
 
     if( empty($photo_id) ) {
-        $DB->historyBack( MSG_INPUT_DATA_FAILE );
+        $DB->historyBack( MSG_INPUT_DATA_FAILE."111" );
     } else {
         //fiickr 라이센스 변경
         if( $flickr->photos_licenses_setLicense($photo_id, $ccl) ) {
             //DB저장
             $arr = array(
-                "member_id"=>$_SESSION['USER_IDX'], 
+                "member_idx"=>$_SESSION['USER_IDX'], 
                 "cate_id"=>$cate, 
                 "title"=>$title,
                 "description"=>$description,
                 "tags"=>$tags,
                 "ccl"=>$ccl,
-                "filename_o"=>'',
-                "filename_r"=>'',
-                //"filename_o"=>$photofile['name'],
-                //"filename_r"=>$upload_name,
+                "filename_o"=>$photofile['name'],
+                "filename_r"=>$upload_name,
                 "info"=>$photoinfo,
                 "photo_id"=>$photo_id
             );
