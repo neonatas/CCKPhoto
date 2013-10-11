@@ -1,23 +1,53 @@
-$(function() {
-	$.get('/ajax/photo.list.php', function(data) {
+var PARAM = (function() {
+	var p = document.location.search.substr(1).split('&');
+	var result = {};
+	for (var i = 0; i < p.length; i++) {
+		var kv = p[i].split('=');
+		result[kv[0]] = kv[1];
+	}
+	return result;
+})();
+
+var start = 0;
+var count = 20;
+var loading = false;
+var load = function(start, count) {
+	loading = true;
+	var cate = PARAM['cate'] || '';
+	var sort = PARAM['sort'] || 'd';
+	var keyword = PARAM['keyword'] || '';
+
+	$('.order input[value="' + sort + '"]').next('label').addClass('on');
+	$('.order input').click(function() {
+		setTimeout(function() {
+			document.filter.submit();
+		},0);
+	});
+	$('.no-result').hide();
+	$('.more').hide();
+	$.getJSON('/ajax/photo.list.php?start=' + start + '&count=' + count + '&cate=' + cate + '&sort=' + sort + '&keyword=' + keyword, function(data) {
+		if (start == 0 && data.length == 0) {
+			$('.no-result').show();
+			return;	
+		}
+		if (data.length == count) {
+			$('.more').show();
+		}
 		var $ul = $('<ul/>');
 		for (var i = 0; i < data.length; i++) {
 			var img = data[i];
 
-			var $li = $('<li/>').html('<a href="">\
+			$('<li/>').html('<a href="detail.php?pid=' + img.id + '&' + document.location.search.substr(1) + '">\
 				<span class="title"><em>' + img.title + '</em></span>\
 			<img src="' + img.image + '" width="232" height="' + Math.floor(232*img.height/img.width) + '"/>\
 			</a>\
-			<a class="recommend ' + (img.is_recommend == 'N' ? '' : 'on') + '" href="">\
+			<a data-pid="' + img.id + '" class="btn-recommend recommend ' + (img.is_recommend == 'n' ? '' : 'on') + '" href="">\
 			추천하기\
-			</a>');
-
-			$li.appendTo($ul);
-
+			</a>').appendTo($ul);
 		}
-		$ul.insertBefore($('.photo-list .more'));
+		$ul.appendTo($('.item-wrapper'));
 		var tops = [11, 11, 11, 205, 205];
-		var lefts = [15, 263, 509, 756, 1002];//[15, 233+15+15, (232+15)*2+15, (232+15)*3+15, (232+15)*4+15];
+		var lefts = [15, 263, 509, 756, 1002];
 
 		var setPosition = function (idx, li) {
 			var $li = $(li);
@@ -33,10 +63,19 @@ $(function() {
 
 		$('.photo-list li').each(setPosition);
 		$('.photo-list .item-wrapper').css('height', Math.max.apply(null, tops) + 'px');
-
+		loading = false;
 	});
+}
 
-})
+$(function() {
+	load(start, count);
+	$('.more').click(function(e) {
+		e.preventDefault();
+		if (!loading) false;
+		start += count;
+		load(start, count);
+	});
+});
 
 $(document).on('mouseenter', '.photo-list li', function() {
 	var $this = $(this);

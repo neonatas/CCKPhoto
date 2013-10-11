@@ -14,7 +14,7 @@ class clsPhotos {
 
         if( $array['member_idx'] != "" && $array['title'] != "" && $array['cate_id'] != "" ) {
             $query = "insert into ".$this->table." ( member_idx, cate_id, title, description, tags, ccl, filename_o, filename_r, info, flickr_photoid )";
-            $query .= " values ( '".$array['member_idx']."', '".$array['cate_id']."', '".$array['title']."', '".$array['description']."','".$array['tags']."', '".$array['ccl']."', '".$array['filename_o']."', '".$array['filename_r']."', '".$array['info']."', '".$array['photo_id']."' )";
+            echo $query .= " values ( '".$array['member_idx']."', '".$array['cate_id']."', '".$array['title']."', '".$array['description']."','".$array['tags']."', '".$array['ccl']."', '".$array['filename_o']."', '".$array['filename_r']."', '".$array['info']."', '".$array['photo_id']."' )";
 
             $res = mysql_query($query,$this->conn) or die ("insert query error!!");
 
@@ -33,6 +33,17 @@ class clsPhotos {
 
         return $result;
     }
+
+    function getPhotoInfo($path) {
+        return exif_read_data($path, 0, true);
+    }
+
+
+
+
+
+
+
 
 /*
 	function incrementFavorite( $idx ) {
@@ -83,51 +94,136 @@ class clsPhotos {
 		}
     }
 
-    function addHits($id, $count=1) {
-        $query = "update ".$this->table." set hits = hits + ".$count." where id = ".$id;
-        $res = mysql_query($query,$this->conn) or die ("update hits error!!");
+    function delete($id) {
+        $data = $this->get($id);
+        $flickr_id = $data['flickr_photoid'];
+
+        unlink( PATH_PHOTOS_UPLOAD.$data['filename_r'] );
+        $query = "delete from ".$this->table." where id = ".$id;
+        $res = mysql_query($query,$this->conn) or die ("delete query error!!");
+
+		if( $res ) {
+			return $flickr_id;
+		} else {
+			return false;
+		}
     }
 
-    function addRecommend( $photo_id, $member_idx ) {
+
+    function getRecommendCount($id) {
         $result = array();
 
+        $query = "select recommend ";
+        $query .= " from ".$this->table;
+        $query .= " where id = ".$id;
+		$res = mysql_query($query,$this->conn) or die ("get select query error!!");
+
+		if( @mysql_affected_rows() > 0 ) {
+			$row = mysql_fetch_array($res);
+
+			return $row['recommend'];
+		} else {
+			return 0;
+		}
+    }
+
+    function getPrevNextId($curr_id, $member_idx = "", $sort = "d", $cate, $keyword = "") {
+        $result = $this->getList($member_idx, $sort, $cate, 0, 0, $keyword);
+        
+        $result_id = array("prev" => "", "next" => "" );
+
+        for($i=0; $i < count($result); $i++ ) {
+            if( $result[$i]['id'] == $curr_id ) {
+                if( $i > 0 )
+                    $result_id['prev'] = $result[$i-1]['id'];
+                if( $i + 1 < count($result) )
+                    $result_id['next'] = $result[$i+1]['id'];
+                break;
+            }
+        }
+
+        return $result_id;
+    }
+
+    function incrementHits($id, $count=1) {
+        $query = "update ".$this->table." set hits = hits + ".$count." where id = ".$id;
+        $res = mysql_query($query,$this->conn) or die ("update hits error!!");
+
+        return $res;
+    }
+
+    function isRecommend($photo_id, $member_idx) {
 		$query = "select photo_id from recommend where photo_id = ".$photo_id." and member_idx = '".$member_idx."'";
 		$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
-		if( @mysql_affected_rows() > 0 ) { 
-            $row = mysql_fetch_array( $res );
+        if( @mysql_affected_rows() > 0 ) 
+            return true;
+        else
+            return false;
+    }
+
+    function incrementRecommend( $photo_id, $member_idx ) {
+        $result = array();
+
+		if( $this->isRecommend($photo_id, $member_idx) ) { 
 			$result['r'] = 'duplication';
-			$result['msg'] = "이미 추천한 사진 입니다.";
-			$result['photo_id'] = $photo_id;
+			$result['msg'] = "";
 		} else {
 			$query = "insert into recommend ( photo_id, member_idx ) values ( '".$photo_id."','".$member_idx."' )";
 			$res = mysql_query($query,$this->conn) or die ("insert query error!!");
 
-			if( $res ) {
+            $query = "update ".$this->table." set recommend = recommend + 1 where id = ".$photo_id;
+            $res = mysql_query($query,$this->conn) or die ("incrementRecommend update query error!!");
+
+            if( $res ) {
 				$result['r'] = 'success';
 				$result['msg'] = "추천 하였습니다.";
-				$result['photo_id'] = $photo_id;
+				$result['count'] = $this->getRecommendCount($photo_id);
 			}
 		}
 
 		return $result;
     }
 
-    function getList($member_idx="", $sort="d", $cate=0, $start=0, $limit = 0, $keyword="") {
+    function decrementRecommend( $photo_id, $member_idx ) {
+        $result = array();
+        $recomm_cnt = $this->getRecommendCount($photo_id);
+
+		if( !$this->isRecommend($photo_id, $member_idx) ) { 
+			$result['r'] = 'duplication';
+			$result['msg'] = "";
+		} else {
+			$query = "delete from recommend where photo_id = '".$photo_id."' and member_idx = '".$member_idx."'";
+			$res = mysql_query($query,$this->conn) or die ("delete query error!!");
+
+            $recomm_cnt--;
+            if( $recomm_cnt < 0 ) $recomm_cnt = 0;
+            $query = "update ".$this->table." set recommend = ".$recomm_cnt." where id = ".$photo_id;
+            $res = mysql_query($query,$this->conn) or die ("decrementRecommend update query error!!");
+
+            if( $res ) {
+				$result['r'] = 'success';
+				$result['msg'] = "취소 하였습니다.";
+				$result['count'] = $this->getRecommendCount($photo_id);
+			}
+		}
+
+		return $result;
+    }
+
+    function getList($member_idx="", $sort="d", $cate=0, $start=0, $count = 0, $keyword="") {
         $result = array();
 
         $str_where = " where 1 ";
         $str_limit = "";
         if( $member_idx != "" )
-            $str_where = " and member_idx = ".$member_idx;
+            $str_where .= " and member_idx = ".$member_idx;
         if( $cate > 0 )
-            $str_limit = " and cate_id = ".$cate;
-        if( $start > 0 )
-            $str_limit = " and id > ".$start;
-        if( $limit > 0 )
-            $str_limit = " limit ".$limit;
+            $str_where .= " and cate_id = ".$cate;
+        if( $count > 0 )
+            $str_limit = " limit ".$start.",".$count;
         if( $keyword != "" )
-            $str_where = " and ( title like = '%".$keyword."%' or description like = '%".$keyword."%' or  tags like = '%".$keyword."%' ";
+            $str_where .= " and ( title like '%".$keyword."%' or description like '%".$keyword."%' or  tags like '%".$keyword."%' ) ";
         
         $str_sort = " order by ";
         switch( $sort ) {

@@ -48,17 +48,14 @@ if (200 == $connection->http_code) {
 
 	$oauth_type = "twitter";
 	//세션 저장
-	$result = $Member->getOauthMemberIdx( $oauth_type, $content->id_str, $content->name );
+	$result = $Member->getOauthMemberIdx( $oauth_type, $content->id_str, $content->name, $content->profile_image_url );
 
 	if( $result['r'] == 'success' ) {
 		$_SESSION['USER_IDX'] = $result['idx'];
 		$_SESSION['USER_TYPE'] = $oauth_type;
 		$_SESSION['USER_ID'] = $content->id_str;
 		$_SESSION['USER_NAME'] = $content->name;
-        $_SESSION['USER_IMAGE'] = $content->profile_image_url;
-        if( $result['my_img'] != "" ) {
-            $_SESSION['USER_IMAGE'] = PATH_PROFILE_IMAGE.$result['my_img'];
-        }
+        $_SESSION['USER_IMAGE'] = $result['my_img'];
         $_SESSION['USER_AGREE'] = $result['policy_agree'];
 
 		//my favorite 정보가 있다면 저장 후 my favorite 페이지로 이동

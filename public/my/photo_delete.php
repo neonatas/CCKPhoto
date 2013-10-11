@@ -1,22 +1,41 @@
 <?
+    session_start();
 
-exit;
+    $re_url = ( trim($_POST["re_url"]) ) ? trim($_POST["re_url"]) : trim($_GET["re_url"]);
+    if ( $re_url == "" ) $re_url = "/my/gallery.php";
+
+    $pid = ( trim($_GET["pid"]) ) ? trim($_GET["pid"]) : "";
 // Require the phpFlickr API
     require_once('../../_lib/config.php');
+    require_once('../../_lib/class.dbConnect.php');
+    require_once('../../_lib/class.photos.php');
     require_once('../../_lib/phpFlickr.php');
 
-// Create new phpFlickr object: new phpFlickr('[API Key]','[API Secret]')
-$flickr = new phpFlickr(FLICKR_API_KEY,FLICKR_API_SECRET, true);
+    $DB = new dbConn();
+    $Photo = new clsPhotos( $DB->getConnection() );
 
-// Authenticate;  need the "IF" statement or an infinite redirect will occur
-if(empty($_GET['frob'])) {
-    $flickr->auth('delete'); // redirects if none; write access to upload a photo
-}
-else {
-	// Get the FROB token, refresh the page;  without a refresh, there will be "Invalid FROB" error
-	$flickr->auth_getToken($_GET['frob']);
-}
+    //로그인 체크
+	if( !isset($_SESSION['USER_IDX']) || $_SESSION['USER_IDX'] == '' ) {  
+		$DB->historyBack("로그인 후 삭제가 가능합니다.");
+	}
 
+	if( $pid == '' ) {  
+		$DB->historyBack("잘못된 접근입니다.");
+	}
 
-$flickr->photos_delete('10134232113');
+    //DB 삭제
+    $photo_data = $Photo->get($pid);
+
+	if( $photo_data['member_idx'] != $_SESSION['USER_IDX'] ) {  
+		$DB->historyBack("본인이 등록한 사진만 삭제 가능합니다.");
+	}
+
+    if( $flickr_id = $Photo->delete($pid) ) {
+        //플리커 삭제
+        $flickr = new phpFlickr(FLICKR_API_KEY,FLICKR_API_SECRET, true);
+        $flickr->setToken(FLICKR_API_TOKEN);
+        $flickr->photos_delete($flickr_id);
+    }
+
+     header("Location:/my/gallery.php");
 ?>

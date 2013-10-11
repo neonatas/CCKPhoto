@@ -40,9 +40,7 @@ if( $result['r'] == 'success' )
 	$_SESSION['USER_TYPE'] = "letscc_photo";
 	$_SESSION['USER_ID'] = $_POST['loginEmail'];
 	$_SESSION['USER_NAME'] = $result['nickname'];
-    $_SESSION['USER_IMAGE'] = "";
-    if( $result['my_img'] != "" )
-        $_SESSION['USER_IMAGE'] = PATH_PROFILE_IMAGE.$result['my_img'];
+    $_SESSION['USER_IMAGE'] = $result['my_img'];
 	$_SESSION['USER_AGREE'] = $result['policy_agree'];
 
 	if( $_POST['autoLogin'] == 'y' )

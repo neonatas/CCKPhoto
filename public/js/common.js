@@ -24,3 +24,34 @@ $.dialog = {
 		f && f();
 	}
 }
+
+$(document).on('click', '.btn-recommend', function(e) {
+	e.preventDefault();
+	//console.log(1);
+	$.ajax({
+		type : 'POST',
+		url:'/ajax/increment.recommend.php',
+		dataType:'json',
+		data:{
+			pid:$(this).data('pid')
+		},
+		success:function(data) {
+			//alert(data.msg);
+			var $this = $(this);;
+			if( data.type == 1 ) {
+				$this.addClass('on');
+				var $msg = $this.next('.msg-recommended');
+				$msg.fadeIn('slow', function() {
+					setTimeout(function() {
+						$msg.fadeOut('slow');
+					},1000);
+				});
+			} else if ( data.type == 2 ) {
+				$this.removeClass('on');
+			} else {
+			}
+			$('.counts .recommended').text(data.count);
+		},
+		context:this
+	});
+});

@@ -6,7 +6,7 @@
 .content h2 strong {font-size:19px; font-weight:normal;display:block; float:left; padding:30px 0 0 30px;}
 .content h2 .license {font-size:12px; display:block; float:left; padding:36px 0 0 6px;}
 .content h2 .author {font-size:12px; display:block; float:left; padding:36px 0 0 4px;}
-.content .photo {position:relative;}
+.content .photo {position:relative; text-align:center;}
 .content .photo img {
 	max-width:800px;
 	-webkit-box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.75);
@@ -17,6 +17,7 @@
 .content .photo .prev {left:-26px; background: url(../images/btn_prev.png) 0 -30px no-repeat; }
 .content .photo .next {right:-26px; background: url(../images/btn_next.png) 0 -30px no-repeat;}
 .content .photo .prev:hover, .content .photo .next:hover {background-position: 0 0;}
+.content .photo .prev.dimmed, .content .photo .next.dimmed {display:none;}
 .content .photo .prev.dimmed:hover, .content .photo .next.dimmed:hover {background-position: 0 -30px;}
 .content .actions {float:right; margin-top:11px;}
 .content .actions li {float: left; position:relative;}
@@ -27,7 +28,7 @@
 .content .actions li .btn-share {background-position:-218px 0; }
 .content .actions li .btn-download:hover {background-position:0 -25px;}
 .content .actions li .btn-info:hover {background-position:-72px -25px;}
-.content .actions li .btn-recommend:hover, .content .actions li .btn-recommend.on {background-position:-145px -25px;}
+.content .actions li .btn-recommendx:hover, .content .actions li .btn-recommend.on {background-position:-145px -25px;}
 .content .actions li .btn-share:hover {background-position:-218px -25px; }
 .content .photo-info {display:none; position:absolute; bottom:33px; left:-98px; background: url(../images/bg_photo_info.png) no-repeat; width:274px; height:235px;}
 .content .photo-info table {margin:55px 0 0 23px;}
@@ -35,7 +36,7 @@
 .content .photo-info th {font-size:11px; width:83px; color:#555; text-align:left;}
 .content .photo-info td {font-size:11px; color:#fff; text-align:left;}
 .content .photo-info .btn-close {background-image:url(../images/btn_close2.png); position:absolute; top:9px; right:10px;}
-.content .msg-recommended {display:none; position:absolute; bottom:34px; left:-24px; width:124px; height:65px; background: url(../images/msg_recommended.png) no-repeat; text-indent:-10000px; }
+.content .msg-recommended {display:none; position:absolute; bottom:34px; left:-24px; width:124px; height:65px; background: url(../images/msg_recommended.png) no-repeat; text-align:left; text-indent:-10000px; }
 
 .content .counts {clear:both; position:relative; top:-2px; left:-2px;}
 .content .counts li {float:left; background: url(../images/bg_detail_counts.png) no-repeat; height:12px; font-size:11px; color:#999;}
@@ -68,3 +69,4 @@
 }
 .content .btn-top {display:inline-block; width:60px; height:22px; background: url(../images/btn_top.png) no-repeat; text-indent:-10000px; text-align:left;}
 .content .btn-list {display:inline-block; width:60px; height:22px; background: url(../images/btn_list.png) no-repeat; text-indent:-10000px; margin-right:5px; text-align:left;}
+.fb-comments {background-color:white;}

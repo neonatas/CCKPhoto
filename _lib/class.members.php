@@ -9,7 +9,7 @@ class clsMembers {
 		$this->conn = $conn;
 	}
 
-	function getOauthMemberIdx($type,$id,$nickname="") {
+	function getOauthMemberIdx($type,$id,$nickname="",$my_img="") {
 		$result = array();
 		$field = "";
 		switch( $type )
@@ -27,16 +27,24 @@ class clsMembers {
 
 		if( @mysql_affected_rows() > 0 ) { 
 			$row = mysql_fetch_array( $res );
-			$query = "update ".$this->table." set logindate = now() where idx = ".$row['idx'];
+			$query = "update ".$this->table." set logindate = now() ";
+            if( empty($row['my_img_r']) ) {
+                $query .= ", my_img_o = '".$my_img."', my_img_r='".$my_img."'";
+                $profile_img = $my_img;
+            } else {
+                $profile_img = $row['my_img_r'];
+            }
+            $query .= " where idx = ".$row['idx'];
+
 			mysql_query($query,$this->conn) or die ("update query error!!");
 
 			$result['r'] = 'success';
 			$result['msg'] = "이미 가입된 회원 입니다.";
 			$result['idx'] = $row['idx'];
 			$result['policy_agree'] = $row['policy_agree'];
-            $result['my_img'] = $row['my_img_r'];
+            $result['my_img'] = $profile_img;
 		} else {
-			$query = "insert into ".$this->table." ( ".$field.", nickname, logindate, policy_agree ) values ( '".$id."','".$nickname."', now(), 'y' )";
+			$query = "insert into ".$this->table." ( ".$field.", nickname, logindate, policy_agree, my_img_r ) values ( '".$id."','".$nickname."', now(), 'y', '".$my_img."' )";
 			$res = mysql_query($query,$this->conn) or die ("insert query error!!");
 
 			if( $res ) {
@@ -44,7 +52,7 @@ class clsMembers {
 				$result['msg'] = "회원 가입이 완료되었습니다.";
 				$result['idx'] = mysql_insert_id();
 				$result['policy_agree'] = 'y';
-                $result['my_img'] = "";
+                $result['my_img'] = $my_img;
 			}
 		}
 
@@ -124,6 +132,28 @@ class clsMembers {
 		
 		if( $res ) {
 			return $agree;
+		} else {
+			return false;
+		}
+	}
+
+	function updateNickName($idx, $nickname) {
+		$query = "update ".$this->table." set nickname = '".$nickname."' where idx = ".$idx;
+		$res = mysql_query($query,$this->conn) or die ("update query error!!");
+		
+		if( $res ) {
+			return $nickname;
+		} else {
+			return false;
+		}
+	}
+
+	function updateProfileImage($idx, $img_r, $img_o) {
+		$query = "update ".$this->table." set my_img_r = '".$img_r."', my_img_o = '".$img_o."' where idx = ".$idx;
+		$res = mysql_query($query,$this->conn) or die ("update query error!!");
+		
+		if( $res ) {
+			return true;
 		} else {
 			return false;
 		}

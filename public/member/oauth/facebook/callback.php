@@ -33,7 +33,7 @@ if ( $user ) {
 	$oauth_type = "facebook";
 
 	//세션 저장
-	$result = $Member->getOauthMemberIdx( $oauth_type, $user, $user_profile['name'] );
+	$result = $Member->getOauthMemberIdx( $oauth_type, $user, $user_profile['name'], "https://graph.facebook.com/".$user."/picture" );
 
 	if( $result['r'] == 'success' )
 	{
@@ -41,10 +41,7 @@ if ( $user ) {
 		$_SESSION['USER_TYPE'] = $oauth_type;
 		$_SESSION['USER_ID'] = $user;
 		$_SESSION['USER_NAME'] = $user_profile['name'];
-        $_SESSION['USER_IMAGE'] = "https://graph.facebook.com/".$user."/picture";
-        if( $result['my_img'] != "" ) {
-            $_SESSION['USER_IMAGE'] = PATH_PROFILE_IMAGE.$result['my_img'];
-        }
+        $_SESSION['USER_IMAGE'] = $result['my_img'];
         $_SESSION['USER_AGREE'] = $result['policy_agree'];
 
 /*

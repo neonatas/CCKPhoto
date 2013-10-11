@@ -30,7 +30,7 @@
             <li class="login <?if($pageCode=="login") echo "on";?>"><a href="/member/login.php">로그인</a></li>
 			<li class="join <?if($pageCode=="join") echo "on";?>"><a href="/member/join.php">회원가입</a></li>
             <? } ?>
-			<li class="about"><a href="">About CCKorea</a></li>
+			<li class="about"><a href="http://cckorea.org">About CCKorea</a></li>
 		</ul>
 
 		<hr />

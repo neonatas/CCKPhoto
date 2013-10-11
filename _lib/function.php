@@ -26,4 +26,18 @@
         return $str;
     }
 
+    function goDetailLink($pid, $keyword="", $cate="", $sort="d", $member_idx = "" ) {
+        $link = "/detail.php?pid=".$pid;
+        if( $keyword != "" )
+            $link .= "&keyword=".$keyword;
+        if( $cate != "" ) 
+            $link .= "&cate=".$cate;
+        if( $sort != "" )
+            $link .= "&sort=".$sort;
+        if( $member_idx != "" )
+            $link .= "&m_idx=".$member_idx;
+        
+        return $link;
+    }
+
 ?>

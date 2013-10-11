@@ -51,7 +51,7 @@
     }
 
     $tmp = explode(".",$photofile['name']);
-    $ext = $tmp[1];
+    $ext = $tmp[ count($tmp) - 1 ];
     //파일 확장자 체크
     if( !$Photo->checkExtension( $ext ) )
     {
@@ -95,11 +95,16 @@
         $ccl = FLICKR_BY;
     }
 
+    //사진정보 저장 (DB에 저장 안함)
+//    $photoinfo = exif_read_data(PATH_PHOTOS.$upload_name, 0, true );
+//    unset( $photoinfo['UndefinedTag'] );
+//    $photoinfo = serialize( $photoinfo );
+
     //flickr 업로드
     $photo_id = $flickr->sync_upload($uploadfile, $title, $description,$tags);
 
     if( empty($photo_id) ) {
-        $DB->historyBack( MSG_INPUT_DATA_FAILE."111" );
+        $DB->historyBack( MSG_INPUT_DATA_FAILE );
     } else {
         //fiickr 라이센스 변경
         if( $flickr->photos_licenses_setLicense($photo_id, $ccl) ) {
