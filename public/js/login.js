@@ -109,17 +109,3 @@ function joinTwitter(re_url) {
 	location.href = '/member/oauth/twitter/redirect.php?re_url=' + re_url;
 	return false;
 }
-
-//form validate
-function showValidError( obj, msg ) {
-	$(obj).addClass('failed');
-
-	return msg;
-}
-
-function showValidSuccess(obj){
-	setTimeout(function(){	$(obj).hide();}, 0);
-	
-	$(obj).siblings('.text').removeClass('failed');
-	return false;
-}	

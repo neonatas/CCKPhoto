@@ -55,3 +55,18 @@ $(document).on('click', '.btn-recommend', function(e) {
 		context:this
 	});
 });
+
+
+//form validate
+function showValidError( obj, msg ) {
+	$(obj).addClass('failed');
+
+	return msg;
+}
+
+function showValidSuccess(obj){
+	setTimeout(function(){	$(obj).hide();}, 0);
+	
+	$(obj).siblings('.text').removeClass('failed');
+	return false;
+}

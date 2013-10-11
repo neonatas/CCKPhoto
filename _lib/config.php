@@ -37,8 +37,8 @@
     define('PATH_PHOTOS_UPLOAD',$_SERVER['DOCUMENT_ROOT'].PATH_PHOTOS_FOLDER);
 
     //Photo setting
-    define('MAX_PHOTO_SIZE','5000000'); //5메가
-    define('VALID_PHOTO_EXT','jpg,gif'); //허용 확장자
+    define('MAX_PHOTO_SIZE','100000000'); //100메가
+    define('VALID_PHOTO_EXT','jpg,gif,png'); //허용 확장자
 
     //Message setting
     define('MSG_PHOTO_UPLOAD_SUCCESS','사진파일이 등록되었습니다.');

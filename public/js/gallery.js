@@ -35,11 +35,11 @@ var load = function(start, count) {
 
 			if (owner) {
 				html += '<a class="delete" data-pid="' + img.id + '" href="">\
-					�����ϱ�\
+					삭제하기\
 					</a>';
 			} else {
 				html += '<a data-pid="' + img.id + '" class="btn-recommend recommend ' + (img.is_recommend == 'n' ? '' : 'on') + '" href="">\
-					��õ�ϱ�\
+					추천하기\
 					</a>';
 			}
 
@@ -106,4 +106,64 @@ $('.photo-list').on('click', '.delete', function() {
 })
 $('#popupDelete .btn-delete').click(function() {
 	location.href="/my/photo_delete.php?pid="+curPid;
+});
+
+
+$(function() {
+	var f = document.my_form;
+
+	//닉넴 수정시 중복확인 클리어
+	$('input[name=nickName]').keyup(function() {
+		$('input[name=checkDuplication]').val('');
+		$('fieldset.nick').removeClass('ok');
+		$('fieldset.nick').removeClass('err');
+	});
+
+	//닉네임 중복 확인
+	$('#popupProfileUpdate .btn-check-nick').click( function() {
+		if( $('input[name=nickName]').val() == "" ) {
+			alert('변경하실 닉네임을 입력하세요.');
+			f.nickName.focus();
+			return false;
+		}
+
+		$.ajax({
+			type : 'POST',
+			url:'/member/validNickName.php',
+			dataType:'json',
+			data:{
+				nickname:f.nickName.value
+			},
+			success:function(data) {
+				if( data.type == 1 ) {
+					$('fieldset.nick').removeClass('err');
+					$('fieldset.nick').addClass('ok');
+					$('input[name=checkDuplication]').val('y');
+				} else if ( data.type == 2 ) {
+					$('fieldset.nick').removeClass('ok');
+					$('fieldset.nick').addClass('err');
+					$('input[name=checkDuplication]').val('');
+				} else {
+					$('input[name=checkDuplication]').val('');
+				}
+			},
+			context:this
+		});
+		return false;
+	});
+
+	$('#popupProfileUpdate .btn-ok').click(function() {
+		if( f.nickName.value != "" && f.checkDuplication.value != 'y' ) {
+			alert('닉네임 중복확인을 해주세요.');
+			f.nickName.focus();
+			return false;
+		}
+		
+		if( f.nickName.value == "" && f.myImg.value == "" ) {
+			return false;
+		}
+
+		f.action = "/member/modify_proc.php";
+		f.submit();
+	});
 });
