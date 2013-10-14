@@ -28,7 +28,7 @@
 .content .actions li .btn-share {background-position:-218px 0; }
 .content .actions li .btn-download:hover {background-position:0 -25px;}
 .content .actions li .btn-info:hover {background-position:-72px -25px;}
-.content .actions li .btn-recommendx:hover, .content .actions li .btn-recommend.on {background-position:-145px -25px;}
+.content .actions li .btn-recommend:hover, .content .actions li .btn-recommend.on {background-position:-145px -25px;}
 .content .actions li .btn-share:hover {background-position:-218px -25px; }
 .content .photo-info {display:none; position:absolute; bottom:33px; left:-98px; background: url(../images/bg_photo_info.png) no-repeat; width:274px; height:235px;}
 .content .photo-info table {margin:55px 0 0 23px;}

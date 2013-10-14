@@ -13,7 +13,7 @@ var count = 20;
 var loading = false;
 var load = function(start, count) {
 	loading = true;
-	var cate = PARAM['cate'] || '';
+	var cate = PARAM['cate'] || '1';
 	var sort = PARAM['sort'] || 'd';
 	var keyword = PARAM['keyword'] || '';
 

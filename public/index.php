@@ -14,16 +14,14 @@
 				<img src="../images/text_main.png" width="505" height="189" alt="함께 나누는 사진 베스트 포토를 추천해주세요! 투표 기간 : 2013. 10. 25 ~ 2013. 11. 10" />
 			</div>
 			<ul class="category">
-				<li class="c1 <?if (!$cate) echo 'on';?>"><a href="/">All</a></li>
-				<li class="c2 <?if ($cate == '1') echo 'on';?>"><a href="?cate=1">자연&amp;풍경</a></li>
-				<li class="c3 <?if ($cate == '2') echo 'on';?>"><a href="?cate=2">인물</a></li>
-				<li class="c4 <?if ($cate == '3') echo 'on';?>"><a href="?cate=3">건축&amp;예술</a></li>
-				<li class="c5 <?if ($cate == '4') echo 'on';?>"><a href="?cate=4">동물&amp;식물</a></li>
-				<li class="c6 <?if ($cate == '5') echo 'on';?>"><a href="?cate=5">여행&amp;문화</a></li>
-				<li class="c7 <?if ($cate == '6') echo 'on';?>"><a href="?cate=6">사물</a></li>
-				<li class="c8 <?if ($cate == '7') echo 'on';?>"><a href="?cate=7">도시</a></li>
-				<li class="c9 <?if ($cate == '8') echo 'on';?>"><a href="?cate=8">음식</a></li>
-				<li class="c10 <?if ($cate == '9') echo 'on';?>"><a href="?cate=9">예술사진</a></li>
+				<li class="c1 <?if (!$cate || $cate == '1') echo 'on';?>"><a href="?cate=1">계절&amp;자연</a></li>
+				<li class="c2 <?if ($cate == '2') echo 'on';?>"><a href="?cate=2">동,식물&amp;생태</a></li>
+				<li class="c3 <?if ($cate == '3') echo 'on';?>"><a href="?cate=3">도시&amp;삶</a></li>
+				<li class="c4 <?if ($cate == '4') echo 'on';?>"><a href="?cate=4">유적지&amp;문화</a></li>
+				<li class="c5 <?if ($cate == '5') echo 'on';?>"><a href="?cate=5">건축&amp;공간</a></li>
+				<li class="c6 <?if ($cate == '6') echo 'on';?>"><a href="?cate=6">사람&amp;사랑</a></li>
+				<li class="c7 <?if ($cate == '7') echo 'on';?>"><a href="?cate=7">여행</a></li>
+				<li class="c8 <?if ($cate == '8') echo 'on';?>"><a href="?cate=8">예술</a></li>
 			</ul>
 			<a class="btn-upload" href="/my/upload.php">사진 올리기</a>
 			<form name="filter">
