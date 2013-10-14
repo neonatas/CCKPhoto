@@ -21,3 +21,13 @@
 	#loginArea input.input-455 { width:435px; background:url("../images/bg_join_input_455.png") no-repeat;}
 	#loginArea .login-about { text-align:left; padding-top:15px; }
 	#loginArea .login-about li { padding-top:5px; }
+
+#popupPasswordSend {background:#bbb url(../images/bg_send_password.png) 40px 35px no-repeat; width:390px; height:204px; position:relative;}
+#popupPasswordSend span, #popupPasswordSend legend { display:none; }
+#popupPasswordSend .text-mail {
+	position:absolute; left: 43px; top: 94px; width: 296px; height: 43px;color:#555;
+	margin:0; background-color:transparent; border:none; font-size:13px; font-weight:bold; line-height:40px;
+	padding: 0 0 0 10px;
+}
+#popupPasswordSend .btn-close {position:absolute; top:11px; right:10px;}
+#popupPasswordSend .btn-send {position:absolute; bottom:19px; right:40px; display:block; border:none; width:77px; height:27px; background: url(../images/btn_send.png) no-repeat; text-indent: -10000px; cursor:pointer;}
