@@ -4,7 +4,8 @@
     $pageCode = "gallery";
     
     $strCSS = "<link rel='stylesheet' media='all' type='text/css' href='/css/".$pageCode.".css' />";
-    $strJS = "<script type='text/javascript' src='/js/".$pageCode.".js'></script>";
+    $strJS = "<script type='text/javascript' src='../js/jquery.validate.js'></script>";
+    $strJS .= "<script type='text/javascript' src='/js/".$pageCode.".js'></script>";
 
     require_once('../../_lib/config.php');
     require_once('../../_lib/class.dbConnect.php');
@@ -39,7 +40,9 @@
 				<span class="title"><em class="name"><?=$member_data['nickname']?></em> <span>님의 갤러리</span></span>
                 <? if( $_SESSION['USER_IDX'] == $member_data['idx'] ) { ?>
 				<a class="btn-profile-update" href="" onclick="$.dialog.open('popupProfileUpdate'); return false;">내 프로필 수정</a>
-                <a class="btn-password-change" href="" onclick="$.dialog.open('popupPasswordChange'); return false;">비밀번호 변경</a>
+                    <? if( $_SESSION['USER_TYPE'] == SITE_NAME ) { ?>
+                    <a class="btn-password-change" href="" onclick="$.dialog.open('popupPasswordChange'); return false;">비밀번호 변경</a>
+                    <? } ?>
 			    <? } ?>
             </div>
 		</div>

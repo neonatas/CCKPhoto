@@ -49,7 +49,7 @@ $result = $Member->joinMember( $arr );
 if( $result['r'] == 'success' )
 {
 	$_SESSION['USER_IDX'] = $result['idx'];
-	$_SESSION['USER_TYPE'] = "letscc_photo";
+	$_SESSION['USER_TYPE'] = SITE_NAME;
 	$_SESSION['USER_ID'] = $joinEmail;
 	$_SESSION['USER_NAME'] = $joinNickName;
     $_SESSION['USER_IMAGE'] = "";

@@ -106,7 +106,7 @@ class clsMembers {
 		$query = "update ".$this->table." set auto_key = '".$key."' where idx = ".$m_idx;
 		$res = mysql_query($query,$this->conn) or die ("update query error!!");
 		
-		if( $res ) {
+		if( @mysql_affected_rows() > 0 ) {
 			return true;
 		} else {
 			return false;
@@ -130,7 +130,7 @@ class clsMembers {
 		$query = "update ".$this->table." set policy_agree = '".$agree."' where idx = ".$idx;
 		$res = mysql_query($query,$this->conn) or die ("update query error!!");
 		
-		if( $res ) {
+		if( @mysql_affected_rows() > 0 ) {
 			return $agree;
 		} else {
 			return false;
@@ -138,21 +138,44 @@ class clsMembers {
 	}
 
 	function updateNickName($idx, $nickname) {
+        if( empty($idx) || empty($nickname) ) {
+            return false;
+        }
+
 		$query = "update ".$this->table." set nickname = '".$nickname."' where idx = ".$idx;
 		$res = mysql_query($query,$this->conn) or die ("update query error!!");
 		
-		if( $res ) {
+		if( @mysql_affected_rows() > 0 ) {
 			return $nickname;
 		} else {
 			return false;
 		}
 	}
 
+	function updatePasswd($idx, $passwd) {
+        if( empty($idx) || empty($passwd) ) {
+            return false;
+        }
+
+		$query = "update ".$this->table." set passwd = '".md5($passwd)."' where idx = ".$idx;
+		$res = mysql_query($query,$this->conn) or die ("update query error!!");
+		
+		if( @mysql_affected_rows() > 0 ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	function updateProfileImage($idx, $img_r, $img_o) {
+        if( empty($idx) || empty($img_r) || empty($img_o) ) {
+            return false;
+        }
+
 		$query = "update ".$this->table." set my_img_r = '".$img_r."', my_img_o = '".$img_o."' where idx = ".$idx;
 		$res = mysql_query($query,$this->conn) or die ("update query error!!");
 		
-		if( $res ) {
+		if( @mysql_affected_rows() > 0 ) {
 			return true;
 		} else {
 			return false;
@@ -214,7 +237,7 @@ class clsMembers {
 			$query = "update ".$this->table." set passwd = '".md5($tempPasswd)."' where email = '".$array['email']."'";
 			$res = mysql_query($query,$this->conn) or die ("update query error!!");
 
-			if( $res ) {
+			if( @mysql_affected_rows() > 0 ) {
 				$result['r'] = "success";
 				$result['passwd'] = $tempPasswd;
 				$result['msg'] = "패스워드를 변경 하였습니다.";
@@ -296,6 +319,21 @@ class clsMembers {
 		$query = "delete from ".$this->table." where idx = ".$idx;
 		$res = mysql_query($query,$this->conn) or die ("member Delete query error!!");
 		return $res;
+	}
+
+	function leaveMember($idx) {
+        if( empty($idx) ) {
+            return false;
+        }
+
+		$query = "update ".$this->table." set is_leave = 'y', leave_date = now() where idx = ".$idx;
+		$res = mysql_query($query,$this->conn) or die ("leave query error!!");
+		
+		if( @mysql_affected_rows() > 0 ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	function getData( $idx ) {

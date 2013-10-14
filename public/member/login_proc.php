@@ -36,7 +36,7 @@ if( $result['r'] == 'success' )
 	$result['f_idx'] = "";
 
 	$_SESSION['USER_IDX'] = $result['idx'];
-	$_SESSION['USER_TYPE'] = "letscc_photo";
+	$_SESSION['USER_TYPE'] = SITE_NAME;
 	$_SESSION['USER_ID'] = $_POST['loginEmail'];
 	$_SESSION['USER_NAME'] = $result['nickname'];
     $_SESSION['USER_IMAGE'] = $result['my_img'];

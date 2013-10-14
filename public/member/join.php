@@ -55,7 +55,7 @@
                     <input type="hidden" name="checkDuplication" />
 				</div>
 				<div class="agreement-area">
-					<label for="agreement"><a href="#" class="link-provision">이용약관</a><span> 및 </span><a href="#" class="link-personal">개인정보 취급방침</a><span>에 동의합니다.</span></label>
+					<label for="agreement"><a href="/other/agreement.php" class="link-provision">이용약관</a><span> 및 </span><a href="/other/privacy.php" class="link-personal">개인정보 취급방침</a><span>에 동의합니다.</span></label>
 					<span id="joinAgreement"></span>
 					<input type="hidden" name="policyAgree"  id="policyAgree" />
 				</div>
