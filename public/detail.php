@@ -109,7 +109,7 @@
 			<span class="author">by <?=$photo_data['nickname']?></span>
 		</h2>
 		<div class="photo">
-			<img src="<?=PATH_PHOTOS_FOLDER.$photo_data['filename_r']?>" width="<?=$file_info['COMPUTED']['Width']?>" height="<?=$file_info['COMPUTED']['Height']?>" />
+			<img src="<?=PATH_PHOTOS_FOLDER.$photo_data['filename_r']?>" width="<?=$file_info['COMPUTED']['Width']?>"  />
 			<span class="prev <? if($prev_id==""){echo "dimmed";}?>" <?=$prev_link?>>prev</span>
 			<span class="next <? if($next_id==""){echo "dimmed";}?>" <?=$next_link?>>next</span>
 		</div>

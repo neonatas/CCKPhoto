@@ -42,6 +42,21 @@
                 <a class="btn-close" href="" onclick="$.dialog.close(); return false;">close</a>
             </div>
         </div>
+        <? } else if ($pageCode=="login") { ?>
+        <div id="popupContainer">
+            <div id="popupBg" onclick="$.dialog.close();"></div>
+            <div id="popupPasswordSend" class="popup">
+                <form name="find_passwd_form" id="find_passwd_form" >
+                    <fieldset class="nick">
+                        <legend>메일로 임시 비밀번호 보내기</legend>
+                        <span>메일로 보내드린 임시 비밀번호로 다시 로그인해주세요!</span>
+                        <input class="text-mail" type="text" name="passwdEmail" id="passwdEmail" placeholder="메일주소를 적어주세요" />
+                        <input class="btn-send" type="button" value="확인" />
+                    </fieldset>
+                </form>
+                <a class="btn-close" href="" onclick="$.dialog.close(); return false;">close</a>
+            </div>
+        </div>
         <? } ?>
 	</div>
     <script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
