@@ -14,7 +14,7 @@
 				<a class="privacy" href="/other/privacy.php">개인정보 취급방침</a>
 			</p>
 		</div>
-        <? if($pageCode=="gallery") {?>
+        <? if($pageCode=="gallery" ) {?>
         <div id="popupContainer">
             <div id="popupBg" onclick="$.dialog.close();"></div>
             <div id="popupDelete" class="popup">
@@ -35,6 +35,24 @@
                         <legend>프로필 사진 등록</legend>
                         <span class="file"><input type="file" name="myImg" onchange="document.getElementById('fileName').value = this.value.split(/[/\\]/).reverse()[0]" /></span>
                         <input id="fileName" class="text-fn" type="text" readonly />
+                    </fieldset>
+                    <input class="btn-ok" type="submit" value="확인" />
+                    <input class="btn-cancel" type="button" value="취소"  onclick="$.dialog.close(); return false;" />
+                </form>
+                <a class="btn-close" href="" onclick="$.dialog.close(); return false;">close</a>
+            </div>
+            <div id="popupPasswordChange" class="popup">
+                <form>
+                    <fieldset class="nick">
+                        <legend>새 비밀번호 입력</legend>
+                        <input class="text-passwd" type="text" name="passwd" placeholder="6자 이상의 숫자를 입력해주세요" />
+                        <label for="passwdConfirm">비밀번호 확인</label>
+                        <input class="text-passwd-confirm" type="text" id="passwdConfirm" name="passwdConfirm" placeholder="6자 이상의 숫자를 입력해주세요" />
+                    </fieldset>
+                    <fieldset class="photo">
+                        <legend>탈퇴하기</legend>
+                        <<span id="leaveAgreement"></span>
+                        <input type="hidden" readonly />
                     </fieldset>
                     <input class="btn-ok" type="submit" value="확인" />
                     <input class="btn-cancel" type="button" value="취소"  onclick="$.dialog.close(); return false;" />

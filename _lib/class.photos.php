@@ -82,7 +82,7 @@ class clsPhotos {
         $query = "select p.*, m.* ";
         $query .= ", (select name from category where id = p.cate_id ) as cate_name";
         $query .= " from ".$this->table." p LEFT JOIN members m ON p.member_idx = m.idx ";
-        $query .= " where p.id = ".$id;
+        $query .= " where p.id = ".$id." and m.is_leave = 'n'";
 		$res = mysql_query($query,$this->conn) or die ("get select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) {
@@ -212,43 +212,43 @@ class clsPhotos {
     }
 
     function getList($member_idx="", $sort="d", $cate=0, $start=0, $count = 0, $keyword="") {
-        $result = array();
+        $result = null;
 
         $str_where = " where 1 ";
         $str_limit = "";
         if( $member_idx != "" )
-            $str_where .= " and member_idx = ".$member_idx;
+            $str_where .= " and p.member_idx = ".$member_idx;
         if( $cate > 0 )
-            $str_where .= " and cate_id = ".$cate;
+            $str_where .= " and p.cate_id = ".$cate;
         if( $count > 0 )
             $str_limit = " limit ".$start.",".$count;
         if( $keyword != "" )
-            $str_where .= " and ( title like '%".$keyword."%' or description like '%".$keyword."%' or  tags like '%".$keyword."%' ) ";
+            $str_where .= " and ( p.title like '%".$keyword."%' or p.description like '%".$keyword."%' or  p.tags like '%".$keyword."%' ) ";
         
         $str_sort = " order by ";
         switch( $sort ) {
             case 'd':
-                $str_sort .= "createdate";
+                $str_sort .= "p.createdate";
                 break;
             case 'h':
-                $str_sort .= "hits";
+                $str_sort .= "p.hits";
                 break;
             case 'r':
-                $str_sort .= "recommend";
+                $str_sort .= "p.recommend";
                 break;
             default:
-                $str_sort .= "createdate";
+                $str_sort .= "p.createdate";
                 break;
         }
         $str_sort .= " desc ";
 
-        $query = "select * from ".$this->table." ";
-        $query .= $str_where;
+        $query = "select * from ".$this->table." p LEFT JOIN members m ON p.member_idx = m.idx ";
+        $query .= $str_where." and m.is_leave = 'n'";
         $query .= $str_sort;
         $query .= $str_limit;
 
 		$res = mysql_query($query,$this->conn) or die ("getList select query error!!");
-
+        $result = array();
 		if( @mysql_affected_rows() > 0 ) {
 			while( $row = mysql_fetch_array($res) ) {
 				$result[] = $row;

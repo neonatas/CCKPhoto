@@ -22,7 +22,7 @@ class clsMembers {
 				break;
 		}
 
-		$query = "select idx, policy_agree, my_img_r from ".$this->table." where ".$field." = '".$id."'";
+		$query = "select idx, policy_agree, my_img_r from ".$this->table." where ".$field." = '".$id."' and is_leave = 'n' ";
 		$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) { 
@@ -60,7 +60,7 @@ class clsMembers {
 	}
 
 	function existEmail($email) {
-		$query = "select idx from ".$this->table." where email = '".$email."'";
+		$query = "select idx from ".$this->table." where email = '".$email."' and is_leave = 'n'";
 		$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) {
@@ -71,7 +71,7 @@ class clsMembers {
 	}
 
 	function existNickName($nickname) {
-		$query = "select idx from ".$this->table." where nickname = '".$nickname."'";
+		$query = "select idx from ".$this->table." where nickname = '".$nickname."' and is_leave = 'n' ";
 		$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) {
@@ -164,7 +164,7 @@ class clsMembers {
 		$result = array();
 
 		if( $this->existEmail($array['email']) !== false ) {
-			$query = "select idx, level, policy_agree, nickname from ".$this->table." where email = '".$array['email']."' and passwd = '".md5($array['passwd'])."'";
+			$query = "select idx, level, policy_agree, nickname from ".$this->table." where email = '".$array['email']."' and passwd = '".md5($array['passwd'])."' and is_leave = 'n' ";
 			$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 			if( @mysql_affected_rows() > 0 ) {
@@ -299,7 +299,10 @@ class clsMembers {
 	}
 
 	function getData( $idx ) {
-		$query = "select * from ".$this->table." where idx = ".$idx;
+        if( $idx == "" ) 
+            return NULL;
+
+		$query = "select * from ".$this->table." where idx = ".$idx." and is_leave = 'n' ";
 		$res = mysql_query($query,$this->conn) or die ("getMember select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) {
