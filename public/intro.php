@@ -22,7 +22,7 @@
 				<div class="text-4">
 					<img src="../images/text_intro4.png" alt="캠패인소개" usemap="#go_license" />
 					<map name="go_license">
-						<area shape="rect" coords="610,70,699,92" href="#"  target="_blink">
+						<area shape="rect" coords="610,70,699,92" href="http://cckorea.org/xe/?mid=ccl"  target="_blink">
 					</map>
 				</div>
 				<div class="text-5"><img src="../images/text_intro5.png" alt="캠패인소개" /></div>

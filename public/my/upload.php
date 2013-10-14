@@ -71,7 +71,7 @@
 					<dt>
 						<div>
 							<img src="../images/title_upload_cc.png" alt="CC 라이센스"/>
-							<img src="../images/btn_upload_ccl_view.png" alt="CC 라이센스 설명보기"/>
+							<a href="http://cckorea.org/xe/?mid=ccl" target="_blink"><img src="../images/btn_upload_ccl_view.png" alt="CC 라이센스 설명보기"/></a>
 						</div>
 					</dt>
 					<dd>

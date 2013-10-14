@@ -27,7 +27,7 @@
 			<li class="sharehub"><a href="http://sharehub.kr">공유허브</a></li>
             <? if($isLogin) { ?>
                 <li class="logout"><a href="/member/logout.php">로그아웃</a></li>
-                <li class="my <?if($pageCode=="galley") echo "on";?>"><a href="/my/gallery.php">마이갤러리</a></li>
+                <li class="my <?if($pageCode=="galley") echo "on";?>"><a href="/my/gallery.php?m_idx=<?=$_SESSION['USER_IDX']?>">마이갤러리</a></li>
             <? } else { ?>
             <li class="login <?if($pageCode=="login") echo "on";?>"><a href="/member/login.php">로그인</a></li>
 			<li class="join <?if($pageCode=="join") echo "on";?>"><a href="/member/join.php">회원가입</a></li>

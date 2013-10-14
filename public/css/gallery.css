@@ -51,6 +51,8 @@
 #popupPasswordChange legend, #popupPasswordChange label {display:none;}
 	#leaveAgreement { width:20px; height:20px; position:absolute; right:80px; bottom:71px; display:line-block;  background:url("../images/btn_check_leave.png") no-repeat; cursor:pointer;}
 	#leaveAgreement.check {  background-position:0 -20px;}
+#popupPasswordChange span.error { display:none; position:relative; z-index:9; background-color:#fff; heigh:20px; line-height:20px; padding:0 6px; color:#ff5019; border:1px solid #c9c9cb; font-size:11px; }
+#popupPasswordChange span.mark { display:block; position:relative; width:20px; height:17px; }
 .text-passwd, .text-passwd-confirm  {
 	position:absolute; width:300px;height:34px;
 	margin:0; background-color:transparent; border:none; color:black; font-size:13px; font-weight:bold; line-height:34px;

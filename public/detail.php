@@ -26,16 +26,20 @@
 
 
     if( $pid == "" ) {
-        $arr_photos = $Photo->getList($member_idx, $sort, $cate, $start, $count, $keyword);
-        $arr_tmp = $arr_photos[0];
-        $pid = $arr_tmp['id'];
+        header('Location: /member/login.php?re_url='.$_SERVER['REQUEST_URI']);
+        exit;
+    }
+
+    //컨텐츠 정보
+    $photo_data = $Photo->get( $pid );
+
+    if( !$photo_data ) {
+        header('Location: /member/login.php?re_url='.$_SERVER['REQUEST_URI']);
+        exit;
     }
 
     //조회수 증가
     $Photo->incrementHits($pid); 
-
-    //컨텐츠 정보
-    $photo_data = $Photo->get( $pid );
 
     //이전, 다음 이미지 링크
     $arr_id = $Photo->getPrevNextId($pid, $member_idx, $sort, $cate, $keyword );

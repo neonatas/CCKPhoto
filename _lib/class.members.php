@@ -22,7 +22,7 @@ class clsMembers {
 				break;
 		}
 
-		$query = "select idx, policy_agree, my_img_r from ".$this->table." where ".$field." = '".$id."'";
+		$query = "select idx, policy_agree, my_img_r from ".$this->table." where ".$field." = '".$id."' and is_leave = 'n' ";
 		$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) { 
@@ -60,7 +60,7 @@ class clsMembers {
 	}
 
 	function existEmail($email) {
-		$query = "select idx from ".$this->table." where email = '".$email."'";
+		$query = "select idx from ".$this->table." where email = '".$email."' and is_leave = 'n'";
 		$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) {
@@ -71,7 +71,7 @@ class clsMembers {
 	}
 
 	function existNickName($nickname) {
-		$query = "select idx from ".$this->table." where nickname = '".$nickname."'";
+		$query = "select idx from ".$this->table." where nickname = '".$nickname."' and is_leave = 'n' ";
 		$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) {
@@ -106,7 +106,7 @@ class clsMembers {
 		$query = "update ".$this->table." set auto_key = '".$key."' where idx = ".$m_idx;
 		$res = mysql_query($query,$this->conn) or die ("update query error!!");
 		
-		if( $res ) {
+		if( @mysql_affected_rows() > 0 ) {
 			return true;
 		} else {
 			return false;
@@ -130,7 +130,7 @@ class clsMembers {
 		$query = "update ".$this->table." set policy_agree = '".$agree."' where idx = ".$idx;
 		$res = mysql_query($query,$this->conn) or die ("update query error!!");
 		
-		if( $res ) {
+		if( @mysql_affected_rows() > 0 ) {
 			return $agree;
 		} else {
 			return false;
@@ -138,21 +138,44 @@ class clsMembers {
 	}
 
 	function updateNickName($idx, $nickname) {
+        if( empty($idx) || empty($nickname) ) {
+            return false;
+        }
+
 		$query = "update ".$this->table." set nickname = '".$nickname."' where idx = ".$idx;
 		$res = mysql_query($query,$this->conn) or die ("update query error!!");
 		
-		if( $res ) {
+		if( @mysql_affected_rows() > 0 ) {
 			return $nickname;
 		} else {
 			return false;
 		}
 	}
 
+	function updatePasswd($idx, $passwd) {
+        if( empty($idx) || empty($passwd) ) {
+            return false;
+        }
+
+		$query = "update ".$this->table." set passwd = '".md5($passwd)."' where idx = ".$idx;
+		$res = mysql_query($query,$this->conn) or die ("update query error!!");
+		
+		if( @mysql_affected_rows() > 0 ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	function updateProfileImage($idx, $img_r, $img_o) {
+        if( empty($idx) || empty($img_r) || empty($img_o) ) {
+            return false;
+        }
+
 		$query = "update ".$this->table." set my_img_r = '".$img_r."', my_img_o = '".$img_o."' where idx = ".$idx;
 		$res = mysql_query($query,$this->conn) or die ("update query error!!");
 		
-		if( $res ) {
+		if( @mysql_affected_rows() > 0 ) {
 			return true;
 		} else {
 			return false;
@@ -164,7 +187,7 @@ class clsMembers {
 		$result = array();
 
 		if( $this->existEmail($array['email']) !== false ) {
-			$query = "select idx, level, policy_agree, nickname from ".$this->table." where email = '".$array['email']."' and passwd = '".md5($array['passwd'])."'";
+			$query = "select idx, level, policy_agree, nickname from ".$this->table." where email = '".$array['email']."' and passwd = '".md5($array['passwd'])."' and is_leave = 'n' ";
 			$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 			if( @mysql_affected_rows() > 0 ) {
@@ -214,7 +237,7 @@ class clsMembers {
 			$query = "update ".$this->table." set passwd = '".md5($tempPasswd)."' where email = '".$array['email']."'";
 			$res = mysql_query($query,$this->conn) or die ("update query error!!");
 
-			if( $res ) {
+			if( @mysql_affected_rows() > 0 ) {
 				$result['r'] = "success";
 				$result['passwd'] = $tempPasswd;
 				$result['msg'] = "패스워드를 변경 하였습니다.";
@@ -298,8 +321,26 @@ class clsMembers {
 		return $res;
 	}
 
+	function leaveMember($idx) {
+        if( empty($idx) ) {
+            return false;
+        }
+
+		$query = "update ".$this->table." set is_leave = 'y', leave_date = now() where idx = ".$idx;
+		$res = mysql_query($query,$this->conn) or die ("leave query error!!");
+		
+		if( @mysql_affected_rows() > 0 ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	function getData( $idx ) {
-		$query = "select * from ".$this->table." where idx = ".$idx;
+        if( $idx == "" ) 
+            return NULL;
+
+		$query = "select * from ".$this->table." where idx = ".$idx." and is_leave = 'n' ";
 		$res = mysql_query($query,$this->conn) or die ("getMember select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) {

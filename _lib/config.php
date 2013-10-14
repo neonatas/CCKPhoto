@@ -1,8 +1,10 @@
 <?
     define( 'LIB_PATH', realpath(dirname(__FILE__).'/') );
+    //Site User Type
+    define('SITE_NAME','share_photo');
 
     // Cookie secret key
-    define('COOKIE_SECRET_KEY','letscc_photo20131001');
+    define('COOKIE_SECRET_KEY',SITE_NAME.'20131001');
 
     // Administrator
     define('ADMIN_ID','admin');
@@ -59,6 +61,8 @@
     define('FLICKR_API_KEY', 'b7150a7b29a3cb3880eb4b2065d00997');
     define('FLICKR_API_SECRET', 'd790211190778b66');
     define('FLICKR_API_TOKEN','72157636399998753-606cd0509ee48111');
+
+    //
 
 
 ?>

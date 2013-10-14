@@ -9,6 +9,8 @@
     require_once('../../_lib/config.php');
     require_once('../../_lib/class.dbConnect.php');
     require_once('../../_lib/class.photos.php');
+    require_once('../../_lib/function.php');
+
 
     $DB = new dbConn();
     $Photo = new clsPhotos( $DB->getConnection() );
@@ -22,7 +24,7 @@
 
     //로그인 체크
 	if( !isset($_SESSION['USER_IDX']) || $_SESSION['USER_IDX'] == '' ) {  
-		$DB->historyBack("로그인 후 사진올리기 가능합니다.");
+		historyBack("로그인 후 사진올리기 가능합니다.");
 	}
 
     $title = ( trim($_POST['title']) ) ? trim($_POST['title']) : "";
@@ -36,18 +38,18 @@
 
     //데이터 유효성 체크
 	if( $title == '' || $cate == '' || $ccl_business == '' || $ccl_change == '' ) {  
-		$DB->historyBack( MSG_INPUT_DATA_FAILE );
+		historyBack( MSG_INPUT_DATA_FAILE );
 	}
 
     //파일 유효성 체크
     if( $photofile['error'] > 0 ) {
-        $DB->historyBack( MSG_INPUT_DATA_FAILE );
+        historyBack( MSG_INPUT_DATA_FAILE );
     }
 
     //파일 용량 체크
     if( !$Photo->checkSize( $photofile['size'] ) )
     {
-        $DB->historyBack(number_format(MAX_PHOTO_SIZE)." 이하의 사진파일만 업로드 가능합니다.");
+        historyBack(number_format(MAX_PHOTO_SIZE)." 이하의 사진파일만 업로드 가능합니다.");
     }
 
     $tmp = explode(".",$photofile['name']);
@@ -55,7 +57,7 @@
     //파일 확장자 체크
     if( !$Photo->checkExtension( $ext ) )
     {
-        $DB->historyBack("확장자(".VALID_PHOTO_EXT.") 파일만 업로드 가능합니다.");
+        historyBack("확장자(".VALID_PHOTO_EXT.") 파일만 업로드 가능합니다.");
     }
 
     $upload_name = time().rand(100000,1000000).".".$ext;
@@ -63,7 +65,7 @@
     
     if( !move_uploaded_file($photofile['tmp_name'], $uploadfile) )
     {
-        $DB->historyBack( MSG_PHOTO_UPLOAD_FAILE );
+        historyBack( MSG_PHOTO_UPLOAD_FAILE );
     }
 
     //CCL 체크
@@ -104,7 +106,7 @@
     $photo_id = $flickr->sync_upload($uploadfile, $title, $description,$tags);
 
     if( empty($photo_id) ) {
-        $DB->historyBack( MSG_INPUT_DATA_FAILE );
+        historyBack( MSG_INPUT_DATA_FAILE );
     } else {
         //fiickr 라이센스 변경
         if( $flickr->photos_licenses_setLicense($photo_id, $ccl) ) {
@@ -128,12 +130,12 @@
                 header('Location: '.$re_url);
             } else if( $result['r'] == 'error' ) {
                 //$flickr->photos_delete($photo_id);
-                $DB->historyBack($result['msg']);
+                historyBack($result['msg']);
                 return;
             }
         } else {
             //$flickr->photos_delete($photo_id);
-            $DB->historyBack(MSG_PHOTO_UPLOAD_FAILE);
+            historyBack(MSG_PHOTO_UPLOAD_FAILE);
         }
     }
 ?>

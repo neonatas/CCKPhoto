@@ -110,6 +110,19 @@ $('#popupDelete .btn-delete').click(function() {
 
 
 $(function() {
+	check_leave();
+
+	//약관 동의
+	$('#leaveAgreement').click( function() {
+		if( $('#leaveAgreement').hasClass('check') ) {
+			$('#leaveAgreement').removeClass('check');
+		} else {
+			$('#leaveAgreement').addClass('check');
+		}
+		check_leave();
+	});
+
+
 	var f = document.my_form;
 
 	//닉넴 수정시 중복확인 클리어
@@ -166,4 +179,81 @@ $(function() {
 		f.action = "/member/modify_proc.php";
 		f.submit();
 	});
+
+	//비밀번호 변경 및 탈퇴
+	var f_passwd = document.my_passwd_form;
+	f_passwd.action = "/member/modify_proc.php";
+
+	$('#my_passwd_form .btn-ok').click( function() {
+
+		if( f_passwd.type.value == "leave" ) {
+			f_passwd.submit();
+		} else {
+			$('#my_passwd_form').submit();
+		}
+
+		return false;
+	});
+	$('#my_passwd_form').keypress( function(e) {
+		if( e.keyCode == 13 ) {
+			if( f_passwd.type.value == "leave" ) {
+				f_passwd.submit();
+			} else {
+				$('#my_passwd_form').submit();
+			}
+
+			return false;
+		}
+	});
+
+
+	$('#my_passwd_form').validate({
+		errorElement:'span',
+		rules: {
+			passwd: {
+			   required: true,
+			   number: true,
+			   minlength: 6
+		   },
+			passwdConfirm: {
+			   required: true,
+			   number: true,
+			   minlength: 6,
+			   equalTo: '#newPasswd'
+		   }
+		},
+
+		messages: {  
+			passwd: {
+				required: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
+				number: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
+				minlength: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); }
+			},
+			passwdConfirm: {
+				required: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
+				number: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
+				minlength: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
+				equalTo: function(r,el) { return showValidError( el, '비밀번호가 일치하지 않습니다, 다시 입력해주세요.' ); }
+			}
+		},
+		success:function(em) {
+		},
+		submitHandler: function (frm) {
+			frm.submit();
+		}
+	});
 });
+
+
+//type 도 여기서 정의
+function check_leave() {
+	var my_f = document.my_passwd_form;
+
+	if( $('#leaveAgreement').hasClass('check') ) {
+		my_f.type.value = "leave";
+		my_f.leave.value = "y";
+	} else {
+		my_f.type.value = "passwd";
+		my_f.leave.value = "";
+	}
+}
