@@ -41,47 +41,6 @@ class dbConn{
 		return $result;
 	}
 
-	function removeQuot($str) {
-		$str = str_replace("\"","",$str);
-		$str = str_replace("'","",$str);
-		return trim($str);
-	}
-	function addSlash($str) {
-		$str = trim($str);
-		$str = addslashes($str);
-		return trim($str) ;
-	}
-
-	function stripSlash($str) {
-		$str = stripslashes($str);
-		return trim($str);
-	}
-
-	function alertMsg($ment,$url,$parent="",$opt="") {
-		echo "<script>alert(\"$ment\");" .$parent . "location.href='$url';" . $opt."</script>";
-		exit;
-	}
-
-	function alertNotMsg($url,$parent="",$opt="") {
-		echo "<script>".$parent . "location.href='$url';" . $opt."</script>";
-		exit;
-	}
-
-	function metaMsg($url) {
-		echo "<meta http-equiv=Refresh content='0;url=$url'>";
-		exit;
-	}
-
-	function historyBack($ment) {
-		echo "<script>alert(\"$ment\");history.back();</script>";
-		exit;
-	}
-
-	function historyBackNoMsg() {
-		echo "<script>history.back();</script>";
-		exit;
-	}
-
 	function dbQuery($q) {
 		$re = $this->setResult($q);
 		return $re;
@@ -125,17 +84,6 @@ class dbConn{
 
 		$re = $this->setResult($q) ;
 		return $re;
-	}
-
-	function memGrade() {
-		if($_SESSION[user]) {
-			$q = "select memtype from member where  id='$_SESSION[user]'";
-			$re_memgrade = $this->setResult($q);
-			if($re_memgrade[cnt] >0) {
-				$row_grade = mysql_fetch_array($re_memgrade[result]);
-				return $row_grade[memtype];
-			}
-		}
 	}
 }
 

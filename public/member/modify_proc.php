@@ -9,6 +9,7 @@ require_once('../../_lib/config.php');
 require_once('../../_lib/class.dbConnect.php');
 require_once('../../_lib/class.members.php');
 require_once('../../_lib/class.photos.php');
+require_once('../../_lib/function.php');
 
 
 $DB = new dbConn();
@@ -18,7 +19,7 @@ $Photo = new clsPhotos( $DB->getConnection() );
 $type = ( trim($_POST['type']) ) ? trim($_POST['type']) : "";
 
 if( $_SESSION['USER_IDX'] == "" ) {
-    $DB->historyBackNoMsg();
+    historyBackNoMsg();
     return;
 }
 
@@ -28,12 +29,12 @@ if( $type == "passwd" ) {
     $passwdConfirm = ( trim($_POST['passwdConfirm']) ) ? trim($_POST['passwdConfirm']) : "";
 
     if( $passwd =="" ) {
-        $DB->historyBack("변경 할 비밀번호를 입력하세요");
+        historyBack("변경 할 비밀번호를 입력하세요");
         return;
     }
 
     if( $passwd != $passwdConfirm ) {
-        $DB->historyBack("비밀번호 확인이 일치하지 않습니다.");
+        historyBack("비밀번호 확인이 일치하지 않습니다.");
         return;
     }
 
@@ -41,7 +42,7 @@ if( $type == "passwd" ) {
         header('Location: '.$re_url);
         return;
     } else {
-        $DB->historyBack("비밀번호 변경에 실패 하였습니다.");
+        historyBack("비밀번호 변경에 실패 하였습니다.");
         return;
     }
     
@@ -63,12 +64,12 @@ if( $type == "passwd" ) {
     $my_img_file = $_FILES['myImg'];
 
     if( $nickName == "" && !is_array($my_img_file) ) {
-        $DB->historyBackNoMsg();
+        historyBackNoMsg();
         return;
     }
 
     if( $nickName !="" && $checkDuplication != "y" ) {
-        $DB->historyBack("이름 & 닉네임 중복확인을 하세요.");
+        historyBack("이름 & 닉네임 중복확인을 하세요.");
         return;
     }
     //닉네임 수정
@@ -82,12 +83,12 @@ if( $type == "passwd" ) {
     if( $my_img_file['tmp_name'] != "" ) {
         //파일 유효성 체크
         if( $my_img_file['error'] > 0 ) {
-            $DB->historyBack( MSG_INPUT_DATA_FAILE );
+            historyBack( MSG_INPUT_DATA_FAILE );
         }
         //파일 용량 체크
         if( !$Photo->checkSize( $my_img_file['size'] ) )
         {
-            $DB->historyBack(number_format(MAX_PHOTO_SIZE)." 이하의 사진파일만 업로드 가능합니다.");
+            historyBack(number_format(MAX_PHOTO_SIZE)." 이하의 사진파일만 업로드 가능합니다.");
         }
 
         $tmp = explode(".",$my_img_file['name']);
@@ -95,7 +96,7 @@ if( $type == "passwd" ) {
         //파일 확장자 체크
         if( !$Photo->checkExtension( $ext ) )
         {
-            $DB->historyBack("확장자(".VALID_PHOTO_EXT.") 파일만 업로드 가능합니다.");
+            historyBack("확장자(".VALID_PHOTO_EXT.") 파일만 업로드 가능합니다.");
         }
 
         $upload_name = time().rand(100000,1000000).".".$ext;
@@ -103,7 +104,7 @@ if( $type == "passwd" ) {
 
         if( !move_uploaded_file($my_img_file['tmp_name'], $uploadfile) )
         {
-            $DB->historyBack( MSG_PHOTO_UPLOAD_FAILE );
+            historyBack( MSG_PHOTO_UPLOAD_FAILE );
         }
 
         if( $Member->updateProfileImage($_SESSION['USER_IDX'], PATH_PROFILE_IMAGE.$upload_name, $my_img_file['name']) ) {

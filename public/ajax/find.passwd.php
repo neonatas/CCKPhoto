@@ -12,7 +12,6 @@ $Member = new clsMembers( $DB->getConnection() );
 $result = array();
 
 if( trim($_POST['email']) == "" ) {
-//    $DB->historyBackNoMsg();
     $result['r'] = "error";
     $result['msg'] = "이메일을 입력하세요.";
 } else {

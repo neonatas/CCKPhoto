@@ -40,4 +40,45 @@
         return $link;
     }
 
+
+	function removeQuot($str) {
+		$str = str_replace("\"","",$str);
+		$str = str_replace("'","",$str);
+		return trim($str);
+	}
+	function addSlash($str) {
+		$str = trim($str);
+		$str = addslashes($str);
+		return trim($str) ;
+	}
+
+	function stripSlash($str) {
+		$str = stripslashes($str);
+		return trim($str);
+	}
+
+	function alertMsg($ment,$url,$parent="",$opt="") {
+		echo "<script>alert(\"$ment\");" .$parent . "location.href='$url';" . $opt."</script>";
+		exit;
+	}
+
+	function alertNotMsg($url,$parent="",$opt="") {
+		echo "<script>".$parent . "location.href='$url';" . $opt."</script>";
+		exit;
+	}
+
+	function metaMsg($url) {
+		echo "<meta http-equiv=Refresh content='0;url=$url'>";
+		exit;
+	}
+
+	function historyBack($ment) {
+		echo "<script>alert(\"$ment\");history.back();</script>";
+		exit;
+	}
+
+	function historyBackNoMsg() {
+		echo "<script>history.back();</script>";
+		exit;
+	}
 ?>
