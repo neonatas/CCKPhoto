@@ -37,6 +37,10 @@
 .content .photo-info td {font-size:11px; color:#fff; text-align:left;}
 .content .photo-info .btn-close {background-image:url(../images/btn_close2.png); position:absolute; top:9px; right:10px;}
 .content .msg-recommended {display:none; position:absolute; bottom:34px; left:-24px; width:124px; height:65px; background: url(../images/msg_recommended.png) no-repeat; text-align:left; text-indent:-10000px; }
+.content .share {display:nonee; position:absolute; bottom:34px; left:-24px; width:124px; height:65px; background: url(../images/bg_share.png) no-repeat; text-align:left; text-indent:-10000px;}
+.content .share li a {background:none; display:block; width:38px; height:38px;}
+.content .share li a.facebook {margin:10px 0 0 20px;}
+.content .share li a.twitter {margin:10px 0 0 10px;}
 
 .content .counts {clear:both; position:relative; top:-2px; left:-2px;}
 .content .counts li {float:left; background: url(../images/bg_detail_counts.png) no-repeat; height:12px; font-size:11px; color:#999;}

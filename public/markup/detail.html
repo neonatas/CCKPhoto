@@ -73,7 +73,14 @@
 				<a class="btn-recommend" href="">추천하기</a>
 				<p class="msg-recommended">추천되었습니다!</p>
 			</li>
-			<li><a class="btn-share" href="">공유하기</a></li>
+			<li>
+				<a class="btn-share" href="">공유하기</a>
+				<ul class="share">
+					<li><a class="facebook" href="http://www.facebook.com/sharer/sharer.php?u=<?='http://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']?>?pid=<?=$pid?>" target="_blank" >Facebook</a></li>
+					<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+					<li><a class="twitter" href="">Twitter</a></li>
+				</ul>
+			</li>
 		</ul>
 		<ul class="counts">
 			<li class="hit">1234</li>
