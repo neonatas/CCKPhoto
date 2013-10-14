@@ -46,7 +46,7 @@
 			</fieldset>
 			</form>
 			<ul class="login-about">
-				<li><a href=""><img src="../images/text_find_passwd.png" alt="비밀번호 찾기" /></a></li>
+				<li><a href="" onclick="$.dialog.open('popupPasswordSend'); return false;"><img src="../images/text_find_passwd.png" alt="비밀번호 찾기" /></a></li>
 				<li><a href="join.php"><img src="../images/text_go_join.png" alt="회원 가입하기" /></a></li>
 			</ul>
 		</div>

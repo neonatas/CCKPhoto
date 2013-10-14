@@ -99,4 +99,31 @@ $(function() {
 		history.go(-1);
 		return false;
 	});
+
+	//비밀번호 찾기
+	$('#find_passwd_form .btn-send').click( function() {
+		var $objEmail = $('#passwdEmail');
+		var l_email = $objEmail.val();
+
+		if( l_email == "" ) {
+			alert("가입시 입력한 이메일을 입력하세요.");
+			$objEmail.focus();
+		} else {
+			$.ajax({
+				url:'/ajax/find.passwd.php',
+				type:'post',
+				dataType:'json',
+				data:{ email: l_email },
+				success:function(data) {
+					alert(data.msg);
+					if( data.r == "success" ) {
+						$.dialog.close(); 
+					} else {
+						$objEmail.val('');
+					}
+				}
+			});
+		}
+		return false;
+	});
 });
