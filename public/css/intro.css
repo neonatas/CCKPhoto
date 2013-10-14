@@ -1,0 +1,10 @@
+	#content.intro { padding-top:115px; position:relative; width:100%; }
+	#introArea { width: 800px; margin:0 auto; margin-bottom:40px; }
+	#introArea h2 {height:47px; width:100%; border-bottom:2px solid #009bb0; text-align:left; }
+	#introArea dd { width: 780px; border:10px solid #201f1f; text-align:center; }
+	#introArea dd div{ width: 706px; margin:0 auto; text-align:center; position:relative;}
+	#introArea dd .text-1 { padding-top:40px; }
+	#introArea dd .text-2 { padding-top:57px; }
+	#introArea dd .text-3 { padding-top:47px; }
+	#introArea dd .text-4 { padding:52px 0 39px 0; border-bottom:2px solid #009bb0; }
+	#introArea dd .text-5 { padding:31px 0 40px 0; text-align:left; }

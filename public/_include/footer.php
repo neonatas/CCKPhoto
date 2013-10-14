@@ -10,8 +10,8 @@
 				<a class="s3" href="">ART TECH</a>
 			</p>
 			<p class="links">
-				<a class="agreement" href="">이용약관</a>
-				<a class="privacy" href="">개인정보 취급방침</a>
+				<a class="agreement" href="/other/agreement.php">이용약관</a>
+				<a class="privacy" href="/other/privacy.php">개인정보 취급방침</a>
 			</p>
 		</div>
         <? if($pageCode=="gallery") {?>

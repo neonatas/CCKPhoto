@@ -36,7 +36,6 @@ $(document).on('click', '.btn-recommend', function(e) {
 			pid:$(this).data('pid')
 		},
 		success:function(data) {
-			//alert(data.msg);
 			var $this = $(this);;
 			if( data.type == 1 ) {
 				$this.addClass('on');
@@ -47,8 +46,12 @@ $(document).on('click', '.btn-recommend', function(e) {
 					},1000);
 				});
 			} else if ( data.type == 2 ) {
-				$this.removeClass('on');
-			} else {
+				alert(data.msg);
+				//$this.removeClass('on');
+			} else if (data.type == -1) {
+				if (confirm('로그인 후에 추천할 수 있습니다. 로그인 페이지로 이동하시겠습니까?')) {
+					document.location.href = '/member/login.php?re_url=' + document.location.href;
+				}
 			}
 			$('.counts .recommended').text(data.count);
 		},
@@ -68,5 +71,17 @@ function showValidSuccess(obj){
 	setTimeout(function(){	$(obj).hide();}, 0);
 	
 	$(obj).siblings('.text').removeClass('failed');
+	return false;
+}
+
+//go facebook
+function joinFacebook(re_url) {
+	location.href = '/member/oauth/facebook/redirect.php?re_url=' + re_url;
+	return false;
+}
+
+//go twitter
+function joinTwitter(re_url) {
+	location.href = '/member/oauth/twitter/redirect.php?re_url=' + re_url;
 	return false;
 }
