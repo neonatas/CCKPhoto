@@ -63,7 +63,7 @@ class clsPhotos {
     function checkExtension( $ext ) {
         $arr_ext = explode(',',VALID_PHOTO_EXT);
         
-        if ( array_search($ext, $arr_ext) === false )
+        if ( array_search(strtolower($ext), $arr_ext) === false )
             return false;
 
         return true;
@@ -167,7 +167,7 @@ class clsPhotos {
 
 		if( $this->isRecommend($photo_id, $member_idx) ) { 
 			$result['r'] = 'duplication';
-			$result['msg'] = "";
+			$result['msg'] = "이미 추천 하셨습니다.";
 		} else {
 			$query = "insert into recommend ( photo_id, member_idx ) values ( '".$photo_id."','".$member_idx."' )";
 			$res = mysql_query($query,$this->conn) or die ("insert query error!!");
@@ -175,7 +175,7 @@ class clsPhotos {
             $query = "update ".$this->table." set recommend = recommend + 1 where id = ".$photo_id;
             $res = mysql_query($query,$this->conn) or die ("incrementRecommend update query error!!");
 
-            if( $res ) {
+            if( @mysql_affected_rows() > 0 ) {
 				$result['r'] = 'success';
 				$result['msg'] = "추천 하였습니다.";
 				$result['count'] = $this->getRecommendCount($photo_id);

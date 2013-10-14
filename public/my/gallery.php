@@ -19,7 +19,7 @@
         header('Location: /member/login.php?re_url='.$_SERVER['REQUEST_URI']);
     }
 
-    $member_idx = $_SESSION['USER_IDX'];
+//    $member_idx = $_SESSION['USER_IDX'];
     $member_data = $Member->getData($member_idx);
 
     require_once "../_include/header.php";

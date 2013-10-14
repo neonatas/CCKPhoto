@@ -20,7 +20,7 @@
 		<h1><a href="/">Share & Photo</a></h1>
 
 		<ul id="nav">
-			<li class="intro"><a href="#">캠패인소개</a></li>
+			<li class="intro <?if($pageCode=="intro") echo "on";?>"><a href="/intro.php">캠패인소개</a></li>
 			<li class="exhibition"><a href="#">전시회</a></li>
 			<li class="workshop"><a href="#">워크샵</a></li>
             <? if($isLogin) { ?>

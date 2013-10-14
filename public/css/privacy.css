@@ -1,0 +1,6 @@
+	#content.privacy { padding-top:80px; }
+	#privacyArea { width: 953px; border:10px solid #201f1f; position:relative; margin:0 auto; margin-bottom:40px; }
+	#privacyArea dl { width: 800px; padding:20px 0 60px 0; margin:0 auto;  }
+	#privacyArea h2 {height:47px; width:100%; border-bottom:2px solid #009bb0; text-align:left; }
+	#privacyArea dd { padding-top:30px; height:900px; overflow:auto; line-height:15px; font-size:10pt; color:#bbb; }
+	#privacyArea dd pre { word-wrap: break-word;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-break:break-all; }

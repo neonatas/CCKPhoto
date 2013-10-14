@@ -65,7 +65,7 @@ $(function() {
 			var l_passwd = $('#loginPasswd').val();
 
 			$.ajax({
-				url:'login_proc.php',
+				url:'/member/login_proc.php',
 				type:'post',
 				dataType:'json',
 				data:{
@@ -84,8 +84,11 @@ $(function() {
 						}
 					}
 				},
-				error:function(e) {
-					console.log(e);
+				error:function(request,status,error) {
+					console.log(request.code);
+					console.log(request.responseText);
+					console.log(status);
+					console.log(error);
 				}
 			});
 		}
@@ -97,15 +100,3 @@ $(function() {
 		return false;
 	});
 });
-
-//go facebook
-function joinFacebook(re_url) {
-	location.href = '/member/oauth/facebook/redirect.php?re_url=' + re_url;
-	return false;
-}
-
-//go twitter
-function joinTwitter(re_url) {
-	location.href = '/member/oauth/twitter/redirect.php?re_url=' + re_url;
-	return false;
-}

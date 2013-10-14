@@ -151,3 +151,4 @@ a.more {display:block; clear:both; width:267px; height:55px; background: url(../
 .btn-cancel {display:inline-block; border:none; width:77px; height:27px; background: url(../images/btn_cancel.png) no-repeat; text-indent: -10000px; cursor:pointer; text-align:left; }
 .btn-ok {display:inline-block; border:none; width:77px; height:27px; background: url(../images/btn_ok.png) no-repeat; text-indent: -10000px; cursor:pointer; text-align:left;}
 .btn-close {display:inline-block; border:none; width:33px; height:33px; background: url(../images/btn_close.png) no-repeat; text-indent: -10000px; cursor:pointer; text-align:left;}
+.btn-recommend {cursor:pointer;}

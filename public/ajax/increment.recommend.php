@@ -17,19 +17,20 @@
      } else {
          if( $Photo->isRecommend($pid, $_SESSION['USER_IDX']) ) {
             $result['type'] = 2;
-            $re_recomm = $Photo->decrementRecommend($pid, $_SESSION['USER_IDX']);
+            $result['msg'] = "이미 추천하셨습니다.";
+            //$re_recomm = $Photo->decrementRecommend($pid, $_SESSION['USER_IDX']);
          } else {
             $result['type'] = 1;
             $re_recomm = $Photo->incrementRecommend($pid, $_SESSION['USER_IDX']);
-         }
 
-        if( $re_recomm['r'] == "success" ) {
-            $result['msg'] = $re_recomm['msg'];
-            $result['count'] = $re_recomm['count'];
-        } else {
-            $result['type'] = -3;
-            $result['msg'] = $re_recomm['msg'];
-        }
+            if( $re_recomm['r'] == "success" ) {
+                $result['msg'] = $re_recomm['msg'];
+                $result['count'] = $re_recomm['count'];
+            } else {
+                $result['type'] = -3;
+                $result['msg'] = $re_recomm['msg'];
+            }
+         }
      }
 
     echo json_encode($result);

@@ -2,7 +2,7 @@
     $pageCode = "login";
 
     $strCSS = "<link rel='stylesheet' media='all' type='text/css' href='/css/".$pageCode.".css' />";
-    $strJS = "<script type='text/javascript' src='../js/jquery.validate.js'></script>";
+    $strJS = "<script type='text/javascript' src='/js/jquery.validate.js'></script>";
     $strJS .= "<script type='text/javascript' src='/js/".$pageCode.".js'></script>";
 
 
