@@ -30,6 +30,7 @@
 				<img src="../images/sample/profile.png" width="63" height="63" />
 				<span class="title"><em class="name">이진우</em> <span>님의 갤러리</span></span>
 				<a class="btn-profile-update" href="" onclick="$.dialog.open('popupProfileUpdate'); return false;">내 프로필 수정</a>
+				<a class="btn-password-change" href="" onclick="$.dialog.open('popupPasswordChange'); return false;">비밀번호 변경</a>
 			</div>
 		</div>
 		<div class="no-result">
@@ -220,6 +221,24 @@
 					<legend>프로필 사진 등록</legend>
 					<span class="file"><input type="file" name="photo"  onchange="document.getElementById('fileName').value = this.value.split(/[/\\]/).reverse()[0]" /></span>
 					<input id="fileName" class="text-fn" type="text" readonly />
+				</fieldset>
+				<input class="btn-ok" type="submit" value="확인" />
+				<input class="btn-cancel" type="button" value="취소"  onclick="$.dialog.close(); return false;" />
+			</form>
+			<a class="btn-close" href="" onclick="$.dialog.close(); return false;">close</a>
+		</div>
+		<div id="popupPasswordChange" class="popup">
+			<form>
+				<fieldset class="nick">
+					<legend>새 비밀번호 입력</legend>
+					<input class="text-passwd" type="text" name="passwd" placeholder="6자 이상의 숫자를 입력해주세요" />
+					<label for="passwdConfirm">비밀번호 확인</label>
+					<input class="text-passwd-confirm" type="text" id="passwdConfirm" name="passwdConfirm" placeholder="6자 이상의 숫자를 입력해주세요" />
+				</fieldset>
+				<fieldset class="photo">
+					<legend>탈퇴하기</legend>
+					<<span id="leaveAgreement"></span>
+					<input type="hidden" readonly />
 				</fieldset>
 				<input class="btn-ok" type="submit" value="확인" />
 				<input class="btn-cancel" type="button" value="취소"  onclick="$.dialog.close(); return false;" />

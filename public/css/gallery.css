@@ -5,7 +5,9 @@
 #content.gallery .profile .title {display:block; float:left; padding:34px 0 0 18px;}
 #content.gallery .profile .title span {background: url(../images/bg_gallery_title.png) 0 0 no-repeat; text-indent:-10000px; display:block; float:left; width:77px; height:20px; margin:12px 0 0 11px;}
 #content.gallery .profile .name {font-size:30px; display:block; color:#fff; float:left; }
-#content.gallery .profile a {display:block; float:left; background: url(../images/bg_gallery_title.png) right 0 no-repeat;text-indent:-10000px; width:90px; height:20px; margin-top:46px;}
+#content.gallery .profile a.btn-profile-update {display:block; float:left; background: url(../images/bg_gallery_title.png) right 0 no-repeat;text-indent:-10000px; width:90px; height:20px; margin-top:46px;}
+#content.gallery .profile a.btn-password-change {display:block; float:right; background: url(../images/text_password_change.png) 0 0 no-repeat;text-indent:-10000px; width:83px; height:14px; margin:48px 30px 0 0;}
+
 /*
 <span><em class="name">이진우</em> 님의 갤러리</span>
 */
@@ -44,3 +46,22 @@
 #popupProfileUpdate .btn-ok {position:absolute; right:129px; bottom:20px;}
 #popupProfileUpdate .btn-cancel {position:absolute; right: 40px; bottom: 20px;}
 #popupProfileUpdate .btn-close {position:absolute; top:10px; right:10px;}
+
+#popupPasswordChange {background:#bbb url(../images/bg_password_change.png) 42px 43px no-repeat; width:390px; height:308px; position:relative;}
+#popupPasswordChange legend, #popupPasswordChange label {display:none;}
+	#leaveAgreement { width:20px; height:20px; position:absolute; right:80px; bottom:71px; display:line-block;  background:url("../images/btn_check_leave.png") no-repeat; cursor:pointer;}
+	#leaveAgreement.check {  background-position:0 -20px;}
+.text-passwd, .text-passwd-confirm  {
+	position:absolute; width:300px;height:34px;
+	margin:0; background-color:transparent; border:none; color:black; font-size:13px; font-weight:bold; line-height:34px;
+	padding: 0 0 0 10px;
+}
+.text-passwd {
+	left:43px; top: 68px;
+}
+.text-passwd-confirm {
+	left:43px; top: 146px;
+}
+#popupPasswordChange .btn-ok {position:absolute; right:129px; bottom:20px;}
+#popupPasswordChange .btn-cancel {position:absolute; right: 40px; bottom: 20px;}
+#popupPasswordChange .btn-close {position:absolute; top:10px; right:10px;}
