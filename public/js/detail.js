@@ -8,12 +8,31 @@
 
 $( function() {
 	$('.btn-info').click(function(){
-		$(this).siblings('.photo-info').toggle();
+		var pop = $(this).next('.photo-info')[0];
+		$(this).closest('ul').find('.pop').each(function(i, obj) {
+			if (pop == obj) {
+				$(obj).toggle();
+			} else {
+				$(obj).hide();
+			}
+		});
 		return false;
 	});
 
 	$('.photo-info .btn-close').click(function(){
 		$('.photo-info').hide();
+		return false;
+	});
+
+	$('.btn-share').click(function() {
+		var pop = $(this).next('.share')[0];
+		$(this).closest('ul').find('.pop').each(function(i, obj) {
+			if (pop == obj) {
+				$(obj).toggle();
+			} else {
+				$(obj).hide();
+			}
+		});
 		return false;
 	});
 });

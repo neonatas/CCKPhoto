@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-
+	<?=$strMeta?>
 	<title>Share & Photo</title>
 	<link rel="stylesheet" media="all" type="text/css" href="/css/common.css" />
     <?=$strCSS?>

@@ -40,6 +40,7 @@ $(document).on('click', '.btn-recommend', function(e) {
 			if( data.type == 1 ) {
 				$this.addClass('on');
 				var $msg = $this.next('.msg-recommended');
+				$(this).closest('ul').find('.pop').hide();
 				$msg.fadeIn('slow', function() {
 					setTimeout(function() {
 						$msg.fadeOut('slow');
