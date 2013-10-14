@@ -17,18 +17,18 @@ hr { width:100%; border:none; margin:0; padding:0; height:0; border-top:2px soli
 #wrap h1 {position:relative; z-index:1; width:307px;height:307px; background:url(../images/logo.png);}
 #wrap h1 a {display:block; width:200px; height:170px; text-indent:-10000px;}
 #nav {position:absolute; right:29px; top:13px;}
-#nav li {float:left; background: url(../images/nav.png) no-repeat;}
+#nav li {float:left; background: url(../images/nav.png) no-repeat; margin-left:30px;}
 #nav li a {color:white; display:block;  height:29px; text-indent:-10000px;}
 
-#nav li.intro {margin-right:58px;background-position:0 -43px;}
+#nav li.intro {background-position:0 -43px;}
 #nav li.intro.on, #nav li.intro:hover {background-position:0 0;}
 #nav li.intro a {width:64px;}
 
-#nav li.exhibition {margin-right:58px;background-position:-122px -43px;}
+#nav li.exhibition {background-position:-122px -43px;}
 #nav li.exhibition.on, #nav li.exhibition:hover {background-position:-122px 0;}
 #nav li.exhibition a {width:37px;}
 
-#nav li.workshop {margin-right:59px;background-position:-217px -43px;}
+#nav li.workshop {background-position:-217px -43px;}
 #nav li.workshop.on, #nav li.workshop:hover {background-position:-217px 0;}
 #nav li.workshop a {width:37px;}
 
@@ -36,7 +36,7 @@ hr { width:100%; border:none; margin:0; padding:0; height:0; border-top:2px soli
 #nav li.login.on, #nav li.login:hover {background-position:-313px 0; position:relative;}
 #nav li.login a {width:55px;}
 
-#nav li.join {margin-right:18px; background-position:-367px -43px;}
+#nav li.join {margin-left:0;background-position:-367px -43px;}
 #nav li.join.on, #nav li.join:hover {background-position:-367px 0; position:relative;}
 #nav li.join a {width:65px;}
 
@@ -44,13 +44,17 @@ hr { width:100%; border:none; margin:0; padding:0; height:0; border-top:2px soli
 #nav li.logout.on, #nav li.logout:hover {background-position:-570px 0; position:relative;}
 #nav li.logout a {width:55px;}
 
-#nav li.my {margin-right:18px; background-position:-624px -43px;}
+#nav li.my {margin-left:0;background-position:-624px -43px;}
 #nav li.my.on, #nav li.my:hover {background-position:-624px 0; position:relative;}
 #nav li.my a {width:65px;}
 
-#nav li.about {background-position:-450px -43px;}
-#nav li.about.on, #nav li.about:hover {background-position:-450px 0;}
+#nav li.about {background: url(../images/nav2.png) 0 0 no-repeat; width:65px;}
+#nav li.about.on, #nav li.about:hover {background-position:0 -30px;}
 #nav li.about a {width:105px;}
+
+#nav li.sharehub {background: url(../images/nav2.png) -93px 0px no-repeat; width:65px;}
+#nav li.sharehub.on, #nav li.sharehub:hover {background-position:-93px -30px;}
+#nav li.sharehub a {width:105px;}
 
 #header hr { position:absolute; top:49px;}
 
