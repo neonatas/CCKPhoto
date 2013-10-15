@@ -37,6 +37,7 @@
     define('PATH_PHOTOS_FOLDER','/photos/');
     define('PATH_PHOTOS','http://'.$_SERVER['SERVER_NAME'].PATH_PHOTOS_FOLDER);
     define('PATH_PHOTOS_UPLOAD',$_SERVER['DOCUMENT_ROOT'].PATH_PHOTOS_FOLDER);
+    define('PATH_FILES_UPLOAD',$_SERVER['DOCUMENT_ROOT']."/files/");
 
     //Photo setting
     define('MAX_PHOTO_SIZE','100000000'); //100메가

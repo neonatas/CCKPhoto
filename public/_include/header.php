@@ -21,10 +21,10 @@
 
 		<ul id="nav">
 			<li class="intro <?if($pageCode=="intro") echo "on";?>"><a href="/intro.php">캠패인소개</a></li>
-			<li class="exhibition"><a href="#">전시회</a></li>
-			<li class="workshop"><a href="#">워크샵</a></li>
-			<li class="about"><a href="http://cckorea.org">About CCKorea</a></li>
-			<li class="sharehub"><a href="http://sharehub.kr">공유허브</a></li>
+			<li class="exhibition <?if($pageCode=="exhibition") echo "on";?>"><a href="/exhibition.php">전시회</a></li>
+			<li class="workshop <?if($pageCode=="workshop") echo "on";?>"><a href="/workshop.php">워크샵</a></li>
+			<li class="about"><a href="http://cckorea.org" target="_blink">About CCKorea</a></li>
+			<li class="sharehub"><a href="http://sharehub.kr" target="_blink">공유허브</a></li>
             <? if($isLogin) { ?>
                 <li class="logout"><a href="/member/logout.php">로그아웃</a></li>
                 <li class="my <?if($pageCode=="galley") echo "on";?>"><a href="/my/gallery.php?m_idx=<?=$_SESSION['USER_IDX']?>">마이갤러리</a></li>

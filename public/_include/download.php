@@ -3,18 +3,24 @@
 
     require_once('../../_lib/config.php');
 
-    $filename_r = ( trim($_GET['filename_r']) ) ? trim($_GET['filename_r']) : "";
-    $filename_o = ( trim($_GET['filename_o']) ) ? trim($_GET['filename_o']) : "";
+    $f_type = ( trim($_GET['t']) ) ? trim($_GET['t']) : "";
+    $name_r = ( trim($_GET['r']) ) ? trim($_GET['r']) : "";
+    $name_o = ( trim($_GET['o']) ) ? trim($_GET['o']) : "";
 
-    $file = PATH_PHOTOS_UPLOAD.$filename_r; //실제 파일명 또는 경로 
-    $dnfile = urlencode($filename_o); //다운받을 파일명
+    if( $f_type == "photo" )
+        $file = PATH_PHOTOS_UPLOAD.$name_r; //실제 파일명 또는 경로 
+    else
+        $file = PATH_FILES_UPLOAD.$name_r; //실제 파일명 또는 경로 
+
+    $dnfile = urldecode($name_o); //다운받을 파일명
+
 
     if(!file_exists($file)) {
         echo "해당 파일이나 경로가 존재하지 않습니다."; 
         exit;
     } else {
 
-        if(eregi("(MSIE 5.0|MSIE 5.1|MSIE 5.5|MSIE 6.0)", $HTTP_USER_AGENT))
+        if(preg_match("(MSIE 5.0|MSIE 5.1|MSIE 5.5|MSIE 6.0)", $HTTP_USER_AGENT))
         { 
             if(strstr($HTTP_USER_AGENT, "MSIE 5.5")) 
             { 

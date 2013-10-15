@@ -5,7 +5,7 @@
     
     $strCSS = "<link rel='stylesheet' media='all' type='text/css' href='/css/".$pageCode.".css' />";
     $strJS = "<script type='text/javascript' src='/js/main.js'></script>";
-    $strJS = "<script type='text/javascript' src='/js/".$pageCode.".js'></script>";
+    $strJS .= "<script type='text/javascript' src='/js/".$pageCode.".js'></script>";
 
 
     require_once('../_lib/config.php');
@@ -103,7 +103,7 @@
 	require_once "_include/header.php";
 ?>
 
-<div id="content" class="detail">
+<div id="content" class="<?=$pageCode?>">
 	<ul class="category">
 		<li class="c0 <?if (!$cate) echo 'on';?>"><a href="/">All</a></li>
 		<li class="c1 <?if ($cate == '1') echo 'on';?>"><a href="?cate=1">계절&amp;자연</a></li>
@@ -128,7 +128,7 @@
 			<span class="next <? if($next_id==""){echo "dimmed";}?>" <?=$next_link?>>next</span>
 		</div>
 		<ul class="actions">
-			<li><a class="btn-download" href="/_include/download.php?filename_r=<?=$photo_data['filename_r']?>&filename_o=<?=$photo_data['filename_o']?>">다운로드</a></li>
+			<li><a class="btn-download" href="/_include/download.php?t=photo&r=<?=$photo_data['filename_r']?>&o=<?=urlencode($photo_data['filename_o'])?>">다운로드</a></li>
 			<li>
 				<a class="btn-info" href="#">사진정보</a>
 				<div class="photo-info pop" >
