@@ -1,13 +1,13 @@
 #content.workshop { padding-top:110px; position:relative; width:100%; }
-#workshop { width: 800px; margin:0 auto; margin-bottom:40px; }
+#workshop { width: 800px; margin:0 auto; margin-bottom:40px; font-weight:bold; }
 #workshop h2 {height:46px; width:100%; border-bottom:2px solid #009bb0; text-align:left; }
 #workshop dd { width: 780px; border:10px solid #201f1f; text-align:center; }
 #workshop p {font-size:12px; line-height:19px; color:#bbb;}
 #workshop .title1 {margin:36px 0 44px 0;}
 #workshop table {margin:10px auto 0; clear:both;}
 #workshop .table1 {margin-top:20px;}
-#workshop th {color:#009bb0; text-align:right; padding-right:8px; vertical-align:top; font-size:11px;line-height:16px;}
-#workshop td {color:#ddd; text-align:left; font-size:11px; line-height:16px;}
+#workshop th {color:#009bb0; text-align:right; padding-right:8px; vertical-align:top; font-size:11px; font-weight:bold; line-height:16px;}
+#workshop td {color:#ddd; text-align:left; font-size:11px; font-weight:bold; line-height:16px;}
 #workshop td span {display:block; padding-top:4px;}
 #workshop td span.small {font-size:9px;}
 #workshop dd div{ width: 706px; margin:0 auto; text-align:center; position:relative;}
@@ -22,7 +22,7 @@
 #workshop .schedule td {color:#ddd;border-bottom:2px solid #005c69; padding:16px 0 8px 20px; }
 #workshop .schedule tr.on td {border-bottom:none;}
 #workshop table .detail {display:none;}
-#workshop table .detail td {padding:12px 0; background-color:rgba(204,204,204,0.5);}
+#workshop table .detail td {padding:12px 0; background-color:rgba(204,204,204,0.5);  font-weight:normal; }
 #workshop .detail hr {border:none; border-top:1px dashed #bbb; margin:5px 0 30px;}
 #workshop .detail th {color:#005c69; text-align:right; vertical-align:top; font-size:12px; line-height:16px; background:none;padding:0 0 5px;}
 #workshop .detail table td {color:#ddd; text-align:left; font-size:12px; line-height:16px; border:none; padding:0 0 5px 10px; background:none;}

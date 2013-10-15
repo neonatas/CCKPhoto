@@ -5,11 +5,11 @@
 #introArea div.desc { color:#bbb; line-height:18px; font-size:12px; font-weight:bold; padding-top:14px; }
 #introArea div.btn-area { padding-top:14px; }
 #introArea div.area dd { border:0; padding:0; }
-#introArea div.area table { width:580px;  font-size:11px; margin:0 auto; }
+#introArea div.area table { width:580px; margin:0 auto; }
 #introArea div.area table caption { display:none; }
-#introArea div.area table th{ width:220px; text-align:right; font-weight:bold;  color:#009bb0; vertical-align:top; }
+#introArea div.area table th{ width:220px; text-align:right; font-size:11px; font-weight:bold; line-height:16px; color:#009bb0; vertical-align:top; }
 #introArea div.area table th span { width:57px; display:inline-block; color:#777; }
-#introArea div.area table td{ padding-left:10px; text-align:left; font-weight:bold;  color:#bbb; }
+#introArea div.area table td{ padding-left:10px; text-align:left; font-size:11px; font-weight:bold; line-height:16px; color:#bbb; }
 #introArea div.area table td a { color:#cccc00; text-decoration:underline; font-style:italic; }
 #introArea .sub-area2 { padding:48px 0 60px; }
 #introArea .sub-area2 span { color:#fffefe; }
