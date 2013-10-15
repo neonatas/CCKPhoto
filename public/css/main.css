@@ -1,8 +1,8 @@
 #content.main {position:relative;padding-top:265px;}
-#content.main .top {position:absolute;width:100%; top:0;left:0; }
+#content.main .top {position:absolute;width:100%; top:5px;left:0; }
 #content.main .top img {position:absolute; top:49px; right:31px;}
-#content.main .category {float:left; width:516px;padding:19px 0 0 30px;}
-.btn-upload {display:block; width:245px; height:52px; background: url(../images/btn_upload.png) no-repeat; text-indent:-10000px;}
+#content.main .category {float:left; width:572px;padding:19px 0 0 30px;}
+.btn-upload {display:block; width:172px; height:52px; background: url(../images/btn_upload.png) no-repeat; text-indent:-10000px;}
 #content.main .btn-upload {float:left;}
 #content.main form {float:right; padding:18px 30px 0 0;}
 #content.main fieldset {float:left;}

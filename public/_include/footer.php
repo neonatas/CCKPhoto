@@ -5,14 +5,16 @@
 			</p>
 			<p class="sponsor">
 				<span>후원</span>
-				<a class="s1" href="">공유 서울</a>
-				<a class="s2" href="">한국 스마트 카드</a>
-				<a class="s3" href="">ART TECH</a>
+				<a class="s1" href="http://www.seoul.go.kr/main/index.html">공유 서울</a>
+				<a class="s2" href="http://www.koreasmartcard.co.kr">한국 스마트 카드</a>
+				<a class="s3" href="http://www.arttech.or.kr">ART TECH</a>
 			</p>
 			<p class="links">
 				<a class="agreement" href="/other/agreement.php">이용약관</a>
 				<a class="privacy" href="/other/privacy.php">개인정보 취급방침</a>
 			</p>
+			<a class="license" rel="license" href="http://creativecommons.org/licenses/by/2.0/kr/">CC-By</a>
+			<span class="license-desc">CCKOREA에 의해 작성된 SharePhoto 웹사이트는 크리에이티브 커먼즈 저작자표시 2.0 대한민국 라이선스에 따라 이용할 수 있습니다.</span>
 		</div>
         <? if($pageCode=="gallery" ) {?>
         <div id="popupContainer">

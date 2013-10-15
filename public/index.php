@@ -11,10 +11,11 @@
 ?>
 		<div id="content" class="main">
 			<div class="top">
-				<img src="../images/text_main.png" width="505" height="189" alt="함께 나누는 사진 베스트 포토를 추천해주세요! 투표 기간 : 2013. 10. 25 ~ 2013. 11. 10" />
+				<img src="../images/text_main.png" width="505" height="189" alt="함께 나누는 사진. " />
 			</div>
 			<ul class="category">
-				<li class="c1 <?if (!$cate || $cate == '1') echo 'on';?>"><a href="?cate=1">계절&amp;자연</a></li>
+			 	<li class="c0 <?if (!$cate) echo 'on';?>"><a href="/">All</a></li>
+				<li class="c1 <?if ($cate == '1') echo 'on';?>"><a href="?cate=1">계절&amp;자연</a></li>
 				<li class="c2 <?if ($cate == '2') echo 'on';?>"><a href="?cate=2">동,식물&amp;생태</a></li>
 				<li class="c3 <?if ($cate == '3') echo 'on';?>"><a href="?cate=3">도시&amp;삶</a></li>
 				<li class="c4 <?if ($cate == '4') echo 'on';?>"><a href="?cate=4">유적지&amp;문화</a></li>
@@ -42,7 +43,7 @@
 				</fieldset>
 			</form>
 			<div class="banner">
-				<a href="">내가 찍은 문화 유산 신청하기</a>
+				<a href="show.php">내가 찍은 문화 유산 신청하기</a>
 			</div>
 			<div class="no-result">
 				결과가 없습니다.

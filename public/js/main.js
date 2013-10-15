@@ -13,7 +13,7 @@ var count = 20;
 var loading = false;
 var load = function(start, count) {
 	loading = true;
-	var cate = PARAM['cate'] || '1';
+	var cate = PARAM['cate'] || '';
 	var sort = PARAM['sort'] || 'd';
 	var keyword = PARAM['keyword'] || '';
 
@@ -41,7 +41,7 @@ var load = function(start, count) {
 				<span class="title"><em>' + img.title + '</em></span>\
 			<img src="' + img.image + '" width="232" height="' + Math.floor(232*img.height/img.width) + '"/>\
 			</a>\
-			<a data-pid="' + img.id + '" class="btn-recommend recommend ' + (img.is_recommend == 'n' ? '' : 'on') + '" href="">\
+			<a data-pid="' + img.id + '" class="btn-recommend recommend ' + (img.is_recommend == 'n' ? '' : (img.is_recommend == 'y' ? 'on' : 'hide')) + '" href="">\
 			추천하기\
 			</a>').appendTo($ul);
 		}

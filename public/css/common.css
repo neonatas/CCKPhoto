@@ -71,14 +71,21 @@ hr { width:100%; border:none; margin:0; padding:0; height:0; border-top:2px soli
 #footer .sponsor a.s3 {margin-left:28px;width:118px;background-position:-634px 0;}
 #footer .sponsor a.s4 {margin-left:28px;width:214px;background-position:-782px 0;}
 
-#footer .links {display:block; height:38px; background:url(../images/icons_footer.png) -995px 32px no-repeat;}
-#footer .links a.agreement {margin-left:50px;width:44px;background-position:-1045px 0;}
+#footer .links {display:block; height:38px; background:url(../images/icons_footer.png) -996px 32px no-repeat; position:absolute; right:140px; top:-4px;}
+#footer .links a.agreement {margin-left:49px;width:44px;background-position:-1045px 0;}
 #footer .links a.privacy {margin-left:12px;width:90px;background-position:-1101px 0;}
-
+#footer .license, #footer .license-desc {background: url(../images/bg_footer2.png) no-repeat;}
+#footer .license {dispaly:block; width:99px; height:34px; background-position:-223px -5px; position:absolute; right:32px; top:16px;}
+#footer .license-desc {dispaly:block; width:322px; height:27px; background-position:-0 -47px; position:absolute; right:32px; top:59px;}
 #content {margin-top:-255px;}
 
 .category li {height:30px; margin-right:15px; float:left;background: url(../images/category.png) no-repeat;}
 .category li a {color:white; display:block;  height:30px; text-indent:-10000px;}
+
+.category li.c0 {background: url(../images/category_ALL.png) 0 0 no-repeat;}
+.category li.c0:hover {background-position:0 -60px;}
+.category li.c0.on, .category li.c1:active {background-position:0 -30px;}
+.category li.c0 a {width:16px;}
 
 .category li.c1 {background-position:0 0;}
 .category li.c1:hover {background-position:0 -30px;}
