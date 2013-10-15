@@ -48,9 +48,13 @@
                     <input type="hidden" name="type" />
                     <fieldset class="new-passwd">
                         <legend>새 비밀번호 입력</legend>
-                        <input class="text-passwd" type="text" name="passwd" id="newPasswd" placeholder="6자 이상의 숫자를 입력해주세요" />
+						<div class="passwd1">
+							<input class="text-passwd" type="password" name="passwd" id="newPasswd" placeholder="6자 이상의 숫자를 입력해주세요" />
+						</div>
                         <label for="passwdConfirm">비밀번호 확인</label>
-                        <input class="text-passwd-confirm" type="text" id="passwdConfirm" name="passwdConfirm" placeholder="6자 이상의 숫자를 입력해주세요" />
+						<div class="passwd2">
+							<input class="text-passwd-confirm" type="password" id="passwdConfirm" name="passwdConfirm" placeholder="6자 이상의 숫자를 입력해주세요" />
+						</div>
                     </fieldset>
                     <fieldset class="photo">
                         <legend>탈퇴하기</legend>

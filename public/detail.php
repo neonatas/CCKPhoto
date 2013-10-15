@@ -88,8 +88,19 @@
 			case "255": $Metering_mode = "Other"; break;
 			default: $Metering_mode = "Unknown"; break;
 	}
+      
+	$strMeta = '<meta property="og:title" content="Share & Photo : '.$photo_data['title'].'" />';
+	$strMeta .= '<meta property="og:type" content="article" />';
+	$strMeta .= '<meta property="og:image" content="'.PATH_PHOTOS_FOLDER.$photo_data['filename_r'].'" />';
+	$strMeta .= '<meta property="og:description" content="함께나누는 사진. 베스트 포토를 추천해주세요!" />';
 
-    require_once "_include/header.php";
+          
+	$strMeta .= '<meta name="twitter:card" content="summary" />';
+	$strMeta .= '<meta name="twitter:title" content="Share & Photo : '.$photo_data['title'].'" />';
+	$strMeta .= '<meta name="twitter:description" content="함께나누는 사진. 베스트 포토를 추천해주세요!" />';
+	$strMeta .= '<meta name="twitter:image" content="'.PATH_PHOTOS_FOLDER.$photo_data['filename_r'].'" />';
+
+	require_once "_include/header.php";
 ?>
 
 <div id="content" class="detail">
@@ -120,7 +131,7 @@
 			<li><a class="btn-download" href="/_include/download.php?filename_r=<?=$photo_data['filename_r']?>&filename_o=<?=$photo_data['filename_o']?>">다운로드</a></li>
 			<li>
 				<a class="btn-info" href="#">사진정보</a>
-				<div class="photo-info" >
+				<div class="photo-info pop" >
 					<table>
 						<caption>사진정보</caption>
 						<tbody>
@@ -140,10 +151,16 @@
             <? if( empty($_SESSION['USER_IDX']) || $_SESSION['USER_IDX'] != $photo_data['member_idx'] ) { ?>
 			<li>
 				<a class="btn-recommend <?if($Photo->isRecommend($pid,$_SESSION['USER_IDX']) ){ echo "on"; }?>" data-pid="<?=$pid?>" >추천하기</a>
-				<p class="msg-recommended">추천되었습니다!</p>
+				<p class="msg-recommended pop">추천되었습니다!</p>
 			</li>
             <? } ?>
-			<li><a class="btn-share" href="">공유하기</a></li>
+			<li>
+				<a class="btn-share" href="">공유하기</a>
+				<ul class="share pop">
+					<li><a class="facebook" href="http://www.facebook.com/sharer/sharer.php?u=<?='http://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']?>?pid=<?=$pid?>" target="_blank" >Facebook</a></li>
+					<li><a class="twitter" href="http://www.twitter.com/share?url=<?='http://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']?>?pid=<?=$pid?>">Twitter</a></li>
+				</ul>
+			</li>
 		</ul>
 		<ul class="counts">
 			<li class="hit"><?=number_format($photo_data['hits'])?></li>
