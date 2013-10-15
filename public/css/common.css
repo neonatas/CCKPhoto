@@ -82,7 +82,7 @@ hr { width:100%; border:none; margin:0; padding:0; height:0; border-top:2px soli
 .category li {height:30px; margin-right:15px; float:left;background: url(../images/category.png) no-repeat;}
 .category li a {color:white; display:block;  height:30px; text-indent:-10000px;}
 
-.category li.c0 {background: url(../images/category_ALL.png) 0 0 no-repeat;}
+.category li.c0 {background: url(../images/category_all.png) 0 0 no-repeat;}
 .category li.c0:hover {background-position:0 -60px;}
 .category li.c0.on, .category li.c1:active {background-position:0 -30px;}
 .category li.c0 a {width:16px;}
