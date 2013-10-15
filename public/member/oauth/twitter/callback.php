@@ -74,34 +74,13 @@ if (200 == $connection->http_code) {
 
     header('Location: '.$return_url);
 
-	//콘텐츠 IDX 가 넘어오면 즐겨찾기에 추가 후 My즐겨찾기 페이지로 이동
     /*
-	if( $c_idx != "" ) {
-		$Favorite = new clsFavorites( $DB->getConnection() );
-
-		$arr = array(
-			"m_idx"=>$_SESSION['USER_IDX'],
-			"c_idx"=>$c_idx,
-			"search_word"=>$keyword,
-			"tags"=>""
-		);
-		$f_result = $Favorite->save( $arr );
-		$f_idx = $f_result['idx']; //데이터가 있으면 callback 페이지에서 my즐겨찾기 페이지로 이동.
-
-		//회원가입에 동의 하지 않았다면 동의 페이지로 이동한다.
-		if( $_SESSION['USER_AGREE'] == "n" ) {
-			header('Location: /member/join_confirm.php?re_url=/my_favorite.php?f_idx='.$f_idx );
-		} else {
-			header('Location: /my_favorite.php?f_idx='.$f_idx);
-		}
-	} else {
 		//회원가입에 동의 하지 않았다면 동의 페이지로 이동한다.
 		if( $_SESSION['USER_AGREE'] == "n" ) {
 			header('Location: /member/join_confirm.php?re_url='.$return_url);
 		} else {
 			header('Location: '.$return_url);
 		}
-	}
     */
 
 } else {

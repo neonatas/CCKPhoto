@@ -51,7 +51,7 @@ class clsMembers {
 				$result['r'] = 'success';
 				$result['msg'] = "회원 가입이 완료되었습니다.";
 				$result['idx'] = mysql_insert_id();
-				$result['policy_agree'] = 'y';
+				$result['policy_agree'] = 'n';
                 $result['my_img'] = $my_img;
 			}
 		}

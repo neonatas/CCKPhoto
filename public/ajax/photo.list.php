@@ -27,6 +27,8 @@
     if( count($arr_photos) > 0 ) {
         foreach ($arr_photos as $p) {
             $is_recommend = ( $Photo->isRecommend($p['id'], $_SESSION['USER_IDX']) ) ? 'y':'n';
+            if( $p['member_idx'] == $_SESSION['USER_IDX'] ) $is_recommend = 'o';
+
             $file_info = $Photo->getPhotoInfo(PATH_PHOTOS.$p['filename_r']);
 
             $result[] = array(

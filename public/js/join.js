@@ -157,24 +157,12 @@ function check_agreement() {
 
 //go facebook
 function joinFacebook(re_url) {
-	var f = document.join_form;
-	if ( f.policyAgree.value == "y" ) {
-		location.href = '/member/oauth/facebook/redirect.php?re_url=' + re_url;
-		return true;
-	} else {
-		alert("이용약관 및 개인정보 취급방침에 동의해주세요.");
-		return false;
-	}
+	location.href = '/member/oauth/facebook/redirect.php?re_url=' + re_url;
+	return true;
 }
 
 //go twitter
 function joinTwitter(re_url) {
-	var f = document.join_form;
-	if ( f.policyAgree.value == "y" ) {
-		location.href = '/member/oauth/twitter/redirect.php?re_url=' + re_url;
-		return true;
-	} else {
-		alert("이용약관 및 개인정보 취급방침에 동의해주세요.");
-		return false;
-	}
+	location.href = '/member/oauth/twitter/redirect.php?re_url=' + re_url;
+	return true;
 }

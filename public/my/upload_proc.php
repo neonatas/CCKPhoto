@@ -129,12 +129,12 @@
             {
                 header('Location: '.$re_url);
             } else if( $result['r'] == 'error' ) {
-                //$flickr->photos_delete($photo_id);
+                $flickr->photos_delete($photo_id);
                 historyBack($result['msg']);
                 return;
             }
         } else {
-            //$flickr->photos_delete($photo_id);
+            $flickr->photos_delete($photo_id);
             historyBack(MSG_PHOTO_UPLOAD_FAILE);
         }
     }
