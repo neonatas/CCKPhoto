@@ -20,6 +20,9 @@
          if( $photo_data['member_idx'] == $_SESSION['USER_IDX'] ) {
                 $result['type'] = -3;
                 $result['msg'] = "본인이 올린 사진은 추천할 수 없습니다.";
+         } else if( $_SESSION['USER_AGREE'] != 'y' ) {
+                $result['type'] = -4;
+                $result['msg'] = "약관 동의를 하지않은 회원은 사진은 추천할 수 없습니다.";
          } else {    
              if( $Photo->isRecommend($pid, $_SESSION['USER_IDX']) ) {
                 $result['type'] = 2;

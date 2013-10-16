@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+	<title>Share & Photo</title>
+	<link rel="stylesheet" media="all" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" media="all" type="text/css" href="../css/join_c.css" />
+</head>
+<body>
+<div id="wrap">
+	<div id="bg"></div>
+	<div id="header">
+		<h1><a href="/">Share & Photo</a></h1>
+
+		<ul id="nav">
+			<li class="intro"><a href="">캠패인소개</a></li>
+			<li class="exhibition"><a href="">전시회</a></li>
+			<li class="workshop"><a href="">워크샵</a></li>
+			<li class="login"><a href="">로그인</a></li>
+			<li class="join on"><a href="">회원가입</a></li>
+			<li class="about"><a href="">About CCKorea</a></li>
+		</ul>
+		<hr />
+	</div>
+	<div id="content" class="join">
+		<div id="joinArea">
+			<h2><img src="../images/title_join.png" alt="회원가입" /></h2>
+			<p class="desc"><img src="../images/text_join_confirm_desc.png" alt="추가 정보를 입력해주시면 회원 가입이 완료됩니다." /></p>
+			<dl>
+				<dt><span>facebook 계정</span>으로 등록되었습니다.</dt>
+				<dd>
+					<img src="" alt="프로필 사진"/>
+					<span>닉네임</span>
+				</dd>
+			</dl>
+			<form name="join_form" id="join_form" action="" method="post">
+			<fieldset>
+				<div class="agreement-area">
+					<label for="agreement"><a href="#" class="link-provision">이용약관</a><span> 및 </span><a href="#" class="link-personal">개인정보 취급방침</a><span>에 동의합니다.</span></label>
+					<span id="joinAgreement"></span>
+					<input type="hidden" name="policyAgree"  id="policyAgree" />
+				</div>
+				<div class="button-area">
+					<img src="../images/btn_join_ok.png" alt="확인" class="btn-ok" /><img src="../images/btn_join_cancel.png" alt="취소" class="btn-cancel" />
+				</div>
+			</fieldset>
+			</form>
+		</div>
+	</div>
+	<div id="footer">
+		<p class="host">
+			<span>추최/추관</span>
+			<a href="">creative commons korea</a>
+		</p>
+		<p class="sponsor">
+			<span>후원</span>
+			<a class="s1" href="">공유 서울</a>
+			<a class="s2" href="">한국 스마트 카드</a>
+			<a class="s3" href="">ART TECH</a>
+		</p>
+		<p class="links">
+			<a class="agreement" href="">이용약관</a>
+			<a class="privacy" href="">개인정보 취급방침</a>
+		</p>
+	</div>
+</div>
+
+<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.js"></script>
+<script type="text/javascript" src="../js/join.js"></script>
+</body>
+</html>

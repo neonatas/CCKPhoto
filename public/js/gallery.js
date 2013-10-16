@@ -212,12 +212,10 @@ $(function() {
 		rules: {
 			passwd: {
 			   required: true,
-			   number: true,
 			   minlength: 6
 		   },
 			passwdConfirm: {
 			   required: true,
-			   number: true,
 			   minlength: 6,
 			   equalTo: '#newPasswd'
 		   }
@@ -225,14 +223,12 @@ $(function() {
 
 		messages: {  
 			passwd: {
-				required: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
-				number: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
-				minlength: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); }
+				required: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); },
+				minlength: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); }
 			},
 			passwdConfirm: {
-				required: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
-				number: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
-				minlength: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
+				required: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); },
+				minlength: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); },
 				equalTo: function(r,el) { return showValidError( el, '비밀번호가 일치하지 않습니다, 다시 입력해주세요.' ); }
 			}
 		},

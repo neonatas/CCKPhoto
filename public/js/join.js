@@ -84,12 +84,10 @@ $(function() {
 			},
 			joinPasswd: {
 			   required: true,
-			   number: true,
 			   minlength: 6
 		   },
 			joinPasswdConfirm: {
 			   required: true,
-			   number: true,
 			   minlength: 6,
 			   equalTo: '#joinPasswd'
 		   },
@@ -105,14 +103,12 @@ $(function() {
 				remote: function(r,el){ return showValidError( el, '입력하신 이메일 이미 등록되었습니다.' ); }
 			},
 			joinPasswd: {
-				required: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
-				number: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
-				minlength: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); }
+				required: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); },
+				minlength: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); }
 			},
 			joinPasswdConfirm: {
-				required: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
-				number: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
-				minlength: function(r,el) { return showValidError( el, '6자 이상의 숫자를 입력해주세요' ); },
+				required: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); },
+				minlength: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); },
 				equalTo: function(r,el) { return showValidError( el, '비밀번호가 일치하지 않습니다, 다시 입력해주세요.' ); }
 			},
 			joinNickName: {

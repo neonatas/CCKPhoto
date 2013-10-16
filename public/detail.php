@@ -101,6 +101,14 @@
 	$strMeta .= '<meta name="twitter:image" content="'.PATH_PHOTOS_FOLDER.$photo_data['filename_r'].'" />';
 
 	require_once "_include/header.php";
+
+	$width = $file_info['COMPUTED']['Width'];
+	$height = $file_info['COMPUTED']['Height'];
+
+	if ($width > 800) {
+		$height = floor($height * 800 / $width);
+		$width = 800;
+	}
 ?>
 
 <div id="content" class="<?=$pageCode?>">
@@ -123,7 +131,7 @@
 			<span class="author">by <?=$photo_data['nickname']?></span>
 		</h2>
 		<div class="photo">
-			<img src="<?=PATH_PHOTOS_FOLDER.$photo_data['filename_r']?>" width="<?=$file_info['COMPUTED']['Width']?>"  />
+			<img src="<?=PATH_PHOTOS_FOLDER.$photo_data['filename_r']?>" width="<?=$width?>"  height="<?=$height?>"  />
 			<span class="prev <? if($prev_id==""){echo "dimmed";}?>" <?=$prev_link?>>prev</span>
 			<span class="next <? if($next_id==""){echo "dimmed";}?>" <?=$next_link?>>next</span>
 		</div>
