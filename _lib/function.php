@@ -1,6 +1,18 @@
 <?
     require_once("config.php");
 
+    function checkAgreementLocation($agree, $return_url) {
+        $r_url = "/";
+
+        if( $agree == "y" ) {
+            $r_url = $return_url;
+        } else {
+            $r_url = "/member/join_confirm.php?re_url=".$return_url;
+        }
+
+        header('Location: '.$r_url);
+    }
+
     function getStringCCL($num) {
         switch( $num ) {
             case FLICKR_BY_NC_SA:

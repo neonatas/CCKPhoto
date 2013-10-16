@@ -7,6 +7,7 @@ require_once('../../../../_lib/config.php');
 
 require_once('../../../../_lib/class.dbConnect.php');
 require_once('../../../../_lib/class.members.php');
+require_once('../../../../_lib/function.php');
 
 // Create our Application instance (replace this with your appId and secret).
 $facebook = new Facebook(array(
@@ -47,16 +48,9 @@ if ( $user ) {
 		header('Location: ./clearsessions.php');
 	}
 
-    header('Location: '.$return_url);
 
-/*
-		//회원가입에 동의 하지 않았다면 동의 페이지로 이동한다.
-		if( $_SESSION['USER_AGREE'] == "n" ) {
-			header('Location: /member/join_confirm.php?re_url='.$return_url);
-		} else {
-			header('Location: '.$return_url);
-		}
-*/
+    //회원가입에 동의 하지 않았다면 동의 페이지로 이동한다.
+    checkAgreementLocation($_SESSION['USER_AGREE'], $return_url);
 
 } else {
 	/* Save HTTP status for error dialog on connnect page.*/

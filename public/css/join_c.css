@@ -1,0 +1,22 @@
+	#content.join { padding-top:115px; }
+	#joinArea { width:545px; margin:0 auto; text-align:center; font-size:10pt; position:relative; padding-bottom:40px; }
+	#joinArea h2 {height:41px; width:100%; border-bottom:2px solid #009bb0; text-align:left; }
+	#joinArea .desc { text-align:left; color:#cdcdcd; padding-top:13px; }
+	#joinArea dl { border:10px solid #201f1f;  border-top:1px solid #000; text-align:left;  font-size:12px; font-weight:bold; margin-top:22px;}
+	#joinArea dl dt { height:38px; line-height:38px; padding-left:10px;  background-color:#201f1f; color:#bbb; } 
+	#joinArea dl dt span { color:#3d5b9d; }
+	#joinArea dl dd { height:60px; line-height:60px; padding-left:10px;  }
+	#joinArea dl dd img { width:46px; height:46px; border:1px solid #707070; }
+	#joinArea dl dd span { display:inline-block; padding-left:12px; }
+	#joinArea form { padding-top:19px; }
+	#joinArea .agreement-area { text-align:right; position:relative; }
+	#joinArea .agreement-area label { display:inline-block; width:226px; height:13px; background:url("../images/text_agreement.png") no-repeat; } 
+	#joinArea .agreement-area span, #joinArea .agreement-area a { text-indent:-10000px; display:inline-block; text-align:left; }
+	
+	#joinArea .agreement-area .link-provision { width:45px; height:13px; position:absolute; left:295px; }
+	#joinArea .agreement-area .link-personal { width:92px; height:13px; position:absolute; left:356px; }
+
+		#joinAgreement { width:20px; height:20px; position:relative; top:5px; display:line-block;  background:url("../images/btn_chk_agreement.png") no-repeat;}
+		#joinAgreement.check {  background-position:0 -20px;}
+	#joinArea .button-area { padding-top:16px; text-align:right; }
+	#joinArea .button-area img { margin-left:13px; cursor:pointer;  }
