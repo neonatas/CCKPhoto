@@ -43,7 +43,7 @@
 				</fieldset>
 			</form>
 			<div class="banner">
-				<a href="show.php">내가 찍은 문화 유산 신청하기</a>
+				<a href="workshop.php">내가 찍은 문화 유산 신청하기</a>
 			</div>
 			<div class="no-result">
 				결과가 없습니다.

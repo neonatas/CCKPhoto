@@ -25,6 +25,7 @@
 #workshop table .detail td {padding:12px 0; background-color:rgba(204,204,204,0.5);  font-weight:normal; }
 #workshop .detail hr {border:none; border-top:1px dashed #bbb; margin:5px 0 30px;}
 #workshop .detail th {color:#005c69; text-align:right; vertical-align:top; font-size:12px; line-height:16px; background:none;padding:0 0 5px;}
+#workshop .detail table {margin-left:15px;margin-right:0;}
 #workshop .detail table td {color:#ddd; text-align:left; font-size:12px; line-height:16px; border:none; padding:0 0 5px 10px; background:none;}
 #workshop .detail dl {position:relative; padding-left: 164px;}
 #workshop .detail dt {font-size:17px; padding-top:3px;}
