@@ -35,6 +35,7 @@ class clsPhotos {
     }
 
     function getPhotoInfo($path) {
+		error_reporting(0);
         return exif_read_data($path, 0, true);
     }
 

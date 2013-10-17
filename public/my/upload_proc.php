@@ -34,8 +34,11 @@
     $ccl_business = ( trim($_POST['ccl_business']) ) ? trim($_POST['ccl_business']) : "";
 //    $ccl_change = ( trim($_POST['ccl_change']) ) ? trim($_POST['ccl_change']) : "";
     $photofile = $_FILES['photo'];
-
-
+	
+	$flickr_title = $title.', by '.$_SESSION['USER_NAME'];
+	$flickr_description = $description."\r\n\r\n-  본사진은  CC Photo&share 캠페인( http://photo.sharehub.kr ) 을 통해서 ".$_SESSION['USER_NAME']."님께서 (by "
+	.$_SESSION['USER_NAME'].") 공유한 사진입니다.\r\n CCL조건만 지키시면 사진을 자유롭게 이용하실 수 있습니다.";
+	
     //데이터 유효성 체크
 	if( $title == '' || $cate == '' || $ccl_business == '' ) {  
 		historyBack( MSG_INPUT_DATA_FAILE );
@@ -89,7 +92,7 @@
 //    $photoinfo = serialize( $photoinfo );
 
     //flickr 업로드
-    $photo_id = $flickr->sync_upload($uploadfile, $title, $description,$tags);
+    $photo_id = $flickr->sync_upload($uploadfile, $flickr_title, $flickr_description,$tags);
 
     if( empty($photo_id) ) {
         historyBack( MSG_INPUT_DATA_FAILE );

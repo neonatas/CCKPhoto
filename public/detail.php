@@ -60,7 +60,8 @@
         $profile_image = $photo_data['my_img_r'];
 
     //이미지 정보
-    $file_info = $Photo->getPhotoInfo(PATH_PHOTOS.$photo_data['filename_r']);
+	$file_info = $Photo->getPhotoInfo(PATH_PHOTOS.$photo_data['filename_r']);
+	
 	switch($file_info['EXIF']['ExposureProgram'])
 	{
 			case "0": $program_mode = "Not Defined"; break;
