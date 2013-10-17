@@ -38,5 +38,5 @@
         $flickr->photos_delete($flickr_id);
     }
 
-     header("Location:/my/gallery.php");
+     header("Location:/my/gallery.php?m_idx=".$_SESSION['USER_IDX']);
 ?>
