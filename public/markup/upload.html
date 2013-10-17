@@ -35,6 +35,7 @@
 					<dd>
 						<span id="btnFileUpload"><input type="file" name="photo" onchange="document.getElementById('fileName').value = this.value.split(/[/\\]/).reverse()[0]" /></span>
 						<input type="text" id="fileName" value="" readonly />
+						<img src="../images/text_upload1.png" alt="사진은 한장씩 등록됩니다. 대량 업로드가 지원되지 않는 점 양해 부탁드립니다 ^^" id="fileUploadExpression" />
 					</dd>
 				</dl>
 				<dl class="input-area2 b-line">
@@ -80,44 +81,18 @@
 						</div>
 					</dt>
 					<dd>
-						<img src="../images/text_upload_ccl_essential.png" alt="제작자 표시는 필수입니다."/>
 						<div class="sub-input-area">
-							<dl>
-								<dt><img src="../images/sub_title_upload_business.png" alt="상업적 이용"/></dt>
-								<dd>
-									<ul>
-										<li class="ccl-b-1">
-											<span class="btn-radio on"></span>
-											<img src="../images/text_upload_ccl_permission.png" alt="상업적 이용 허락" />
-										</li>
-										<li class="ccl-b-2">
-											<span class="btn-radio"></span>
-											<img src="../images/text_upload_ccl_permission_no.png" alt="상업적 이용 허락하지 않음"/>
-										</li>
-									</ul>
-									<input type="hidden" name="ccl_business" value="1"/>
-								</dd>
-							</dl>
-							<dl>
-								<dt><img src="../images/sub_title_upload_change.png" alt="저작물의 변경"/></dt>
-								<dd>
-									<ul>
-										<li class="ccl-c-1">
-											<span class="btn-radio on"></span>
-											<img src="../images/text_upload_ccl_permission.png" alt="저작물의 변경 허락" />
-										</li>
-										<li class="ccl-c-2">
-											<span class="btn-radio"></span>
-											<img src="../images/text_upload_ccl_permission_no.png" alt="저작물의 변경 허락하지 않음"/>
-										</li>
-										<li class="ccl-c-3">
-											<span class="btn-radio"></span>
-											<img src="../images/text_upload_ccl_same.png" alt="동일한 이용조건 적용"/>
-										</li>
-									</ul>
-									<input type="hidden" name="ccl_change" value="1"/>
-								</dd>
-							</dl>
+							<ul>
+								<li class="ccl-b-1">
+									<span class="btn-radio on"></span>
+									<img src="../images/text_upload_ccl_by.png" alt="상업적 이용 허락" />
+								</li>
+								<li class="ccl-b-2">
+									<span class="btn-radio"></span>
+									<img src="../images/text_upload_ccl_bysa.png" alt="상업적 이용 허락" />
+								</li>
+							</ul>
+							<input type="hidden" name="ccl_business" value="1"/>
 						</div>
 					</dd>
 				</dl>

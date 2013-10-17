@@ -38,6 +38,7 @@ $(function() {
 			},
 			loginPasswd: {
 			   required: true,
+				range:true,
 			   minlength: 6
 		   }
 		},
@@ -49,8 +50,9 @@ $(function() {
 				remote: function(r,el){ return showValidError( el, '가입되지 않은 이메일 입니다.' ); }
 			},
 			loginPasswd: {
-				required: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); },
-				minlength: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); }
+				required: function(r,el) { return showValidError( el, '6자 이상의 숫자+영문을 입력해주세요' ); },
+				range: function(r,el) { return showValidError( el, '특수문자나 한글은 입력하실 수 없습니다. 6자 이상의 숫자+영문을 입력해주세요' ); },
+				minlength: function(r,el) { return showValidError( el, '6자 이상의 숫자+영문을 입력해주세요' ); }
 			}
 		},
 

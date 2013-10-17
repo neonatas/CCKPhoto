@@ -42,4 +42,33 @@
 					$('input[name=ccl_change]').val(ccl_code);
 			}
 		});
+
+        var f = document.upload_form;
+        $('.btn-upload-ok').click(function(){
+            if( f.photo.value == "" ) {
+                alert("등록할 사진을 선택해 주세요.");
+                return false;
+            }
+            if( f.title.value == "" ) {
+                alert("제목을 입력해 주세요.");
+                f.title.focus();
+                return false;
+            }
+            if( f.description.value == "" ) {
+                alert("설명을 입력해 주세요.");
+                f.description.focus();
+                return false;
+            }
+            if( f.cate.value == "" ) {
+                alert("카테고리를 선택해 주세요.");
+                return false;
+            }
+
+            f.action = 'upload_proc.php';
+            f.submit();
+        });
+        $('.btn-upload-cancel').click(function(){
+            history.go(-1);
+            return false;
+        });
 	});

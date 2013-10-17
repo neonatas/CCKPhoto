@@ -223,12 +223,12 @@ $(function() {
 
 		messages: {  
 			passwd: {
-				required: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); },
-				minlength: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); }
+				required: function(r,el) { return showValidError( el, '6자 이상의 숫자+영문을 입력해주세요' ); },
+				minlength: function(r,el) { return showValidError( el, '6자 이상의 숫자+영문을 입력해주세요' ); }
 			},
 			passwdConfirm: {
-				required: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); },
-				minlength: function(r,el) { return showValidError( el, '6자 이상을 입력해주세요' ); },
+				required: function(r,el) { return showValidError( el, '6자 이상의 숫자+영문을 입력해주세요' ); },
+				minlength: function(r,el) { return showValidError( el, '6자 이상의 숫자+영문을 입력해주세요' ); },
 				equalTo: function(r,el) { return showValidError( el, '비밀번호가 일치하지 않습니다, 다시 입력해주세요.' ); }
 			}
 		},

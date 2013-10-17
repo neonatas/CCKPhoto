@@ -26,8 +26,9 @@
 				<dl class="input-area1 b-line">
 					<dt><img src="../images/title_upload_register.png" alt="사진 등록"/></dt>
 					<dd>
-						<span id="btnFileUpload"><input type="file" name="photo" onchange="javascript: document.getElementById('fileName').value = this.value.split(/[/\\]/).reverse()[0]" /></span>
+						<span id="btnFileUpload"><input type="file" name="photo" onchange="document.getElementById('fileName').value = this.value.split(/[/\\]/).reverse()[0]" /></span>
 						<input type="text" id="fileName" value="" readonly />
+						<img src="../images/text_upload1.png" alt="사진은 한장씩 등록됩니다. 대량 업로드가 지원되지 않는 점 양해 부탁드립니다 ^^" id="fileUploadExpression" />
 					</dd>
 				</dl>
 				<dl class="input-area2 b-line">
@@ -71,48 +72,22 @@
 					<dt>
 						<div>
 							<img src="../images/title_upload_cc.png" alt="CC 라이센스"/>
-							<a href="http://cckorea.org/xe/?mid=ccl" target="_blink"><img src="../images/btn_upload_ccl_view.png" alt="CC 라이센스 설명보기"/></a>
+							<img src="../images/btn_upload_ccl_view.png" alt="CC 라이센스 설명보기"/>
 						</div>
 					</dt>
 					<dd>
-						<img src="../images/text_upload_ccl_essential.png" alt="제작자 표시는 필수입니다."/>
 						<div class="sub-input-area">
-							<dl>
-								<dt><img src="../images/sub_title_upload_business.png" alt="상업적 이용"/></dt>
-								<dd>
-									<ul>
-										<li class="ccl-b-1">
-											<span class="btn-radio on"></span>
-											<img src="../images/text_upload_ccl_permission.png" alt="상업적 이용 허락" />
-										</li>
-										<li class="ccl-b-2">
-											<span class="btn-radio"></span>
-											<img src="../images/text_upload_ccl_permission_no.png" alt="상업적 이용 허락하지 않음"/>
-										</li>
-									</ul>
-									<input type="hidden" name="ccl_business" value="1"/>
-								</dd>
-							</dl>
-							<dl>
-								<dt><img src="../images/sub_title_upload_change.png" alt="저작물의 변경"/></dt>
-								<dd>
-									<ul>
-										<li class="ccl-c-1">
-											<span class="btn-radio on"></span>
-											<img src="../images/text_upload_ccl_permission.png" alt="저작물의 변경 허락" />
-										</li>
-										<li class="ccl-c-2">
-											<span class="btn-radio"></span>
-											<img src="../images/text_upload_ccl_permission_no.png" alt="저작물의 변경 허락하지 않음"/>
-										</li>
-										<li class="ccl-c-3">
-											<span class="btn-radio"></span>
-											<img src="../images/text_upload_ccl_same.png" alt="동일한 이용조건 적용"/>
-										</li>
-									</ul>
-									<input type="hidden" name="ccl_change" value="1"/>
-								</dd>
-							</dl>
+							<ul>
+								<li class="ccl-b-1">
+									<span class="btn-radio on"></span>
+									<img src="../images/text_upload_ccl_by.png" alt="저작자표시 (CC BY)" />
+								</li>
+								<li class="ccl-b-3">
+									<span class="btn-radio"></span>
+									<img src="../images/text_upload_ccl_bysa.png" alt="저작자표시-동일조건변경허락 (CC BY-SA)" />
+								</li>
+							</ul>
+							<input type="hidden" name="ccl_business" value="1"/>
 						</div>
 					</dd>
 				</dl>
@@ -127,38 +102,3 @@
 <?
     require_once "../_include/footer.php";
 ?>
-
-<script type="text/javascript">
-<!--
-    $(function(){
-        var f = document.upload_form;
-        $('.btn-upload-ok').click(function(){
-            if( f.photo.value == "" ) {
-                alert("등록할 사진을 선택해 주세요.");
-                return false;
-            }
-            if( f.title.value == "" ) {
-                alert("제목을 입력해 주세요.");
-                f.title.focus();
-                return false;
-            }
-            if( f.description.value == "" ) {
-                alert("설명을 입력해 주세요.");
-                f.description.focus();
-                return false;
-            }
-            if( f.cate.value == "" ) {
-                alert("카테고리를 선택해 주세요.");
-                return false;
-            }
-
-            f.action = 'upload_proc.php';
-            f.submit();
-        });
-        $('.btn-upload-cancel').click(function(){
-            history.go(-1);
-            return false;
-        });
-    });
-//-->
-</script>

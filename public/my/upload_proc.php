@@ -32,12 +32,12 @@
     $cate = ( trim($_POST['cate']) ) ? trim($_POST['cate']) : "";
     $tags = ( trim($_POST['tags']) ) ? trim($_POST['tags']) : "";
     $ccl_business = ( trim($_POST['ccl_business']) ) ? trim($_POST['ccl_business']) : "";
-    $ccl_change = ( trim($_POST['ccl_change']) ) ? trim($_POST['ccl_change']) : "";
+//    $ccl_change = ( trim($_POST['ccl_change']) ) ? trim($_POST['ccl_change']) : "";
     $photofile = $_FILES['photo'];
 
 
     //데이터 유효성 체크
-	if( $title == '' || $cate == '' || $ccl_business == '' || $ccl_change == '' ) {  
+	if( $title == '' || $cate == '' || $ccl_business == '' ) {  
 		historyBack( MSG_INPUT_DATA_FAILE );
 	}
 
@@ -69,34 +69,20 @@
     }
 
     //CCL 체크
-    if( $ccl_business == 1 ) {
-        switch( $ccl_change ) {
-            case 1:
-                $ccl = FLICKR_BY;
-                break;
-            case 2:
-                $ccl = FLICKR_BY_ND;
-                break;
-            case 3:
-                $ccl = FLICKR_BY_SA;
-                break;
-        }
-    } else if ( $ccl_business == 2 ) {
-        switch( $ccl_change ) {
-            case 1:
-                $ccl = FLICKR_BY_NC;
-                break;
-            case 2:
-                $ccl = FLICKR_BY_NC_ND;
-                break;
-            case 3:
-                $ccl = FLICKR_BY_NC_SA;
-                break;
-        }
-    } else {
-        $ccl = FLICKR_BY;
+    switch( $ccl_business ) {
+        case 1:
+            $ccl = FLICKR_BY;
+            break;
+        case 2:
+            $ccl = FLICKR_BY_ND;
+            break;
+        case 3:
+            $ccl = FLICKR_BY_SA;
+            break;
+        default:
+            $ccl = FLICKR_BY;
+            break;
     }
-
     //사진정보 저장 (DB에 저장 안함)
 //    $photoinfo = exif_read_data(PATH_PHOTOS.$upload_name, 0, true );
 //    unset( $photoinfo['UndefinedTag'] );

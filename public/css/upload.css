@@ -23,12 +23,12 @@
 		#uploadArea .input-area6 { padding:20px 0 35px 0; overflow:hidden; }
 		#uploadArea .input-area6 dt div { position:relative; top:10px; }
 		#uploadArea .input-area6 dt div img { margin-top:10px; }
-		#uploadArea .input-area6 .sub-input-area { padding-top:21px; overflow:hidden; }
-		#uploadArea .input-area6 .sub-input-area dl { padding-bottom:13px; overflow:hidden; }
-		#uploadArea .input-area6 .sub-input-area li { float:left; padding-right:20px; cursor:pointer; }
+		#uploadArea .input-area6 .sub-input-area { padding-top:20px; overflow:hidden; width:535px;}
+		#uploadArea .input-area6 .sub-input-area li { float:left; cursor:pointer; width:49%; position:relative; }
 		#uploadArea .input-area6 .sub-input-area li img { vertical-align:top; }
-		#uploadArea .input-area6 .sub-input-area span.btn-radio { width:13px; height:13px; background:url("../images/btn_radio_ccltype.png") no-repeat; display:inline-block; }
+		#uploadArea .input-area6 .sub-input-area span.btn-radio { width:13px; height:13px; top:0; left:0; position:absolute; background:url("../images/btn_radio_ccltype.png") no-repeat; display:inline-block; }
 		#uploadArea .input-area6 .sub-input-area span.btn-radio.on { background-position:0 -13px; }
+
 		#uploadArea .button-area {width:100%; text-align:center; }
 		#uploadArea .button-area img {margin-left:10px;  }
 		#uploadArea input.input-535 { width:525px; height:32px; border:0; padding:0 5px; background:url("../images/bg_photo_input_535.png") no-repeat; color:#eee; }
@@ -37,4 +37,5 @@
 			#btnFileUpload { position:relative; display:block; width:63px; height:33px; background:url("../images/btn_file_register.png") no-repeat; text-indent:-10000px; cursor:pointer; overflow:hidden;}
 			#btnFileUpload:hover { background-position:0 -33px; }
 			#btnFileUpload input {position:absolute; right:0;  width:1000px; height:100px;  opacity: .0; filter: alpha(opacity=0); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";}
-			#fileName {position:absolute; top:6px; left:104px; width:400px; border:none; background:transparent; font-size:10.5pt; color:#969696;}
+			#fileName {position:absolute; top:-5px; left:114px; width:400px; border:none; background:transparent; font-size:10.5pt; color:#969696;}
+			#fileUploadExpression {position:absolute; top:20px; left:114px; }
