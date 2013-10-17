@@ -228,46 +228,6 @@
 						</tr>
 						<tr>
 							<td>11/16(토)</td>
-							<td>공유의 장소, 공원 Ⅱ : 뚝섬 한강공원 일대</td>
-							<td>방병상</td>
-							<td>am 02:00</td>
-							<td><a class="btn-detail" href="">자세히보기</a></td>
-						</tr>
-						<tr class="detail">
-							<td colspan="5">
-								<table>
-									<tr>
-										<th>멘토 사진가</th>
-										<td>방병상</td>
-									</tr>
-									<tr>
-										<th>촬영동선</th>
-										<td>토요 나눔장터-인공암벽-수영장-자연학습장-윈드서핑장 등</td>
-									</tr>
-									<tr>
-										<th>모임장소&amp;시간</th>
-										<td>뚝섬전망문화콤플렉스(자벌레) 2층 까페 앞, 오후2시 (7호선 뚝섬유원지역 3번 출구)</td>
-									</tr>
-								</table>
-								<hr>
-								<dl>
-									<dt>방병상</dt>
-									<dd class="image"><img src="../images/workshop_photo5.jpg" width="124" height="142" /></dd>
-									<dd>
-										<ul>
-											<li>홍익대학교 산업미술대학원 사진디자인 전공</li>
-											<li>사진가, 한국예술종합학교 미술원 조형예술과 강사</li>
-											<li>‘젊은 사진가상’(월간 사진예술, 2000), ‘사진 비평상’ 수상, 타임스페이스, 2000) 외 수상</li>
-											<li>국립현대미술관, K-mopa, 기요사또 등 주요 미술관 작품 소장</li>
-											<li>‘Too Young to Die’ (성곡미술관, 2010), (내일의 작가상 수상전)등 9회 개인전</li>
-											<li>‘Tales of Seoul’ (한미사진미술관, 2012) 외 다수의 주요 단체전</li>
-										</ul>
-									</dd>
-								</dl>
-							</td>
-						</tr>
-						<tr>
-							<td>11/16(토)</td>
 							<td>과거와 현대의 공존 : 북촌한옥마을 일</td>
 							<td>김영경</td>
 							<td>am 02:00</td>
