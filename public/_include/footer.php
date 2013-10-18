@@ -8,6 +8,7 @@
 				<a class="s1" href="http://www.seoul.go.kr/main/index.html" target="_blink">공유 서울</a>
 				<a class="s2" href="http://www.koreasmartcard.co.kr" target="_blink">한국 스마트 카드</a>
 				<a class="s3" href="http://www.arttech.or.kr" target="_blink">ART TECH</a>
+				<a class="s4" href="http://photo.naver.com" target="_blink">Naver 포토갤러리</a>
 			</p>
 			<p class="links">
 				<a class="agreement" href="/other/agreement.php">이용약관</a>
