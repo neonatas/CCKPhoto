@@ -70,7 +70,7 @@
 					<tbody>
 					    <tr>
 							<td>11/02(토)</td>
-							<td>공유의 장소, 공원 Ⅰ : 북서울 꿈의숲</td>
+							<td>공유의 장소, 공원 : 북서울 꿈의숲</td>
 							<td>이은종</td>
 							<td>am 09:50</td>
 							<td><a class="btn-detail" href="">자세히보기</a></td>
