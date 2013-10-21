@@ -150,44 +150,6 @@
 						</tr>
 						<tr>
 							<td>11/09(토)</td>
-							<td>문화의 공존 : 우리 안의 또 다른 우리</td>
-							<td>이재용</td>
-							<td>pm 03:00</td>
-							<td><a class="btn-detail" href="">자세히보기</a></td>
-						</tr>
-						<tr class="detail">
-							<td colspan="5">
-								<table>
-									<tr>
-										<th>멘토 사진가</th>
-										<td>이재용</td>
-									</tr>
-									<tr>
-										<th>촬영동선</th>
-										<td>이태원 시장길-가구거리-이슬람사원뒷길-이태원 카페 골목-(경리단길)-리움</td>
-									</tr>
-									<tr>
-										<th>모임장소&amp;시간</th>
-										<td>용산구청 앞, 오후3시 (6호선 녹사평역 3번 출구 300m)</td>
-									</tr>
-								</table>
-								<hr>
-								<dl>
-									<dt>이재용</dt>
-									<dd class="image"><img src="../images/workshop_photo3.jpg" width="124" height="142" /></dd>
-									<dd>
-										<ul>
-											<li>홍익대학교 산업미술대학원 사진디자인 전공, 사진가</li>
-											<li>여고괴담 두 번째 이야기, 무사, 봄날은 간다, 고양이를 부탁해 외 40여 편 영화포스터 촬영<br/>삼성카드, 현대건설, 후지파인픽스, 니콘코리아, 서울대의과대학 외 다수 광고사진 촬영</li>
-											<li>Sovereign Art Prize 수상(2013)</li>
-											<li>‘Memories of the Gaze’(시선의 기억) 개인전과 아를르 사진 페스티벌 (프랑스, 1999)등 다<br />수 주요 단체전</li>
-										</ul>
-									</dd>
-								</dl>
-							</td>
-						</tr>
-						<tr>
-							<td>11/09(토)</td>
 							<td>나눔의 공간, 골목길 : 이화동-삼선동-혜화동 일대</td>
 							<td>임종진</td>
 							<td>am 09:30</td>
@@ -227,10 +189,10 @@
 							</td>
 						</tr>
 						<tr>
-							<td>11/16(토)</td>
-							<td>과거와 현대의 공존 : 북촌한옥마을 일</td>
+							<td>11/9(토)</td>
+							<td>과거와 현대의 공존 : 북촌한옥마을 일대</td>
 							<td>김영경</td>
-							<td>am 02:00</td>
+							<td>pm 02:00</td>
 							<td><a class="btn-detail" href="">자세히보기</a></td>
 						</tr>
 						<tr class="detail">
@@ -261,6 +223,44 @@
 											<li>‘대동산수’(2007) /  ‘모던 스케이프’(2010) 출판</li>
 											<li>‘The Underground’(2010) 등 3회 개인전</li>
 											<li>‘한국·호주 수교50주년 기념교류전:한국_도시 다시 상상하기’(호주, 2011)외 다수 주요 단체전</li>
+										</ul>
+									</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<td>11/16(토)</td>
+							<td>문화의 공존, 우리 안의 또 다른 우리: 이태원 일대</td>
+							<td>이재용</td>
+							<td>pm 03:00</td>
+							<td><a class="btn-detail" href="">자세히보기</a></td>
+						</tr>
+						<tr class="detail">
+							<td colspan="5">
+								<table>
+									<tr>
+										<th>멘토 사진가</th>
+										<td>이재용</td>
+									</tr>
+									<tr>
+										<th>촬영동선</th>
+										<td>이태원 시장길-가구거리-이슬람사원뒷길-이태원 카페 골목-(경리단길)-리움</td>
+									</tr>
+									<tr>
+										<th>모임장소&amp;시간</th>
+										<td>용산구청 앞, 오후3시 (6호선 녹사평역 3번 출구 300m)</td>
+									</tr>
+								</table>
+								<hr>
+								<dl>
+									<dt>이재용</dt>
+									<dd class="image"><img src="../images/workshop_photo3.jpg" width="124" height="142" /></dd>
+									<dd>
+										<ul>
+											<li>홍익대학교 산업미술대학원 사진디자인 전공, 사진가</li>
+											<li>여고괴담 두 번째 이야기, 무사, 봄날은 간다, 고양이를 부탁해 외 40여 편 영화포스터 촬영<br/>삼성카드, 현대건설, 후지파인픽스, 니콘코리아, 서울대의과대학 외 다수 광고사진 촬영</li>
+											<li>Sovereign Art Prize 수상(2013)</li>
+											<li>‘Memories of the Gaze’(시선의 기억) 개인전과 아를르 사진 페스티벌 (프랑스, 1999)등 다<br />수 주요 단체전</li>
 										</ul>
 									</dd>
 								</dl>
