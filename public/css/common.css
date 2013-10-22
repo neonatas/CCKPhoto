@@ -62,14 +62,15 @@ hr { width:100%; border:none; margin:0; padding:0; height:0; border-top:2px soli
 #footer p {padding-top:32px; float:left; position:relative;}
 #footer span, #footer a, #footer .links  {background: url(../images/icons_footer.png) no-repeat; display:block; height:38px; text-indent:-10000px; float:left;}
 #footer .host {padding-left:30px;}
-#footer .host span { width:76px;background-position:-10px -19px;}
-#footer .host a {width:153px; margin-left:30px;background-position:-116px -19px;}
+#footer .host span { width:24px;background-position:-10px -19px;}
+#footer .host a {width:153px; margin-left:21px;background-position:-55px -19px;}
 
-#footer .sponsor span {margin-left:50px;width:28px;background-position:-319px -19px;}
-#footer .sponsor a.s1 {margin-left:29px;width:56px;background-position:-376px -19px;}
-#footer .sponsor a.s2 {margin-left:20px;width:128px;background-position:-452px -19px;}
-#footer .sponsor a.s3 {margin-left:20px;width:85px;background-position:-600px -19px;}
-#footer .sponsor a.s4 {margin-left:19px;width:214px;background-position:-704px -19px;}
+#footer .sponsor span {margin-left:24px;width:24px;background-position:-232px -19px;}
+#footer .sponsor a.s1 {margin-left:18px;width:62px;background-position:-274px -19px;}
+#footer .sponsor a.s2 {margin-left:20px;width:119px;background-position:-356px -19px;}
+#footer .sponsor a.s3 {margin-left:20px;width:85px;background-position:-495px -19px;}
+#footer .sponsor a.s4 {margin-left:16px;width:160px;background-position:-596px -19px;}
+#footer .sponsor a.s5 {margin-left:16px;width:130px;background-position:-772px -10px;position:relative;top:-9px;}
 
 #footer .links {display:block; height:17px; padding:0; overflow:hidden; background-position:-974px -19px; position:absolute; right:140px; top:32px;}
 #footer .links a.agreement {width:44px;background-position:-974px -19px;}
