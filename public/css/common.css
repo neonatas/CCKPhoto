@@ -60,23 +60,23 @@ hr { width:100%; border:none; margin:0; padding:0; height:0; border-top:2px soli
 
 #footer {width:1280px; height:97px; clear:both; background: url(../images/bg_footer.png) no-repeat; position:relative; }
 #footer p {padding-top:32px; float:left; position:relative;}
-#footer span, #footer a, #footer .links:after {background: url(../images/icons_footer.png) no-repeat; display:block; height:38px; text-indent:-10000px; float:left;}
-#footer .host {padding-left:44px;}
-#footer .host span { width:76px;}
-#footer .host a {width:153px; margin-left:30px;background-position:-106px 0;}
+#footer span, #footer a, #footer .links  {background: url(../images/icons_footer.png) no-repeat; display:block; height:38px; text-indent:-10000px; float:left;}
+#footer .host {padding-left:30px;}
+#footer .host span { width:24px;background-position:-10px -19px;}
+#footer .host a {width:153px; margin-left:21px;background-position:-55px -19px;}
 
-#footer .sponsor span {margin-left:50px;width:28px;background-position:-309px 0;}
-#footer .sponsor a.s1 {margin-left:29px;width:56px;background-position:-366px 0;}
-#footer .sponsor a.s2 {margin-left:30px;width:154px;background-position:-452px 0;}
-#footer .sponsor a.s3 {margin-left:28px;width:118px;background-position:-634px 0;}
-#footer .sponsor a.s4 {margin-left:28px;width:214px;background-position:-782px 0;}
+#footer .sponsor span {margin-left:24px;width:24px;background-position:-232px -19px;}
+#footer .sponsor a.s1 {margin-left:18px;width:62px;background-position:-274px -19px;}
+#footer .sponsor a.s2 {margin-left:20px;width:119px;background-position:-356px -19px;}
+#footer .sponsor a.s3 {margin-left:20px;width:85px;background-position:-495px -19px;}
+#footer .sponsor a.s4 {margin-left:16px;width:160px;background-position:-596px -19px;}
+#footer .sponsor a.s5 {margin-left:16px;width:130px;background-position:-772px -10px;position:relative;top:-9px;}
 
-#footer .links {display:block; height:38px; background:url(../images/icons_footer.png) -996px 32px no-repeat; position:absolute; right:140px; top:-4px;}
-#footer .links a.agreement {margin-left:49px;width:44px;background-position:-1045px 0;}
-#footer .links a.privacy {margin-left:12px;width:90px;background-position:-1101px 0;}
-#footer .license, #footer .license-desc {background: url(../images/bg_footer2.png) no-repeat;}
-#footer .license {dispaly:block; width:99px; height:34px; background-position:-223px -5px; position:absolute; right:32px; top:16px;}
-#footer .license-desc {dispaly:block; width:322px; height:27px; background-position:-0 -47px; position:absolute; right:32px; top:59px;}
+#footer .links {display:block; height:17px; padding:0; overflow:hidden; background-position:-974px -19px; position:absolute; right:140px; top:32px;}
+#footer .links a.agreement {width:44px;background-position:-974px -19px;}
+#footer .links a.privacy {margin-left:12px;width:90px;background-position:-1030px -19px;}
+#footer .license {dispaly:block; width:99px; height:35px; background-position:-1130px -2px; position:absolute; right:31px; top:15px;}
+#footer .license-desc {dispaly:block; width:296px; height:24px; background-position:-933px -48px; position:absolute; right:31px; top:61px;}
 #content {margin-top:-255px;}
 
 .category li {height:30px; margin-right:15px; float:left;background: url(../images/category.png) no-repeat;}
