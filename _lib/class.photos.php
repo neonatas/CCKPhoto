@@ -99,7 +99,11 @@ class clsPhotos {
         $data = $this->get($id);
         $flickr_id = $data['flickr_photoid'];
 
-        unlink( PATH_PHOTOS_UPLOAD.$data['filename_r'] );
+        if( is_file( PATH_PHOTOS_UPLOAD.$data['filename_r'] ) )
+            unlink( PATH_PHOTOS_UPLOAD.$data['filename_r'] );
+        if( is_file( PATH_PHOTOS_UPLOAD."thumb/".$data['filename_r'] ) )
+            unlink( PATH_PHOTOS_UPLOAD."thumb/".$data['filename_r'] );
+
         $query = "delete from ".$this->table." where id = ".$id;
         $res = mysql_query($query,$this->conn) or die ("delete query error!!");
 
