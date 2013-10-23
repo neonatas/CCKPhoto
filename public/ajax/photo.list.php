@@ -30,12 +30,18 @@
             if( $p['member_idx'] == $_SESSION['USER_IDX'] ) $is_recommend = 'o';
 
 			$file_info = $Photo->getPhotoInfo(PATH_PHOTOS.$p['filename_r']);
-
+            
+            if( is_file(PATH_PHOTOS_UPLOAD."thumb/".$p['filename_r'] ) ) {
+                $image_path = PATH_PHOTOS."thumb/".$p['filename_r'];
+            } else {
+                $image_path = PATH_PHOTOS.$p['filename_r'];
+            }
+            
             $result[] = array(
                 'id' => $p['id'],
                 'member_idx' => $p['member_idx'],
                 'title' => $p['title'],
-                'image' => PATH_PHOTOS.$p['filename_r'],
+                'image' => $image_path,
                 'hits' => $p['hits'],
                 'recommend' => $p['recommend'],
                 'width' => $file_info['COMPUTED']['Width'],

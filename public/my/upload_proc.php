@@ -10,10 +10,11 @@
     require_once('../../_lib/class.dbConnect.php');
     require_once('../../_lib/class.photos.php');
     require_once('../../_lib/function.php');
-
+    require_once('../../_lib/Thumbnail.class.php');
 
     $DB = new dbConn();
     $Photo = new clsPhotos( $DB->getConnection() );
+
 
     // Require the phpFlickr API
     require_once('../../_lib/phpFlickr.php');
@@ -70,6 +71,14 @@
     {
         historyBack( MSG_PHOTO_UPLOAD_FAILE );
     }
+
+    //[ADD] 2013-10-23 : 썸네일 저장
+	Thumbnail::create($uploadfile,
+					  232, null,
+					  null,
+					  Array(
+						  'savepath' => '%PATH%thumb/%FILENAME%.%EXT%'
+					  ));
 
     //CCL 체크
     switch( $ccl_business ) {
