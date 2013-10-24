@@ -64,7 +64,7 @@
         historyBack("확장자(".VALID_PHOTO_EXT.") 파일만 업로드 가능합니다.");
     }
 
-    $upload_name = time().rand(100000,1000000).".".$ext;
+    $upload_name = time().rand(100000,1000000).".".strtolower($ext);
     $uploadfile = PATH_PHOTOS_UPLOAD.$upload_name;
     
     if( !move_uploaded_file($photofile['tmp_name'], $uploadfile) )
