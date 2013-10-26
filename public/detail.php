@@ -191,7 +191,7 @@
 				</dl>
 			</div>
 			<div class="comment">
-				<div class="fb-comments" data-href="<?='http://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']?>?pid=<?=$pid?>" data-colorscheme="The color scheme used in the plugin" data-numposts="5" data-width="780"></div>
+				<div class="fb-comments" data-href="<?='http://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']?>?pid=<?=$pid?>" data-colorscheme="light" data-numposts="5" data-width="780"></div>
 			</div>
 		</div>
 		<a class="btn-top" href="#content">TOP</a>
