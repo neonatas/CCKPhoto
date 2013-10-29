@@ -47,6 +47,7 @@
 	<thead>
 	<tr>
 		<th>No.</th>
+        <th>Name</th>
 		<th>Email</th>
 		<th>twitter</th>
 		<th>facebook</th>
@@ -62,9 +63,10 @@
 	?>
 	<tr>
 		<td><?=$number?></td>
-		<td><?=$row['email']?></td>
-		<td><?=$row['twitter_id']?></td>
-		<td><?=$row['facebook_id']?></td>
+		<td><?=$row['nickname']?></td>
+        <td><?=$row['email']?></td>
+		<td><a href="https://twitter.com/intent/user?user_id=<?=$row['twitter_id']?>" target="_blink"><?=$row['twitter_id']?></a></td>
+		<td><a href="https://www.facebook.com/profile.php?id=<?=$row['facebook_id']?>" target="_blink"><?=$row['facebook_id']?></a></td>
 		<td><?=substr(trim($row["joindate"]), 0, 10)?></td>
 		<td><?=substr(trim($row["logindate"]), 0, 10)?></td>
 	</tr>
