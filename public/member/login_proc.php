@@ -42,6 +42,7 @@ if( $result['r'] == 'success' )
 	$_SESSION['USER_NAME'] = $result['nickname'];
     $_SESSION['USER_IMAGE'] = $result['my_img'];
 	$_SESSION['USER_AGREE'] = $result['policy_agree'];
+    $_SESSION['USER_LEVEL'] = $result['level'];
 
 	if( $_POST['autoLogin'] == 'y' )
 	{

@@ -58,6 +58,7 @@ if (200 == $connection->http_code) {
 		$_SESSION['USER_NAME'] = $content->name;
         $_SESSION['USER_IMAGE'] = $result['my_img'];
         $_SESSION['USER_AGREE'] = $result['policy_agree'];
+        $_SESSION['USER_LEVEL'] = $result['level'];
 
 		//my favorite 정보가 있다면 저장 후 my favorite 페이지로 이동
 		$c_idx ="";

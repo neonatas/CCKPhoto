@@ -22,7 +22,7 @@ class clsMembers {
 				break;
 		}
 
-		$query = "select idx, policy_agree, my_img_r from ".$this->table." where ".$field." = '".$id."' and is_leave = 'n' ";
+		$query = "select idx, policy_agree, my_img_r, level from ".$this->table." where ".$field." = '".$id."' and is_leave = 'n' ";
 		$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 		if( @mysql_affected_rows() > 0 ) { 
@@ -43,6 +43,7 @@ class clsMembers {
 			$result['idx'] = $row['idx'];
 			$result['policy_agree'] = $row['policy_agree'];
             $result['my_img'] = $profile_img;
+            $result['level'] = $row['level'];
 		} else {
 			$query = "insert into ".$this->table." ( ".$field.", nickname, logindate, policy_agree, my_img_r ) values ( '".$id."','".$nickname."', now(), 'y', '".$my_img."' )";
 			$res = mysql_query($query,$this->conn) or die ("insert query error!!");
@@ -53,6 +54,7 @@ class clsMembers {
 				$result['idx'] = mysql_insert_id();
 				$result['policy_agree'] = 'n';
                 $result['my_img'] = $my_img;
+                $result['level'] = $row['level'];
 			}
 		}
 
@@ -95,6 +97,7 @@ class clsMembers {
 			$result['msg'] = "회원 가입이 완료되었습니다.";
 			$result['idx'] = mysql_insert_id();
 			$result['policy_agree'] = $array['policy_agree'];
+            $result['level'] = 9;
 		}
 
 		return $result;
@@ -187,7 +190,7 @@ class clsMembers {
 		$result = array();
 
 		if( $this->existEmail($array['email']) !== false ) {
-			$query = "select idx, level, policy_agree, nickname from ".$this->table." where email = '".$array['email']."' and passwd = '".md5($array['passwd'])."' and is_leave = 'n' ";
+			$query = "select idx, level, policy_agree, nickname, level from ".$this->table." where email = '".$array['email']."' and passwd = '".md5($array['passwd'])."' and is_leave = 'n' ";
 			$res = mysql_query($query,$this->conn) or die ("select query error!!");
 
 			if( @mysql_affected_rows() > 0 ) {
@@ -200,6 +203,7 @@ class clsMembers {
                 $result['nickname'] = $row['nickname'];
                 $result['my_img'] = $row['my_img_r'];
 				$result['policy_agree'] = $row['policy_agree'];
+                $result['level'] = $row['level'];
 			} else {
 				$result['r'] = 'error';
 				$result['type'] = 'passwd';

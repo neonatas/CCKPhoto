@@ -27,7 +27,7 @@
     //DB 삭제
     $photo_data = $Photo->get($pid);
 
-	if( $photo_data['member_idx'] != $_SESSION['USER_IDX'] ) {  
+	if( !($photo_data['member_idx'] == $_SESSION['USER_IDX'] || $_SESSION['USER_LEVEL'] == 1) ) {  
 		historyBack("본인이 등록한 사진만 삭제 가능합니다.");
 	}
 
@@ -38,5 +38,5 @@
         $flickr->photos_delete($flickr_id);
     }
 
-     header("Location:/my/gallery.php?m_idx=".$_SESSION['USER_IDX']);
+     header("Location:/my/gallery.php?m_idx=".$photo_data['member_idx']);
 ?>

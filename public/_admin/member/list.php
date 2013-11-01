@@ -13,6 +13,7 @@
 	$nowPage = $_POST['nowPage'] ? $_POST['nowPage'] : $_GET['nowPage'];
 	$BlockSize = $_POST['BlockSize'] ? $_POST['BlockSize'] : $_GET['BlockSize'];
 	$PageSize = $_POST['PageSize'] ? $_POST['PageSize'] : $_GET['PageSize'];
+    $sort = $_POST['sort'] ? $_POST['sort'] : $_GET['sort'];
 
 	if($nowPage == "") $nowPage = 1;
 	if($BlockSize == "") $BlockSize = 10;
@@ -31,10 +32,38 @@
 	$arr = array("keyfield"=>$keyfield,"keyword"=>$keyword); 
 	$PAGE = new pageSet($nowPage, $BlockSize,$PageSize, $totalRecord,$arr);
 
-	$where_temp .= " order by idx desc";
-	$where_temp .= $PAGE->getLimitQuery();
+    $query = "select m.* ";
+    $query .= ", (select count(*) from photos p where m.idx = p.member_idx) as count";
+    $query .= " from ".$table." m ";
 
-	$re = $DB->dbSelect($table,$where_temp);
+    switch( $sort ) {
+        case 'c':
+            $where_temp .= " order by count desc";
+        break;
+        case 'j':
+            $where_temp .= " order by joindate desc";
+            break;
+        case 'l':
+            $where_temp .= " order by logindate desc";
+            break;
+        default:
+            $where_temp .= " order by idx desc";
+        break;
+    }
+
+    $where_temp .= $PAGE->getLimitQuery();
+
+    $query .= $where_temp;
+	
+	$re = $DB->dbQuery($query);
+
+
+    $sort_link = "./list.php?keyfield=".$keyfield;
+    $sort_link .= "&keyword=".$keyword;
+    $sort_link .= "&nowPage=".$nowPage;
+    $sort_link .= "&BlockSize=".$BlockSize;
+    $sort_link .= "&PageSize=".$PageSize;
+    $sort_link .= "&sort=";
 ?>
 
 <style type="text/css">
@@ -51,8 +80,9 @@
 		<th>Email</th>
 		<th>twitter</th>
 		<th>facebook</th>
-		<th>Sign Up</th>
-		<th>Last Login</th>
+        <th><a href="<?=$sort_link?>c">upload count</a></th>
+		<th><a href="<?=$sort_link?>k">Sign Up</a></th>
+		<th><a href="<?=$sort_link?>l">Last Login</a></th>
 	</tr>
 	</thead>
 	<tbody>
@@ -67,6 +97,7 @@
         <td><?=$row['email']?></td>
 		<td><a href="https://twitter.com/intent/user?user_id=<?=$row['twitter_id']?>" target="_blink"><?=$row['twitter_id']?></a></td>
 		<td><a href="https://www.facebook.com/profile.php?id=<?=$row['facebook_id']?>" target="_blink"><?=$row['facebook_id']?></a></td>
+        <td><?=$row["count"]?></td>
 		<td><?=substr(trim($row["joindate"]), 0, 10)?></td>
 		<td><?=substr(trim($row["logindate"]), 0, 10)?></td>
 	</tr>
@@ -78,7 +109,7 @@
 	</tr>
 	<tr>
 		<td colspan="8" >
-			<form method="post" action="<?=$_SERVER['REQUEST_URI']?>" name="search_form" class="BoardSearch">
+			<form method="get" action="<?=$_SERVER['REQUEST_URI']?>" name="search_form" class="BoardSearch">
 			<fieldset>
 				<select id="searchSelect" name="keyfield">
 					<option value="" <? if($keyfield=="") { echo "selected"; } ?>>Select</option>

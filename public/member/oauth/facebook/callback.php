@@ -44,6 +44,7 @@ if ( $user ) {
 		$_SESSION['USER_NAME'] = $user_profile['name'];
         $_SESSION['USER_IMAGE'] = $result['my_img'];
         $_SESSION['USER_AGREE'] = $result['policy_agree'];
+        $_SESSION['USER_LEVEL'] = $result['level'];
     } else {
 		header('Location: ./clearsessions.php');
 	}

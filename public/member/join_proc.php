@@ -55,6 +55,7 @@ if( $result['r'] == 'success' )
 	$_SESSION['USER_NAME'] = $joinNickName;
     $_SESSION['USER_IMAGE'] = "";
     $_SESSION['USER_AGREE'] = $policyAgree;
+    $_SESSION['USER_LEVEL'] = $result['level'];
 } else if( $result['r'] == 'error' ) {
     historyBack($result['msg']);
     return;

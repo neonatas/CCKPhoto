@@ -59,7 +59,7 @@
 <script type="text/javascript">
 var midx = <?=$member_data['idx']?>;
 var owner = false;
-<? if( $_SESSION['USER_IDX'] == $member_data['idx'] ) { ?>
+<? if( $_SESSION['USER_IDX'] == $member_data['idx'] || $_SESSION['USER_LEVEL'] == 1) { ?>
 owner = true;
 <? } ?>
 </script>
