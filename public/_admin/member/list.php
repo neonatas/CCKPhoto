@@ -64,13 +64,20 @@
     $sort_link .= "&BlockSize=".$BlockSize;
     $sort_link .= "&PageSize=".$PageSize;
     $sort_link .= "&sort=";
+
+    
+    $query = "select * from photos";
+    $photo_re = $DB->dbQuery($query);
 ?>
 
 <style type="text/css">
 	.info-idx { display:none; }
+    #contentList { position:relative; }
+    .total-count { position:absolute; right:0; top:10px; font-size:14px; font-weight:bold; color:#333; }
 </style>
 
 <div id="contentList">
+<span class="total-count">Total upload count : <?=number_format($photo_re[cnt])?></span>
 <table>
 <caption>Member List</caption>
 	<thead>

@@ -15,14 +15,15 @@
 					<img src="../images/text_intro1.png" alt="“함께 나누는 사진” 캠페인은 사진에 CCL(Creative Commons License)을 붙여 많은 사람들과 사진을 공유하고자 하는 작은 운동입니다." />
 				</div>
 				<div class="sub-area2 area">
-					<div class="desc">
+					<div class="desc" >
 						‘1인 1디카’ 를 거쳐서 ‘1인 1스마트 폰’ 시대라는 표현, 들어보셨지요? 이제 우리는 언제, 어디서나 사진을 찍습니다.<br />
 						사진을 찍고, 나누는 것은 쉬워졌지만 우리가 사용할 수 있는 사진은 여전히 제한적입니다.<br />
 						좋은 사진이 이렇게 많은데, 사용은 왜 이리 어려울까요?<br />
 						<span>그렇다면, 우리가 먼저 내가 찍은 사진을 다른 사람들이 쓸 수 있도록 해보아요~</span><br />
 						<span>여러분의 사진에  CCL(Creative Commons License)를 붙여서 웹사이트에 올려주세요!</span><br />
-						CCL은 ‘출처를 밝혀주고 편하게 사용하세요’, ‘비상업적인 용도 내에서 자유롭게 사용하세요’ 와 같은 조건을 달아서,<br />
-						이용 허락을 알려주는 방법입니다.  여러분이 원하는 이용 허락을 간단한 그림 마크로 보여주는 것을 CCL 이라고 합니다.<br />
+CCL은 자신의 창작물에 대하여 다른 사람들이 어떻게 사용할지 명확하게 안내하는 이용 허락 라이선스 입니다. <br />
+이번 사진 캠페인에서는 '저작자 표시(CC BY)'와 '저작자표시-동일조건변경허락(CC BY-SA)' 라이선스를 <br />적용하여 공유합니다. 
+공유된 사진은 출처를 표시하고, 2차적 저작물에 대해서도 동일한 라이선스를 적용하면 <br />영리, 비영리 구분없이 자유롭게 변경하여 사용할 수 있습니다.<br />
 					</div>
 					<div class="btn-area">
 						<a href="http://cckorea.org/xe/?mid=ccl"  target="_blink"><img src="../images/btn_intro_ccldesc.png" alt="CCL 설명 보기" /></a>
