@@ -45,7 +45,12 @@
 
         var f = document.upload_form;
         $('.btn-upload-ok').click(function(){
-            if( f.photo.value == "" ) {
+			if( $(this).data('uploading') == 'y' ) {
+                alert("사진 업로드 중입니다.");
+                return false;
+			}
+
+			if( f.photo.value == "" ) {
                 alert("등록할 사진을 선택해 주세요.");
                 return false;
             }
@@ -64,6 +69,7 @@
                 return false;
             }
 
+			$(this).data('uploading','y');
             f.action = 'upload_proc.php';
             f.submit();
         });

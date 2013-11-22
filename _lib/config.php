@@ -11,23 +11,23 @@
     define('ADMIN_PASSWD','1234');
 
     // E-mail setting
-    define('EMAIL_FROM_ADDR','YOUREMAIL@ADDRESS');
-    define('EMAIL_FROM_NAME','YOUREMAILNAME');
+    define('EMAIL_FROM_ADDR','creative@cckorea.org');
+    define('EMAIL_FROM_NAME','CCKOREA');
 
     // Database setting
     define('DB_HOST','localhost');
-    define('DB_NAME','letsccphoto');
-    define('DB_USER','letsccphoto');
-    define('DB_PASSWD','dkwkwkt^^');
+    define('DB_NAME','ShareNPhoto');
+    define('DB_USER','root');
+    define('DB_PASSWD','TlTlzpdl');
 
-    // Facebook app setting
-    define('FACEBOOK_APPID', '171376159718071');
-    define('FACEBOOK_SECRET', '3074ce1362e9fa1ba96939b63ace70db');
+    // Facebook app setting 
+    define('FACEBOOK_APPID', '1403130929918022');
+    define('FACEBOOK_SECRET', '3d52c86afaa4ab27ca639edae4d943e4');
     define('FACEBOOK_CALLBACK', 'http://'.$_SERVER['SERVER_NAME'].'/member/oauth/facebook/callback.php');
 
 	// Twitter app setting
-    define('CONSUMER_KEY', '02f1Bk6gnw5xWxHq4a3Uw');
-    define('CONSUMER_SECRET', 'qzKDBFWXmMrVtC0TZYELvRNIYXZthYDvCpRc5CBmqT4');
+    define('CONSUMER_KEY', 'uewfzlkhS8LzJXrrlBzWQ');
+    define('CONSUMER_SECRET', 'fk6u9uMVyb5JoqR7ZMe8f9Yn8qIpB2pdT9CaCfw0Ug');
     define('TWITTER_CALLBACK', 'http://'.$_SERVER['SERVER_NAME'].'/member/oauth/twitter/callback.php');
 
     //Path setting
@@ -58,10 +58,10 @@
     define('FLICKR_BY_ND',6);
 
     //Flickr app setting
-    define('FLICKR_USER_ID', '100477638@N03');
-    define('FLICKR_API_KEY', 'b7150a7b29a3cb3880eb4b2065d00997');
-    define('FLICKR_API_SECRET', 'd790211190778b66');
-    define('FLICKR_API_TOKEN','72157636399998753-606cd0509ee48111');
+    define('FLICKR_USER_ID', '105466062@N04');
+    define('FLICKR_API_KEY', 'b3a9127b5f8043ac539fd57dc4bb7e78');
+    define('FLICKR_API_SECRET', 'ad60d3256516c328');
+    define('FLICKR_API_TOKEN','72157636585936695-50c9ffcd3de8c959');
 
     //
 
