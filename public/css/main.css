@@ -37,7 +37,7 @@
 
 .photo-list li .title {display:none; position:absolute; z-index:1; top:0; right:0; left:0; bottom:0; border:5px solid white;background: url(../images/bg_photo_title.png) -8px -39px no-repeat;}
 .photo-list li .title em {display:block;color:white; width:130px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; line-height:40px; font-weight:normal; font-size:14px; padding-left:8px;}
-.photo-list li .recommend {display:none; position:absolute; z-index:1; top:12px; right:15px; width:74px; height:20px;  background: url(../images/btn_recommend.png) no-repeat; text-indent:-10000px;}
+.photo-list li .recommend {/*display:none;*/ position:absolute; z-index:1; top:12px; right:15px; width:74px; height:20px;  background: url(../images/btn_recommend.png) no-repeat; text-indent:-10000px;}
 .photo-list li .recommend.on {background-position:0 -20px;}
 .photo-list li .recommend.hide {display:none !important;}
 .photo-list li:hover .title, .photo-list li:hover .recommend {display:block; }

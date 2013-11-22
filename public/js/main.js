@@ -46,7 +46,7 @@ var load = function(start, count) {
 			</a>').appendTo($ul);
 		}
 		$ul.appendTo($('.item-wrapper'));
-		var tops = [11, 11, 11, 205, 205];
+		var tops = [11, 11, 11, 11, 11];
 		var lefts = [15, 263, 509, 756, 1002];
 
 		var setPosition = function (idx, li) {

@@ -11,7 +11,7 @@
 ?>
 		<div id="content" class="main">
 			<div class="top">
-				<img src="../images/text_main.png" width="505" height="189" alt="함께 나누는 사진. " />
+				<img src="../images/text_main2.png" width="888" height="170" alt="함께 나누는 사진. " />
 			</div>
 			<ul class="category">
 			 	<li class="c0 <?if (!$cate) echo 'on';?>"><a href="/">All</a></li>
@@ -24,7 +24,7 @@
 				<li class="c7 <?if ($cate == '7') echo 'on';?>"><a href="?cate=7">여행</a></li>
 				<li class="c8 <?if ($cate == '8') echo 'on';?>"><a href="?cate=8">예술</a></li>
 			</ul>
-			<a class="btn-upload" href="/my/upload.php">사진 올리기</a>
+			<!-- <a class="btn-upload" href="/my/upload.php">사진 올리기</a> -->
 			<form name="filter">
 				<input type="hidden" name="cate" value="<?=$cate?>" />
 				<fieldset class="order">
@@ -42,9 +42,9 @@
 					<input class="btn-search" type="submit" value="검색" />
 				</fieldset>
 			</form>
-			<div class="banner">
+			<!-- <div class="banner">
 				<a href="workshop.php">내가 찍은 문화 유산 신청하기</a>
-			</div>
+			</div> -->
 			<div class="no-result">
 				결과가 없습니다.
 			</div>
