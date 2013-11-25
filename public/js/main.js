@@ -9,7 +9,7 @@ var PARAM = (function() {
 })();
 
 var start = 0;
-var count = 20;
+var count = 50;
 var loading = false;
 var load = function(start, count) {
 	loading = true;

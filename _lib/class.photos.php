@@ -230,6 +230,7 @@ class clsPhotos {
         if( $keyword != "" )
             $str_where .= " and ( p.title like '%".$keyword."%' or p.description like '%".$keyword."%' or  p.tags like '%".$keyword."%' ) ";
         
+		/*
         $str_sort = " order by ";
         switch( $sort ) {
             case 'd':
@@ -246,6 +247,8 @@ class clsPhotos {
                 break;
         }
         $str_sort .= " desc ";
+*/
+		$str_sort = " order by rand() ";
 
         $query = "select * from ".$this->table." p LEFT JOIN members m ON p.member_idx = m.idx ";
         $query .= $str_where." and m.is_leave = 'n'";
