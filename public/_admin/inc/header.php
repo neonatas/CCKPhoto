@@ -64,7 +64,8 @@ body {text-align:center;}
 		</div>
 		<div id="topMenu">
 			<ul>
-				<li><a href="/_admin/member/list.php">Members</a></li>
+				<li><a href="/_admin/member/list.php">Member</a></li>
+				<li><a href="/_admin/photo/list.php">Photo</a></li>
 			</ul>
 		</div>
 	</div>

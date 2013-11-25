@@ -13,7 +13,7 @@
 	$nowPage = $_POST['nowPage'] ? $_POST['nowPage'] : $_GET['nowPage'];
 	$BlockSize = $_POST['BlockSize'] ? $_POST['BlockSize'] : $_GET['BlockSize'];
 	$PageSize = $_POST['PageSize'] ? $_POST['PageSize'] : $_GET['PageSize'];
-    $sort = $_POST['sort'] ? $_POST['sort'] : $_GET['sort'];
+	$sort = $_POST['sort'] ? $_POST['sort'] : $_GET['sort'];
 
 	if($nowPage == "") $nowPage = 1;
 	if($BlockSize == "") $BlockSize = 10;

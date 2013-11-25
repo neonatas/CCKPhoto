@@ -7,4 +7,11 @@
 <ul>
 	<li><a href="list.php?pgkey=list">List</a></li>
 </ul>
-<? } ?>
+<? } else if( $TopMenu == "photo" ) { ?>
+<ul>
+	<li><a href="list.php">List</a></li>
+	<li><a href="r_list.php">Recommend List</a></li>
+</ul>
+<?
+	}
+?>
