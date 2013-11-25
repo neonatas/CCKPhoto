@@ -19,7 +19,7 @@
 	$query .= " ,(select nickname from members where idx = m.idx ) as admin_name";
 	$query .= " from members m LEFT JOIN recommend r ON m.idx = r.member_idx ";
 	$query .= " LEFT JOIN photos p ON p.id = r.photo_id ";
-	$where_temp = " where m.level = 1 and p.id not null ";
+	$where_temp = " where m.level = 1 AND p.id IS NOT NULL ";
 
 	$re = $DB->dbQuery($query.$where_temp);
 	$totalRecord = $re[cnt];
