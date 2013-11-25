@@ -11,7 +11,8 @@
 ?>
 		<div id="content" class="main">
 			<div class="top">
-				<img src="../images/text_main2.png" width="888" height="170" alt="함께 나누는 사진. " />
+			<img src="../images/text_main2.png" width="888" height="170" alt="함께 나누는 사진. " />
+				<!-- <img src="../images/text_main.png"  alt="함께 나누는 사진. " /> -->
 			</div>
 			<ul class="category">
 			 	<li class="c0 <?if (!$cate) echo 'on';?>"><a href="/">All</a></li>
