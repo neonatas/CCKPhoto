@@ -31,7 +31,7 @@ var load = function(start, count) {
 			return;	
 		}
 		if (data.length == count) {
-			$('.more').show();
+			//$('.more').show();
 		}
 		var $ul = $('<ul/>');
 		for (var i = 0; i < data.length; i++) {
