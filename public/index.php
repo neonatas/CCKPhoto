@@ -52,7 +52,7 @@
 			<div class="photo-list">
 				<div class="item-wrapper">
 				</div>
-				<a class="more" href="" style="display:none;">더 불러오기</a>
+				<a class="more" href="" >더 불러오기</a>
 				<hr />
 			</div>
 		</div>
