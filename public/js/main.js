@@ -12,7 +12,8 @@ var start = 0;
 var count = 50;
 var loading = false;
 var loadData = null;
-var seed = Math.random();
+var seed = Math.random() * 1000;
+seed = parseInt(seed);
 
 var load = function(start, count, seed) {
 	loading = true;
