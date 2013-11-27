@@ -13,9 +13,10 @@
     $keyword = ( trim($_GET['keyword']) ) ? trim($_GET['keyword']) : "";
     $cate = ( trim($_GET['cate']) ) ? trim($_GET['cate']) : "";
     $sort = ( trim($_GET['sort']) ) ? trim($_GET['sort']) : "d";
+	$seed = ( trim($_GET['seed']) ) ? trim($_GET['seed']) : 0;
     $member_idx = ( trim($_GET['m_idx']) ) ? trim($_GET['m_idx']) : "";
 
-	$arr_photos = $Photo->getList($member_idx, $sort, $cate, $start, $count, $keyword);
+	$arr_photos = $Photo->getList($member_idx, $sort, $cate, $start, $count, $keyword, $seed);
     
     /*
         sort  :   d => createdate

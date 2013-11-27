@@ -216,7 +216,7 @@ class clsPhotos {
 		return $result;
     }
 
-    function getList($member_idx="", $sort="d", $cate=0, $start=0, $count = 0, $keyword="") {
+    function getList($member_idx="", $sort="d", $cate=0, $start=0, $count = 0, $keyword="", $seed = 0) {
         $result = null;
 
         $str_where = " where 1 ";
@@ -248,7 +248,10 @@ class clsPhotos {
         }
         $str_sort .= " desc ";
 */
-		$str_sort = " order by rand() ";
+		if( $seed > 0 )
+			$str_sort = " order by rand(".$seed.") ";
+		else
+			$str_sort = " order by id asc ";
 
         $query = "select * from ".$this->table." p LEFT JOIN members m ON p.member_idx = m.idx ";
         $query .= $str_where." and m.is_leave = 'n'";
