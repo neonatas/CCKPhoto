@@ -11,7 +11,10 @@
 ?>
 		<div id="content" class="main">
 			<div class="top">
-			<img src="../images/text_main2.png" width="888" height="170" alt="함께 나누는 사진. " />
+			<img src="../images/text_main3.png" width="697" height="251" alt="함께 나누는 사진. " usemap="#goExhibition"/>
+			<map name="goExhibition">
+				<area shape="rect" coords="149,100,229,120" href="/exhibition.php">
+			</map>
 				<!-- <img src="../images/text_main.png"  alt="함께 나누는 사진. " /> -->
 			</div>
 			<ul class="category">

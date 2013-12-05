@@ -12,3 +12,9 @@
 	#exhibitionArea .sub-area3 table td a { color:#cccc00; text-decoration:underline; font-style:italic; }
 	#exhibitionArea .sub-area4 { padding-top:50px; }
 	#exhibitionArea .sub-area4 img{ border:3px solid #009bb0; width:540px; height:260px;}
+	#exhibitionArea .sub-area5 { padding-top:40px; }
+	#exhibitionArea .sub-area6 { padding-top:30px; }
+	#exhibitionArea .sub-area6 table { width:710px; margin:0 auto; }
+	#exhibitionArea .sub-area6 table caption { display:none; }
+	#exhibitionArea .sub-area6 table th{ text-align:right; font-size:11px; font-weight:bold; color:#009bb0; vertical-align:top;}
+	#exhibitionArea .sub-area6 table td{ font-size:11px; height:13px; text-align:right; color:#ddd; }

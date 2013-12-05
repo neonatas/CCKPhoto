@@ -50,6 +50,51 @@
 				<div class="sub-area4">
 					<img src="../images/map_exhibition.png" alt="찾아오시는길" />
 				</div>
+				<div class="sub-area5"><img src="../images/text_exhibition2.png" alt="전시회 초대 작품을 발표합니다." /></div>
+				<div class="sub-area6">
+					<table summary="당첨자 발표">
+						<caption>당첨자 발표</caption>
+						<tr>
+							<th>작품명 / 닉네임</th><th>작품명 / 닉네임</th><th>작품명 / 닉네임</th>
+						</tr>
+<tr><td>- / 제동환</td><td>보고싶어 / shinhj</td><td>토끼는 없었다 / Young yun heo</td></tr>
+<tr><td>가을아이 / 댄싱베어</td><td>부석사 무량수전 / Seokjoon Choi</td><td>파이프에서 탈출 / Seoul YouthHub</td></tr>
+<tr><td>개기일식 / 강응규</td><td>블루 모스크 / Hye Ri O</td><td>푸르름으로 날아오르다 / Taejin Kim</td></tr>
+<tr><td>겨울바다가 / 김목화</td><td>비밀의 정원 / 한햇님(mywaymysoul)</td><td>한강 뚝섬 / Elysian Fields Shan</td></tr>
+<tr><td>겨울호수 / 김문규</td><td>빛속으로 / Jinsoo Jang</td><td>한강의 코스모스 향연 / 데이빗두</td></tr>
+<tr><td>경쟁 / 이재호(짝마)</td><td>빛의 마술 / Seongi Min</td><td>한옥마을 / 권혜인</td></tr>
+<tr><td>고베 카이유간 수족관 / Changhwan Han</td><td>사랑하고 사랑해 / shinhj</td><td>호주여행2 / 임성열</td></tr>
+<tr><td>골목길 속 숨겨진 어항 / 쫑밖에없다</td><td>선 / 김아영</td><td>휘감은 마을 / Aeyoung Kim</td></tr>
+<tr><td>광명속으로 / 고메</td><td>설악산 / Chanhwan Han</td><td>Alone / 김지수</td></tr>
+<tr><td>구름을 담은 와인잔 / Jennifer Kang</td><td>소금산맥 / 박민오</td><td>decal2 / 권ㅁㅣ령</td></tr>
+<tr><td>그날의 따뜻함 / Hyungun Lee</td><td>소원의 무게 / Hye Ri O</td><td>enjoy / LeeHyeJin</td></tr>
+<tr><td>그녀의 꿈 / ㄱㅣㅁㄷㅗㅇㅕㄴ</td><td>수암골 / Jinmin Jeon</td><td>EYE / RHQ8191</td></tr>
+<tr><td>기차역 / jIhyun Son</td><td>수원화성에서.. / kimsohyeon</td><td>flower / 이주봉</td></tr>
+<tr><td>꽃 / 강응규</td><td>시간이 흐른 뒤엔 / 주은지</td><td>hospital_01 / 백준영</td></tr>
+<tr><td>꽃 / LeeHyeJin</td><td>시골풍경 / 김유나</td><td>I (image) hsare / 서원재 </td></tr>
+<tr><td>꿈 / Siwan Park</td><td>쌈지길 / TaeWoo Kang</td><td>I (image) hsare / 서원재 </td></tr>
+<tr><td>꿈 / Sohye Ham</td><td>엄마와아들 / 신정인</td><td>I (image) hsare / 서원재 </td></tr>
+<tr><td>꿈 안에서 / Kim Dabin</td><td>여름 만리포 불꽃놀이 / Changhwan Han</td><td>kotor / 제형준제형준</td></tr>
+<tr><td>끄지 않는 등불.. / 가을</td><td>여름운동회 / 쫑밖에없다</td><td>LP바 / Joong Hoon Shin</td></tr>
+<tr><td>나는달린다 / 인수</td><td>여름의 대나무숲 / 권혜인</td><td>SEE YOU / Kikun Kim</td></tr>
+<tr><td>나비 / 제동환</td><td>여행자 / Aeyoung Kim</td><td>Soft / Hyung-jin Jang</td></tr>
+<tr><td>난 바다가 좋다~~ㅎㅎ / 웃는고냥이</td><td>연습이 거장을 만든다 / Seokjoon Choi</td><td>untitled / 강응규</td></tr>
+<tr><td>남사예담촌 돌담길2</td><td>열아홉 / Yoo SuJin</td><td>zero gravity / 용요용요용</td></tr>
+<tr><td>너는 누구냐? / 웃는고냥이</td><td>우리를 비춘다 / 댄싱베어</td><td></td></tr>
+<tr><td>노년을 아프게하는것2 / 김목화</td><td>우산 / 정다예</td><td></td></tr>
+<tr><td>대천항 / 김문규</td><td>우주 / 이길산</td><td></td></tr>
+<tr><td>대한민국 국보1호 / 데이빗두</td><td>운동화 / 빛의근원</td><td></td></tr>
+<tr><td>도시의 일상 / 김수길</td><td>일몰 / 김문규</td><td></td></tr>
+<tr><td>도전 / 인수</td><td>자벌레의 꿈 / 한햇님(mywaymysoul)</td><td></td></tr>
+<tr><td>두물머리에서 / 임충호</td><td>젊은날의 초상 / 백준영</td><td></td></tr>
+<tr><td>만추 / Ryeong A Lee</td><td>점심시간 / Changhwan Han</td><td></td></tr>
+<tr><td>모성애 / 쁘릅</td><td>제주도로 가는 배에서 / 강응규</td><td></td></tr>
+<tr><td>물고기 / 데니</td><td>조심해 위험해 / 주은지</td><td></td></tr>
+<tr><td>미래 주거지 / 인수</td><td>책 / 제동환</td><td></td></tr>
+<tr><td>민들레_ 여기피고 날아가다/ Yeaju Yun</td><td>청담대교 / 박형열</td><td></td></tr>
+<tr><td>바다 / 서배이</td><td>추운 날 동태 / Joong Hoon Shin</td><td></td></tr>
+					</table>
+				</div>
 			</dd>
 		</dl>
 	</div>
