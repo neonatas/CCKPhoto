@@ -1,6 +1,6 @@
-#content.main {position:relative;padding-top:340px;}
+#content.main {position:relative;padding-top:266px;}
 #content.main .top {position:absolute;width:100%; top:25px;left:0; }
-#content.main .top img {position:absolute; top:49px; left:290px;}
+#content.main .top img {position:absolute; top:100px; right:30px;}
 #content.main .category {float:left; width:572px;padding:19px 0 0 30px;}
 .btn-upload {display:block; width:172px; height:52px; background: url(../images/btn_upload.png) no-repeat; text-indent:-10000px;}
 #content.main .btn-upload {float:left;}
@@ -41,3 +41,6 @@
 .photo-list li .recommend.on {background-position:0 -20px;}
 .photo-list li .recommend.hide {display:none !important;}
 .photo-list li:hover .title, .photo-list li:hover .recommend {display:block; }
+
+.btn-exhibition {width:86px; height:27px; display:block; text-indent:-1000px;  background: url(../images/btn_exhibition.png) 0 -27px no-repeat; float:left; margin:28px 0 0 30px; }
+.btn-exhibition:hover {background-position:0 0;}

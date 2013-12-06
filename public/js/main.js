@@ -60,8 +60,8 @@ var load = function(start, count, seed) {
 
 			$li.css({position: 'absolute', top: tops[col] + 'px', left: lefts[col] + 'px'})
 			setTimeout(function() {
-				$li.animate({opacity:1},1000);
-			}, 1000 * Math.random());
+				$li.animate({opacity:1},2000);
+			}, 200 * idx);
 			$li.width($li.width()).height($li.height());
 			tops[col] += $li.height() + 15;
 		}

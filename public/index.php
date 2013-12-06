@@ -11,14 +11,15 @@
 ?>
 		<div id="content" class="main">
 			<div class="top">
-			<img src="../images/text_main3.png" width="697" height="251" alt="함께 나누는 사진. " usemap="#goExhibition"/>
+			<img src="../images/text_main4.png" width="894" height="128" alt="함께 나누는 사진. " usemap="#goExhibition"/>
 			<map name="goExhibition">
-				<area shape="rect" coords="149,100,229,120" href="/exhibition.php">
+				<area shape="rect" coords="810,110,894,127" href="/exhibition.php">
 			</map>
 				<!-- <img src="../images/text_main.png"  alt="함께 나누는 사진. " /> -->
 			</div>
+			<a href="/" class="btn-exhibition">선정작 전시</a>
 			<ul class="category">
-			 	<li class="c0 <?if (!$cate) echo 'on';?>"><a href="/">All</a></li>
+			 	<li class="c0 <?if ($cate == '0') echo 'on';?>"><a href="?cate=0"">All</a></li>
 				<li class="c1 <?if ($cate == '1') echo 'on';?>"><a href="?cate=1">계절&amp;자연</a></li>
 				<li class="c2 <?if ($cate == '2') echo 'on';?>"><a href="?cate=2">동,식물&amp;생태</a></li>
 				<li class="c3 <?if ($cate == '3') echo 'on';?>"><a href="?cate=3">도시&amp;삶</a></li>

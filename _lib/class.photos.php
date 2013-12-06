@@ -269,5 +269,23 @@ class clsPhotos {
 
 		return $result;
     }
+
+	function getAdminRecommendList() {
+		$query = "select p.*";
+		$query .= " from members m LEFT JOIN recommend r ON m.idx = r.member_idx ";
+		$query .= " LEFT JOIN photos p ON p.id = r.photo_id ";
+		$query .= " where m.level = 1 AND p.id IS NOT NULL ";	
+
+		$res = mysql_query($query,$this->conn) or die ("getList select query error!!");
+        $result = array();
+		if( @mysql_affected_rows() > 0 ) {
+			while( $row = mysql_fetch_array($res) ) {
+				$result[] = $row;
+			}
+			return $result;
+		}
+
+		return $result;
+	}
 }
 ?>

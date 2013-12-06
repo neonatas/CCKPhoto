@@ -11,12 +11,16 @@
     $start = ( trim($_GET['start']) ) ? trim($_GET['start']) : 0;
     $count = ( trim($_GET['count']) ) ? trim($_GET['count']) : 0;
     $keyword = ( trim($_GET['keyword']) ) ? trim($_GET['keyword']) : "";
-    $cate = ( trim($_GET['cate']) ) ? trim($_GET['cate']) : "";
+    $cate = ( trim($_GET['cate']) != "" ) ? trim($_GET['cate']) : "";
     $sort = ( trim($_GET['sort']) ) ? trim($_GET['sort']) : "d";
 	$seed = ( trim($_GET['seed']) ) ? trim($_GET['seed']) : 0;
     $member_idx = ( trim($_GET['m_idx']) ) ? trim($_GET['m_idx']) : "";
 
-	$arr_photos = $Photo->getList($member_idx, $sort, $cate, $start, $count, $keyword, $seed);
+	if ($cate === "") {
+		$arr_photos = $Photo->getAdminRecommendList();
+	}
+	else
+		$arr_photos = $Photo->getList($member_idx, $sort, $cate, $start, $count, $keyword, $seed);
     
     /*
         sort  :   d => createdate
