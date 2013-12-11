@@ -80,11 +80,11 @@
 <tr><td>나비 / 제동환</td><td>여행자 / Aeyoung Kim</td><td>Soft / Hyung-jin Jang</td></tr>
 <tr><td>난 바다가 좋다~~ㅎㅎ / 웃는고냥이</td><td>연습이 거장을 만든다 / Seokjoon Choi</td><td>untitled / 강응규</td></tr>
 <tr><td>남사예담촌 돌담길2</td><td>열아홉 / Yoo SuJin</td><td>zero gravity / 용요용요용</td></tr>
-<tr><td>너는 누구냐? / 웃는고냥이</td><td>우리를 비춘다 / 댄싱베어</td><td></td></tr>
-<tr><td>노년을 아프게하는것2 / 김목화</td><td>우산 / 정다예</td><td></td></tr>
-<tr><td>대천항 / 김문규</td><td>우주 / 이길산</td><td></td></tr>
-<tr><td>대한민국 국보1호 / 데이빗두</td><td>운동화 / 빛의근원</td><td></td></tr>
-<tr><td>도시의 일상 / 김수길</td><td>일몰 / 김문규</td><td></td></tr>
+<tr><td>너는 누구냐? / 웃는고냥이</td><td>우리를 비춘다 / 댄싱베어</td><td>벚꽃 / 11장유리</td></tr>
+<tr><td>노년을 아프게하는것2 / 김목화</td><td>우산 / 정다예</td><td>별 헤는 밤 / Jihyun Son</td></tr>
+<tr><td>대천항 / 김문규</td><td>우주 / 이길산</td><td>춘천 / Joong Hoon Shin</td></tr>
+<tr><td>대한민국 국보1호 / 데이빗두</td><td>운동화 / 빛의근원</td><td>코스모스의 아름다움 / Jinmin Jeon</td></tr>
+<tr><td>도시의 일상 / 김수길</td><td>일몰 / 김문규</td><td>코엑스 / 유성락</td></tr>
 <tr><td>도전 / 인수</td><td>자벌레의 꿈 / 한햇님(mywaymysoul)</td><td></td></tr>
 <tr><td>두물머리에서 / 임충호</td><td>젊은날의 초상 / 백준영</td><td></td></tr>
 <tr><td>만추 / Ryeong A Lee</td><td>점심시간 / Changhwan Han</td><td></td></tr>
@@ -98,6 +98,4 @@
 			</dd>
 		</dl>
 	</div>
-
-
 <? require_once "_include/footer.php"; ?>
