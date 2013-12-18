@@ -11,7 +11,7 @@
 ?>
 		<div id="content" class="main">
 			<div class="top">
-			<img src="../images/text_main5.png" width="894" height="133" alt="함께 나누는 사진. " usemap="#goExhibition"/>
+			<img src="../images/text_main6.png" width="894" height="133" alt="함께 나누는 사진. " usemap="#goExhibition"/>
 			<map name="goExhibition">
 				<area shape="rect" coords="810,110,894,127" href="/exhibition.php">
 			</map>
