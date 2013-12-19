@@ -24,7 +24,8 @@ CCL(Creative Commons License)을 붙여 공유된 사진 100점을<br />
 						<th>전시일정<span>온라인</span></th><td>2013.12. 9(월) ~ 12. 27(금)</td>
 					</tr>
 					<tr>
-						<th><span>오프라인</span></th><td>2013. 12. 18(수) ~ 12. 23(월)</td>
+						<th><span>오프라인</span></th>
+						<td>2013. 12. 18(수) ~ 12. 23(월)<br />오전 10시 ~ 오후 7시</td>
 					</tr>
 					<tr>
 						<th>전시장소<span>온라인</span></th><td>‘함께 나누는 사진’ 웹사이트,  네이버 포토 갤러리<br />(<a href="http://photo.naver.com/galleryn/list" target="_blink">http://photo.naver.com/galleryn/list</a>)</td>
